@@ -16,6 +16,6 @@ public class TopDownView : MonoBehaviour {
 	void Update () {
         
         this.transform.position = new Vector3(target.transform.position.x + cameraPosition.x, target.transform.position.y + cameraPosition.y + 15, target.transform.position.z + cameraPosition.z - 3);
-        this.transform.rotation.SetLookRotation(target.transform.position);
+        this.transform.LookAt(target.transform);
     }
 }
