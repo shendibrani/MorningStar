@@ -58,6 +58,7 @@ half4 CalculateLight (unity_v2f_deferred i)
 	light.ndotl = LambertTerm (normalWorld, light.dir);
 	if (light.ndotl <= 0.0f) light.ndotl = 0;
 	else light.ndotl = 1;
+	
 
 	UnityIndirect ind;
 	UNITY_INITIALIZE_OUTPUT(UnityIndirect, ind);
