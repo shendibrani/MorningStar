@@ -5,8 +5,8 @@ GraphicsSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 3
   m_Deferred:
-    m_Mode: 1
-    m_Shader: {fileID: 69, guid: 0000000000000000f000000000000000, type: 0}
+    m_Mode: 2
+    m_Shader: {fileID: 4800000, guid: 0c9fc88d16b12df49ae0ba2756306891, type: 3}
   m_LegacyDeferred:
     m_Mode: 1
     m_Shader: {fileID: 63, guid: 0000000000000000f000000000000000, type: 0}
