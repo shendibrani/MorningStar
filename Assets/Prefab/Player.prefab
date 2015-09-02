@@ -177,6 +177,7 @@ GameObject:
   - 23: {fileID: 2352146}
   - 54: {fileID: 5466710}
   - 138: {fileID: 13803170}
+  - 114: {fileID: 11430134}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -571,7 +572,7 @@ Rigidbody:
   m_GameObject: {fileID: 154258}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: .0500000007
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -586,7 +587,7 @@ Rigidbody:
   m_GameObject: {fileID: 190264}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: .0500000007
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -601,7 +602,7 @@ Rigidbody:
   m_GameObject: {fileID: 134638}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: .0500000007
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -631,7 +632,7 @@ Rigidbody:
   m_GameObject: {fileID: 184768}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 0
+  m_Drag: .0500000007
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -646,7 +647,7 @@ Rigidbody:
   m_GameObject: {fileID: 184008}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: .0500000007
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -808,7 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 1
-  smoothTime: 10
+  smoothTime: 4
   xAxis: {fileID: 11448668}
   zAxis: {fileID: 11465440}
 --- !u!114 &11421960
@@ -825,6 +826,18 @@ MonoBehaviour:
   upDown: {fileID: 11454584}
   leftRight: {fileID: 11478178}
   speed: 200
+--- !u!114 &11430134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8ce7effacb6944f81bff5bcd125ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 5493190}
 --- !u!114 &11448668
 MonoBehaviour:
   m_ObjectHideFlags: 1
