@@ -16,20 +16,8 @@ public class HingeConstrain : MonoBehaviour {
 	    _rigidbody = GetComponent<Rigidbody>();
         _distance = Vector3.Distance(_rigidbody.transform.position, _target.transform.position);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-
-       
-        //Vector3
-	}
 
     void FixedUpdate()
-    {
-        
-    }
-
-    void LateUpdate()
     {
         Vector3 tmpVector = _rigidbody.transform.position - _target.transform.position;
         Vector3.ClampMagnitude(tmpVector, _distance);

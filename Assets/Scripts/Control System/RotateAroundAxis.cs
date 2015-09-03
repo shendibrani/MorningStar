@@ -17,7 +17,7 @@ public class RotateAroundAxis : MonoBehaviour
 	}
 	
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 		if(xAxis != 0 || zAxis != 0){
 			float yRot = UtilityFunctions.TrigToAngleDEG(zAxis, xAxis);
