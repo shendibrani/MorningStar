@@ -4,21 +4,11 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
-    static GameManager instance;
+    [SerializeField]
+    float displayInterval = 20f;
+    float targetTime = 0f;
 
-    List <IListener> listnerList = new List<IListener>();
-
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null) instance = new GameManager();
-            return instance;
-        }
-
-    }
-
-    GameManager()
+    void Start()
     {
 
     }
@@ -28,8 +18,9 @@ public class GameManager : MonoBehaviour {
 	    
 	}
 
-    public void PlayerDeath()
+    public void PlayerDeath(PlayerInfo info)
     {
+        targetTime = Time.time + displayInterval;
 
     }
 }

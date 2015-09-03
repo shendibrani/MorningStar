@@ -6,6 +6,12 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     [SerializeField]
     Transform weaponBase;
+    GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = transform.Find("Manager").GetComponent<GameManager>();
+    }
 
     public void OnDeath()
     {
@@ -34,5 +40,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
+
+        gameManager.PlayerDeath(this.GetComponentInParent<PlayerInfo>());
     }
 }

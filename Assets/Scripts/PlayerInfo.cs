@@ -1,7 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IListener : MonoBehaviour {
+public class PlayerInfo : MonoBehaviour {
+
+    [SerializeField]
+    PlayerID id;
+
+    public enum PlayerID
+    {
+        Player1, Player2
+    };
 
 	// Use this for initialization
 	void Start () {
