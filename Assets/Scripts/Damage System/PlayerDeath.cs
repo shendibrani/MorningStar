@@ -10,7 +10,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     void Start()
     {
-        gameManager = transform.Find("Manager").GetComponent<GameManager>();
+        //gameManager = transform.Find("Manager").GetComponent<GameManager>();
     }
 
     public void OnDeath()
@@ -41,6 +41,6 @@ public class PlayerDeath : MonoBehaviour, IDeath
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
 
-        gameManager.PlayerDeath(this.GetComponentInParent<PlayerInfo>());
+        //gameManager.PlayerDeath(this.GetComponentInParent<PlayerInfo>());
     }
 }
