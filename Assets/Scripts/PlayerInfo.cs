@@ -11,5 +11,9 @@ public class PlayerInfo : MonoBehaviour {
 	void Start () {
 		playerID = players;
 		players++;
+
+		foreach (AnalogToAxisLayer analog in GetComponentsInChildren<AnalogToAxisLayer>()){
+			analog.joystick = playerID;
+		}
 	}
 }

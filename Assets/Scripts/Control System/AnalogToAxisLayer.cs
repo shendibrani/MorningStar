@@ -23,7 +23,7 @@ public class AnalogToAxisLayer : Axis
 		}
 	}
 
-	[SerializeField] int joystick;
+	public int joystick;
 	[SerializeField] StickDirection direction;
 	[SerializeField] StickType type;
 }
