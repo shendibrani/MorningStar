@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
-public class RigidBodyPause : MonoBehaviour, IPausable {
+public class RigidBodyPause : MonoBehaviour, IMessage {
 
     [SerializeField]
     bool isPaused = true;
@@ -14,6 +14,7 @@ public class RigidBodyPause : MonoBehaviour, IPausable {
 
     void Start()
     {
+        MessagingManager.AddListener(this);
 
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         velocity = rigidbody.velocity;
@@ -23,7 +24,19 @@ public class RigidBodyPause : MonoBehaviour, IPausable {
         if (isPaused) OnPause();
     }
 
-    public void OnPause()
+    public void Message(Messages message, GameObject sender)
+    {
+        switch (message){
+            case Messages.PAUSE:
+                OnPause();
+                break;
+            case Messages.RESUME:
+                OnResume();
+                break;
+        }
+    }
+
+    void OnPause()
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
@@ -37,7 +50,7 @@ public class RigidBodyPause : MonoBehaviour, IPausable {
         //rigidbody.angularVelocity = Vector3.
     }
 
-    public void OnResume()
+    void OnResume()
     {
         GetComponent<Rigidbody>().constraints = constraints;
     }
