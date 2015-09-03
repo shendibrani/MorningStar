@@ -3,21 +3,13 @@ using System.Collections;
 
 public class PlayerInfo : MonoBehaviour {
 
-    [SerializeField]
-    PlayerID id;
+	public static int players = 1;
 
-    public enum PlayerID
-    {
-        Player1, Player2
-    };
+	public int playerID {get; private set;}
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		playerID = players;
+		players++;
 	}
 }
