@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 492790}
   - 95: {fileID: 9573390}
   m_Layer: 0
-  m_Name: TestCharacter
+  m_Name: TestCharacterPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
