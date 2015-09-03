@@ -3,30 +3,33 @@ using System.Collections;
 
 public class AnalogToAxisLayer : Axis 
 {
-	[SerializeField] string axisName;
+
 	[SerializeField] float deadZone = 0.1f;
 	[SerializeField] bool invert;
+	public int player {get; set;}
+	[SerializeField] StickDirection direction;
+	[SerializeField] StickType type;
 
-//	public new float axisValue {
-//		get{
-//			//if(focus){
-//				string AxisName = "P"+joystick+" ";
-//				if(direction == StickDirection.HORIZONTAL){
-//					AxisName += "Horizontal ";
-//				} else {
-//					AxisName += "Vertical ";
-//				}
-//				if(type == StickType.MOVEMENT){
-//					AxisName += "Movement";
-//				} else {
-//					AxisName += "Attack";
-//				}
-//			Debug.Log("axis value called");
-//				return 
-//			}
-//			return 0;
-//		}
-//	}
+	string axisName {
+		get{ 
+			string AxisName = "P"+player+" ";
+			if(direction == StickDirection.HORIZONTAL){
+				AxisName += "Horizontal ";
+			} else {
+				AxisName += "Vertical ";
+			}
+			if(type == StickType.MOVEMENT){
+				AxisName += "Movement";
+			} else {
+				AxisName += "Attack";
+			}
+			return AxisName;
+		}
+	}
+
+	void Start(){
+
+	}
 
 	void Update(){
 		_axisValue = Input.GetAxisRaw(axisName);
@@ -34,12 +37,8 @@ public class AnalogToAxisLayer : Axis
 		if(Mathf.Abs(_axisValue) < deadZone){
 			_axisValue = 0;
 		}
-		Debug.Log(_axisValue);
+		//Debug.Log(_axisValue);
 	}
-
-//	public int joystick;
-//	[SerializeField] StickDirection direction;
-//	[SerializeField] StickType type;
 }
 
 public enum StickType{
