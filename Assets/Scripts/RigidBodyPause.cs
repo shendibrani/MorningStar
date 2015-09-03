@@ -5,23 +5,23 @@ using System.Collections;
 public class RigidBodyPause : MonoBehaviour, IMessage {
 
     [SerializeField]
-    bool isPaused = true;
+    bool isPausedAtStart = true;
 
-    Vector3 velocity;
-    Vector3 angularVelocity;
+    //Vector3 velocity;
+    //Vector3 angularVelocity;
     RigidbodyConstraints constraints;
-    bool useGravity;
+    //bool useGravity;
 
     void Start()
     {
         MessagingManager.AddListener(this);
 
         Rigidbody rigidbody = GetComponent<Rigidbody>();
-        velocity = rigidbody.velocity;
-        angularVelocity = rigidbody.angularVelocity;
+        //velocity = rigidbody.velocity;
+        //angularVelocity = rigidbody.angularVelocity;
         constraints = rigidbody.constraints;
-        useGravity = rigidbody.useGravity;
-        if (isPaused) OnPause();
+        //useGravity = rigidbody.useGravity;
+        if (isPausedAtStart) OnPause();
     }
 
     public void Message(Messages message, GameObject sender)
@@ -40,10 +40,10 @@ public class RigidBodyPause : MonoBehaviour, IMessage {
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
-        velocity = rigidbody.velocity;
-        angularVelocity = rigidbody.angularVelocity;
+        //velocity = rigidbody.velocity;
+        //angularVelocity = rigidbody.angularVelocity;
         constraints = rigidbody.constraints;
-        useGravity = rigidbody.useGravity;
+        //useGravity = rigidbody.useGravity;
 
         rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         //rigidbody.velocity = Vector3.zero();
