@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour, IMessage {
 
     [SerializeField]
-    float displayInterval = 0.5f;
+    float displayInterval = 10f;
     [SerializeField]
     ImageController victoryImage;
+
+    int player0Score = 0;
+    int player1Score = 0;
 
     float targetTime = 0f;
     bool useTimer = false;
@@ -26,10 +29,14 @@ public class GameManager : MonoBehaviour, IMessage {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((Time.time > targetTime)&&(useTimer))
+        if ((useTimer) && (Time.time > targetTime))
         {
-            gameTimerCallback();
+            RestartGame();
+            victoryImage.Disable();
+            useTimer = false;
         }
+
+
 	}
 
     public void Message(Messages message, GameObject sender)
@@ -52,12 +59,13 @@ public class GameManager : MonoBehaviour, IMessage {
             {
                 case 0:
                     victoryImage.GetComponent<Image>().color = Color.red;
+                    player0Score++;
                     break;
                 case 1:
                     victoryImage.GetComponent<Image>().color = Color.green;
+                    player1Score++;
                     break;
             }
-            gameTimerCallback = RestartGame;
         }
 
         targetTime = Time.time + displayInterval;
@@ -67,6 +75,7 @@ public class GameManager : MonoBehaviour, IMessage {
     void RestartGame()
     {
         Debug.Log("reload");
-        Application.LoadLevel(Application.loadedLevel);
+        MessagingManager.Broadcast(Messages.RESTART, this.gameObject);
+        //Application.LoadLevel(Application.loadedLevel);
     }
 }
