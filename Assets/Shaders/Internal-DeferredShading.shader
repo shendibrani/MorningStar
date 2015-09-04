@@ -56,8 +56,14 @@ half4 CalculateLight (unity_v2f_deferred i)
 	float3 eyeVec = normalize(wpos-_WorldSpaceCameraPos);
 	half oneMinusReflectivity = 1 - SpecularStrength(specColor.rgb);
 	light.ndotl = LambertTerm (normalWorld, light.dir);
-	if (light.ndotl <= 0.0f) light.ndotl = 0;
-	else light.ndotl = 1;
+	if (light.ndotl < 0.1f) light.ndotl = 0;
+	if (light.ndotl > 0.1 && light.ndotl < 0.3) light.ndotl = 0.2;
+	if (light.ndotl > 0.3 && light.ndotl < 0.5) light.ndotl = 0.5;
+	if (light.ndotl > 0.5 ) light.ndotl = 1;
+	
+	
+	
+	
 	
 
 	UnityIndirect ind;
