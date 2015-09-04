@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(ImageController))]
+[RequireComponent(typeof(Image))]
 public class ImageController : MonoBehaviour {
 
 
@@ -23,12 +23,12 @@ public class ImageController : MonoBehaviour {
 
     public void Enable()
     {
-        GetComponent<ImageController>().enabled = true;
+        GetComponent<Image>().enabled = true;
     }
 
     public void Disable()
     {
-        GetComponent<ImageController>().enabled = false;
+        GetComponent<Image>().enabled = false;
     }
 
     public void FadeOut()

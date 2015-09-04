@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour, IMessage {
  
         if (victoryImage != null)
         {
-            victoryImage.Enable();
+            
             switch (info.playerID)
             {
                 case 0:
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour, IMessage {
                     break;
             }
         }
-
+        victoryImage.Enable();
         targetTime = Time.time + displayInterval;
         useTimer = true;
     }
