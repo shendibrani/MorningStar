@@ -5,7 +5,7 @@ public class PlayerInfo : MonoBehaviour {
 
 	public static int players = 1;
 
-	[SerializeField] Camera camera;
+//	[SerializeField] Camera camera;
 
 	public int playerID {get; private set;}
 
@@ -18,13 +18,13 @@ public class PlayerInfo : MonoBehaviour {
 			analog.joystick = playerID;
 		}
 
-		switch (playerID){
-		case 1:
-			camera.rect = new Rect(new Vector2(0,0), new Vector2(0.5f, 1));
-			break;
-		case 2:
-			camera.rect = new Rect(new Vector2(0,0.5f), new Vector2(0.5f, 1));
-			break;
-		}
+//		switch (playerID){
+//		case 1:
+//			camera.rect = new Rect(new Vector2(0,0), new Vector2(0.5f, 1));
+//			break;
+//		case 2:
+//			camera.rect = new Rect(new Vector2(0,0.5f), new Vector2(0.5f, 1));
+//			break;
+//		}
 	}
 }
