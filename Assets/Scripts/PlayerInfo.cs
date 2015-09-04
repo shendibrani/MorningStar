@@ -5,7 +5,7 @@ public class PlayerInfo : MonoBehaviour {
 
 	public static int players = 1;
 
-//	[SerializeField] Camera camera;
+	//[SerializeField] Camera camera;
 
 	public int playerID {get; private set;}
 
@@ -14,8 +14,10 @@ public class PlayerInfo : MonoBehaviour {
 		playerID = players;
 		players++;
 
+		Debug.Log(GetComponentsInChildren<AnalogToAxisLayer>().Length);
+
 		foreach (AnalogToAxisLayer analog in GetComponentsInChildren<AnalogToAxisLayer>()){
-			analog.joystick = playerID;
+			analog.player = playerID;
 		}
 
 //		switch (playerID){

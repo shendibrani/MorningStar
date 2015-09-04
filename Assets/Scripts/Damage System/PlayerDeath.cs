@@ -20,12 +20,13 @@ public class PlayerDeath : MonoBehaviour, IDeath
         foreach (Collider c in parent.GetComponentsInChildren<Collider>())
         {
             c.enabled = true;
+            if (c.GetComponent<DealDamageOnCollision>()) c.GetComponent<DealDamageOnCollision>().enabled = false;
         }
 
         foreach (Rigidbody r in parent.GetComponentsInChildren<Rigidbody>())
         {
-            weaponBase.GetComponent<Rigidbody>().useGravity = true;
-            weaponBase.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            r.GetComponent<Rigidbody>().useGravity = true;
+            r.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
 
         if (weaponBase != null)
@@ -40,6 +41,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
+
+        MessagingManager.Broadcast(Messages.DEATH, this.transform.parent.gameObject);
 
         //gameManager.PlayerDeath(this.GetComponentInParent<PlayerInfo>());
     }
