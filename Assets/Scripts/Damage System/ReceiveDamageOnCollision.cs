@@ -22,6 +22,14 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
         }
     }
 
+    public HealthBar HealthBar
+    {
+        set
+        {
+            healthBar = value;
+        }
+    }
+
 	void OnCollisionEnter(Collision c)
 	{
 		if(c.collider.GetComponent<DealDamageOnCollision>() != null){

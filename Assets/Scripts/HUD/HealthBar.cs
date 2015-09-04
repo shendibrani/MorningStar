@@ -9,13 +9,14 @@ public class HealthBar : MonoBehaviour {
     float displayHealth = 0;
     float health = 0;
 
-	private Image lifeBar;
+    [SerializeField]
+	Image lifeBar;
 
 
 	// Use this for initialization
 	void Start () {
 
-		lifeBar = this.gameObject.GetComponent<Image>();
+		//lifeBar = this.gameObject.GetComponent<Image>();
 	}
 
     public void SetMaxHealth(float value)
@@ -38,8 +39,7 @@ public class HealthBar : MonoBehaviour {
         {
             displayHealth--;
         }
-
-			lifeBar.fillAmount = displayHealth / maxHealth;
+            if (lifeBar != null)    lifeBar.fillAmount = displayHealth / maxHealth;
 
 		}
 
