@@ -38,6 +38,6 @@ public class MessagingManager
 }
 
 public enum Messages {
-    PAUSE, RESUME, DEATH, RESTART
+    PAUSE, RESUME, DEATH, RESTART, LOADED
 }
 
