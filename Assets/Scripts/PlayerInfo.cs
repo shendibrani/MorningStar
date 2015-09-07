@@ -56,7 +56,7 @@ public class PlayerInfo : MonoBehaviour, IMessage {
     public void AttachWeapon(GameObject weapon)
     {
         GetComponentInChildren<PlayerDeath>().AttachWeapon(weapon);
-        weapon.GetComponent<AttachWeapon>().Attach(this.gameObject, rightRotator);
+        weapon.GetComponent<WeaponInfo>().Attach(this.gameObject, rightRotator);
     }
 
     public void Message(Messages message, GameObject sender)

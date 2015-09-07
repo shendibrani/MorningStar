@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttachWeapon : MonoBehaviour {
+public class WeaponInfo : MonoBehaviour {
 
     [SerializeField]
     Rigidbody baseComponent;
