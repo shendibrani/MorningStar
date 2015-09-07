@@ -10,10 +10,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 
 	public int playerID {get; private set;}
 
-    float decayTimer = 0;
-    [SerializeField]
-    float decayTime = 10f;
-
     public PlayerState State
     {
         get
