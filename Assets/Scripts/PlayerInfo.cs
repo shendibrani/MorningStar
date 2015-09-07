@@ -10,10 +10,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 
 	public int playerID {get; private set;}
 
-    float decayTimer = 0;
-    [SerializeField]
-    float decayTime = 10f;
-
     public PlayerState State
     {
         get
@@ -50,10 +46,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 
     public void Update()
     {
-        if ((state == PlayerState.DEAD) && (Time.time > decayTimer))
-        {
-            Object.Destroy(this.gameObject);
-        }
     }
 
     public void Message(Messages message, GameObject sender)
@@ -62,7 +54,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
         {
             case Messages.DEATH:
                  if (sender.GetComponent<PlayerInfo>() == this) state = PlayerState.DEAD;
-                 decayTimer = Time.time + decayTime;
                  break;
         }
     }
