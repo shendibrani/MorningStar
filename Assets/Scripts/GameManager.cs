@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour, IMessage {
 
     [SerializeField]
-    float displayInterval = 0.5f;
+    float displayInterval = 10f;
     [SerializeField]
-    Image victoryImage;
+    ImageController victoryImage;
+
+    int player0Score = 0;
+    int player1Score = 0;
+
     float targetTime = 0f;
     bool useTimer = false;
 
     delegate void GameEvent();
-    delegate void ImageEvent(Image image);
+    delegate void ImageEvent();
 
     event ImageEvent imageTimerCallback;
     event GameEvent gameTimerCallback;
@@ -25,10 +29,14 @@ public class GameManager : MonoBehaviour, IMessage {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((Time.time > targetTime)&&(useTimer))
+        if ((useTimer) && (Time.time > targetTime))
         {
-            gameTimerCallback();
+            RestartGame();
+            victoryImage.Disable();
+            useTimer = false;
         }
+
+
 	}
 
     public void Message(Messages message, GameObject sender)
@@ -43,37 +51,31 @@ public class GameManager : MonoBehaviour, IMessage {
 
     public void PlayerDeath(PlayerInfo info)
     {
-        targetTime = Time.time + displayInterval;
-        useTimer = true;
+ 
         if (victoryImage != null)
         {
-            victoryImage.enabled = true;
+            
             switch (info.playerID)
             {
                 case 0:
-                    victoryImage.color = Color.red;
+                    victoryImage.GetComponent<Image>().color = Color.red;
+                    player0Score++;
                     break;
                 case 1:
-                    victoryImage.color = Color.green;
+                    victoryImage.GetComponent<Image>().color = Color.green;
+                    player1Score++;
                     break;
             }
-            gameTimerCallback = RestartGame;
         }
-    }
-
-    void DisableImage(Image image)
-    {
-        image.enabled = false;
-    }
-
-    void EnableImage(Image image)
-    {
-        image.enabled = true;
+        victoryImage.Enable();
+        targetTime = Time.time + displayInterval;
+        useTimer = true;
     }
 
     void RestartGame()
     {
         Debug.Log("reload");
-        Application.LoadLevel(Application.loadedLevel);
+        MessagingManager.Broadcast(Messages.RESTART, this.gameObject);
+        //Application.LoadLevel(Application.loadedLevel);
     }
 }
