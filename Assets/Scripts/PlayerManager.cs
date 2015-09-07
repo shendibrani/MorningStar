@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerManager : MonoBehaviour, IMessage {
 
 	[SerializeField] GameObject playerPrefab;
+    [SerializeField] GameObject weaponPrefab;
 
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject healthBarPrefab;
@@ -40,28 +41,46 @@ public class PlayerManager : MonoBehaviour, IMessage {
     void CreatePlayers()
     {
         Debug.Log("A");
+
+        //instantiate player prefab in random position from 0,0
+        Vector3 pos = new Vector3(RNG.NextFloat() * 10, 0, RNG.NextFloat() * 10);
         playerA = (GameObject)GameObject.Instantiate(
             playerPrefab,
-            new Vector3(RNG.NextFloat() * 10, 0, RNG.NextFloat() * 10),
+            pos,
             Quaternion.identity);
         cameraReference.a = playerA.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
 
+        //instantiate weapon prefab
+        GameObject weaponA = (GameObject)GameObject.Instantiate(weaponPrefab, pos + weaponPrefab.transform.position, Quaternion.identity);
+        weaponA.transform.Rotate(0,90,0);
+        playerA.GetComponent<PlayerInfo>().AttachWeapon(weaponA);
+        //weaponA.GetComponent<AttachWeapon>().Attach(playerA, playerA.GetComponent<PlayerInfo>().rightRotator);
+
+        //set up HUD 
         healthA = (GameObject)GameObject.Instantiate(healthBarPrefab, new Vector3(960, -768, 0), Quaternion.identity);
         healthA.transform.SetParent(canvas.transform, false);
         playerA.GetComponentInChildren<ReceiveDamageOnCollision>().HealthBar = healthA.GetComponent<HealthBar>();
 
-        Debug.Log("A");
+
+        Debug.Log("B");
+
+        pos += new Vector3(RNG.NextFloat(), 0, RNG.NextFloat()).normalized * engagementDistance;
         playerB = (GameObject)GameObject.Instantiate(
             playerPrefab,
-            playerA.transform.position + (new Vector3(RNG.NextFloat(), 0, RNG.NextFloat()).normalized * engagementDistance),
+            pos,
             Quaternion.identity);
         cameraReference.b = playerB.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
+
+        GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos + weaponPrefab.transform.position, Quaternion.identity);
+        weaponB.transform.Rotate(0, 90, 0);
+        playerB.GetComponent<PlayerInfo>().AttachWeapon(weaponB);
+        //weaponB.GetComponent<AttachWeapon>().Attach(playerB, playerB.GetComponent<PlayerInfo>().rightRotator);
 
         healthB = (GameObject)GameObject.Instantiate(healthBarPrefab, new Vector3(960, -768, 0), Quaternion.identity);
         healthB.transform.SetParent(canvas.transform, false);
         healthB.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
         playerB.GetComponentInChildren<ReceiveDamageOnCollision>().HealthBar = healthB.GetComponent<HealthBar>();
 
-        Debug.Log("A");
+        Debug.Log("Done");
     }
 }

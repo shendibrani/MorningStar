@@ -5,8 +5,9 @@ public class DecayControl : MonoBehaviour {
 
     [SerializeField]
     float decayTime = 10f;
-    float fallTimer = 5f;
+    float fallTime = 5f;
     float timer;
+    [SerializeField]
     DecayState state = DecayState.ALIVE;
 
     enum DecayState
@@ -41,11 +42,11 @@ public class DecayControl : MonoBehaviour {
                c.isTrigger = true;
                if (c.GetComponent<Rigidbody>()) c.GetComponent<Rigidbody>().useGravity = true;
            }
-        timer += fallTimer;
+        timer = Time.time + fallTime;
         state = DecayState.FALLING;
     }
 
-    void Activate()
+    public void Activate()
     {
         timer = decayTime + Time.time;
         state = DecayState.DEAD;
