@@ -50,10 +50,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 
     public void Update()
     {
-        if ((state == PlayerState.DEAD) && (Time.time > decayTimer))
-        {
-            Object.Destroy(this.gameObject);
-        }
     }
 
     public void Message(Messages message, GameObject sender)
@@ -62,7 +58,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
         {
             case Messages.DEATH:
                  if (sender.GetComponent<PlayerInfo>() == this) state = PlayerState.DEAD;
-                 decayTimer = Time.time + decayTime;
                  break;
         }
     }

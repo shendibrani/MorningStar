@@ -13,8 +13,11 @@ public class CameraRepositionBehaviour : MonoBehaviour {
 
 	void Update () 
 	{
-		Vector3 center = (b.transform.position - a.transform.position)/2 + a.transform.position;
-		transform.position = new Vector3(center.x, yPosition, center.z);
-		transform.LookAt(transform);
+        if (a != null && b != null)
+        {
+            Vector3 center = (b.transform.position - a.transform.position) / 2 + a.transform.position;
+            transform.position = new Vector3(center.x, yPosition, center.z);
+            transform.LookAt(transform);
+        }
 	}
 }
