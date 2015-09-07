@@ -31,8 +31,9 @@ public class GameManager : MonoBehaviour, IMessage {
 	void Update () {
         if ((useTimer) && (Time.time > targetTime))
         {
-            if (gameTimerCallback != null) gameTimerCallback();
-            gameTimerCallback -= RestartGame;
+            RestartGame();
+            //if (gameTimerCallback != null) gameTimerCallback();
+            //gameTimerCallback -= RestartGame;
         }
 
 
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour, IMessage {
                     break;
             }
         }
-        imageTimerCallback += RestartGame;
+        //imageTimerCallback += RestartGame;
         victoryImage.Enable();
         targetTime = Time.time + displayInterval;
         useTimer = true;

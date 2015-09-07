@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 112610, guid: e23d31dd787f60645bbe6ec9763026a8, type: 2}
+  weaponPrefab: {fileID: 171632, guid: 66fd2433548b06749b6ce764d2d4a1a4, type: 2}
   canvas: {fileID: 186594822}
   healthBarPrefab: {fileID: 188394, guid: ddb57a6c33747b34e93256436a3f55dc, type: 2}
   cameraReference: {fileID: 1098789432}

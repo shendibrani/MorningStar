@@ -10,6 +10,11 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 
 	public int playerID {get; private set;}
 
+    [SerializeField]
+    public RotateAroundAxis leftRotator;
+    [SerializeField]
+    public RotateAroundAxis rightRotator;
+
     public PlayerState State
     {
         get
@@ -48,12 +53,21 @@ public class PlayerInfo : MonoBehaviour, IMessage {
     {
     }
 
+    public void AttachWeapon(GameObject weapon)
+    {
+        GetComponentInChildren<PlayerDeath>().AttachWeapon(weapon);
+        weapon.GetComponent<WeaponInfo>().Attach(this.gameObject, rightRotator);
+    }
+
     public void Message(Messages message, GameObject sender)
     {
         switch (message)
         {
             case Messages.DEATH:
-                 if (sender.GetComponent<PlayerInfo>() == this) state = PlayerState.DEAD;
+                if (sender.GetComponent<PlayerInfo>() == this) { 
+                    state = PlayerState.DEAD;
+                    GetComponent<DecayControl>().Activate();
+                }
                  break;
         }
     }

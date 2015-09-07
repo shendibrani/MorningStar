@@ -13,6 +13,11 @@ public class PlayerDeath : MonoBehaviour, IDeath
         //gameManager = transform.Find("Manager").GetComponent<GameManager>();
     }
 
+    public void AttachWeapon(GameObject o)
+    {
+        weaponBase = o.transform;
+    }
+
     public void OnDeath()
     {
         Transform parent = transform.parent;
@@ -41,6 +46,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
+
+        GetComponentInChildren<LookAtEachotherBehaviour>().enabled = false;
 
         MessagingManager.Broadcast(Messages.DEATH, this.transform.parent.gameObject);
 
