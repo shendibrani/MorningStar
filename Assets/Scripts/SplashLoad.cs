@@ -12,7 +12,6 @@ public class SplashLoad : MonoBehaviour {
 	void Update () {
         if (Input.anyKeyDown)
         {
-            LoadingScreen.instance.Load(1);
             this.enabled = false;
         }
 	}

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerInfo : MonoBehaviour, IMessage {
 
-	public static int players = 1;
+	//public static int players = 1;
 
     PlayerState state = PlayerState.ALIVE;
 	//[SerializeField] Camera camera;
@@ -29,14 +29,11 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 
 	// Use this for initialization
 	void Start () {
-		playerID = players;
-		players++;
+		//playerID = players;
+		//players++;
+
 
 		Debug.Log(GetComponentsInChildren<AnalogToAxisLayer>().Length);
-
-		foreach (AnalogToAxisLayer analog in GetComponentsInChildren<AnalogToAxisLayer>()){
-			analog.player = playerID;
-		}
 
         MessagingManager.AddListener(this);
 //		switch (playerID){
@@ -53,6 +50,20 @@ public class PlayerInfo : MonoBehaviour, IMessage {
     {
     }
 
+    public void AssignPlayer(int id)
+    {
+        playerID = id;
+
+        foreach (AnalogToAxisLayer analog in GetComponentsInChildren<AnalogToAxisLayer>())
+        {
+            analog.player = playerID;
+        }
+        foreach (AbilityButtonInput keyboard in GetComponentsInChildren<AbilityButtonInput>())
+        {
+            keyboard.player = playerID;
+        }
+    }
+
     public void AttachWeapon(GameObject weapon)
     {
         GetComponentInChildren<PlayerDeath>().AttachWeapon(weapon);
@@ -67,6 +78,7 @@ public class PlayerInfo : MonoBehaviour, IMessage {
                 if (sender.GetComponent<PlayerInfo>() == this) { 
                     state = PlayerState.DEAD;
                     GetComponent<DecayControl>().Activate();
+                    playerID = 0;
                 }
                  break;
         }
