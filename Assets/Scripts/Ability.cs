@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ability : MonoBehaviour {
+public abstract class Ability : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,5 @@ public class Ability : MonoBehaviour {
 	
 	}
 
-    public virtual void Execute()
-    {
-
-    }
+    public abstract void Execute();
 }
