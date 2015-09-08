@@ -7,7 +7,7 @@ public class WeaponInfo : MonoBehaviour {
     [SerializeField]
     Rigidbody baseComponent;
     [SerializeField]
-    List <Rigidbody> headComponents;
+    List <Collider> headComponents;
     //[SerializeField]
     //RotateAroundAxis rotator;
 
@@ -30,18 +30,18 @@ public class WeaponInfo : MonoBehaviour {
 
     public void Death()
     {
-        foreach (Rigidbody r in headComponents)
+        foreach (Collider c in headComponents)
         {
-            if (r.GetComponent<DealDamageOnCollision>()) r.GetComponent<DealDamageOnCollision>().enabled = false;
+            if (c.GetComponent<DealDamageOnCollision>()) c.GetComponent<DealDamageOnCollision>().enabled = false;
         }
     }
 
     public void Falling()
     {
-        foreach (Rigidbody r in headComponents)
+        foreach (Collider c in headComponents)
         {
-            if (r.GetComponent<Collider>()) r.GetComponent<Collider>().enabled = false;
+            c.enabled = false;
         }
-        baseComponent.GetComponent<Collider>().enabled = false;
+        if (baseComponent.GetComponent<Collider>()) baseComponent.GetComponent<Collider>().enabled = false;
     }
 }

@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseComponent: {fileID: 5445560}
   headComponents:
-  - {fileID: 5455408}
+  - {fileID: 13554120}
 --- !u!135 &13554120
 SphereCollider:
   m_ObjectHideFlags: 1
