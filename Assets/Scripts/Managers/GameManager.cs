@@ -57,18 +57,19 @@ public class GameManager : MonoBehaviour, IMessage {
             
             switch (info.playerID)
             {
-                case 0:
+                case 1:
+                    victoryImage.Enable();
                     victoryImage.GetComponent<Image>().color = Color.red;
                     player0Score++;
                     break;
-                case 1:
+                case 2:
+                    victoryImage.Enable();
                     victoryImage.GetComponent<Image>().color = Color.green;
                     player1Score++;
                     break;
             }
         }
         //imageTimerCallback += RestartGame;
-        victoryImage.Enable();
         targetTime = Time.time + displayInterval;
         useTimer = true;
     }

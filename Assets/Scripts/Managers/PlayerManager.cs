@@ -49,12 +49,12 @@ public class PlayerManager : MonoBehaviour, IMessage {
             pos,
             Quaternion.identity);
         cameraReference.a = playerA.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
+        playerA.GetComponent<PlayerInfo>().AssignPlayer(1);
 
         //instantiate weapon prefab
-        GameObject weaponA = (GameObject)GameObject.Instantiate(weaponPrefab, pos + weaponPrefab.transform.position, Quaternion.identity);
-        weaponA.transform.Rotate(0,90,0);
+        GameObject weaponA = (GameObject)GameObject.Instantiate(weaponPrefab, pos + new Vector3(0,10,0), Quaternion.identity);
         playerA.GetComponent<PlayerInfo>().AttachWeapon(weaponA);
-        playerA.GetComponent<PlayerInfo>().AssignPlayer(1);
+        
         //weaponA.GetComponent<AttachWeapon>().Attach(playerA, playerA.GetComponent<PlayerInfo>().rightRotator);
 
         //set up HUD 
@@ -71,11 +71,13 @@ public class PlayerManager : MonoBehaviour, IMessage {
             pos,
             Quaternion.identity);
         cameraReference.b = playerB.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
-
-        GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos + weaponPrefab.transform.position, Quaternion.identity);
-        weaponB.transform.Rotate(0, 90, 0);
-        playerB.GetComponent<PlayerInfo>().AttachWeapon(weaponB);
         playerB.GetComponent<PlayerInfo>().AssignPlayer(2);
+
+
+        GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos + new Vector3(0, 10, 0), Quaternion.identity);
+
+        playerB.GetComponent<PlayerInfo>().AttachWeapon(weaponB);
+        
         //weaponB.GetComponent<AttachWeapon>().Attach(playerB, playerB.GetComponent<PlayerInfo>().rightRotator);
 
         healthB = (GameObject)GameObject.Instantiate(healthBarPrefab, new Vector3(960, -768, 0), Quaternion.identity);

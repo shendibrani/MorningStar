@@ -42,6 +42,7 @@ public class DecayControl : MonoBehaviour {
                c.isTrigger = true;
                if (c.GetComponent<Rigidbody>()) c.GetComponent<Rigidbody>().useGravity = true;
            }
+        GetComponentInChildren<WeaponInfo>().Falling();
         timer = Time.time + fallTime;
         state = DecayState.FALLING;
     }

@@ -78,6 +78,7 @@ public class PlayerInfo : MonoBehaviour, IMessage {
                 if (sender.GetComponent<PlayerInfo>() == this) { 
                     state = PlayerState.DEAD;
                     GetComponent<DecayControl>().Activate();
+                    GetComponentInChildren<WeaponInfo>().Death();
                     playerID = 0;
                 }
                  break;
