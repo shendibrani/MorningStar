@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerDeath : MonoBehaviour, IDeath
 {
 
-    [SerializeField]
     Transform weaponBase;
     GameManager gameManager;
 
