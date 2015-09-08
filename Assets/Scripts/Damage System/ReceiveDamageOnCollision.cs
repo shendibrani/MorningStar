@@ -6,7 +6,6 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
 {
     [SerializeField]
 	float health;
-    [SerializeField]
     HealthBar healthBar;
 
     void Start()

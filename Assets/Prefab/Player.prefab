@@ -102,6 +102,8 @@ GameObject:
   - 114: {fileID: 11464922}
   - 114: {fileID: 11434374}
   - 136: {fileID: 13698052}
+  - 114: {fileID: 11451366}
+  - 114: {fileID: 11481220}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Untagged
@@ -567,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decayTime: 10
+  state: 0
 --- !u!114 &11412010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,7 +610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthBar: {fileID: 0}
 --- !u!114 &11430956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -660,7 +662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bcd455c85800f4b9f6d7cc916d6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponBase: {fileID: 0}
 --- !u!114 &11450880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -675,6 +676,21 @@ MonoBehaviour:
   upDown: {fileID: 11434374}
   leftRight: {fileID: 11464922}
   speed: 200
+--- !u!114 &11451366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0fa42efc33f7f4984f36e09e2384b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upDown: {fileID: 11434374}
+  leftRight: {fileID: 11464922}
+  dashPower: 800
+  interval: 1
 --- !u!114 &11453480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -735,6 +751,19 @@ MonoBehaviour:
   invert: 0
   direction: 0
   type: 1
+--- !u!114 &11481220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34831ca30daf4cb42bbc75046be48766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plusAbility: {fileID: 11451366}
+  minusAbility: {fileID: 11451366}
 --- !u!114 &11485054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -781,7 +810,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: dashPower
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minus
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: plus
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112610}

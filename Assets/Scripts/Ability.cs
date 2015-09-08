@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SplashLoad : MonoBehaviour {
+public abstract class Ability : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,9 +10,8 @@ public class SplashLoad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.anyKeyDown)
-        {
-            this.enabled = false;
-        }
+	
 	}
+
+    public abstract void Execute();
 }

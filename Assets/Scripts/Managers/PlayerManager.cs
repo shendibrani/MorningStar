@@ -54,6 +54,7 @@ public class PlayerManager : MonoBehaviour, IMessage {
         GameObject weaponA = (GameObject)GameObject.Instantiate(weaponPrefab, pos + weaponPrefab.transform.position, Quaternion.identity);
         weaponA.transform.Rotate(0,90,0);
         playerA.GetComponent<PlayerInfo>().AttachWeapon(weaponA);
+        playerA.GetComponent<PlayerInfo>().AssignPlayer(1);
         //weaponA.GetComponent<AttachWeapon>().Attach(playerA, playerA.GetComponent<PlayerInfo>().rightRotator);
 
         //set up HUD 
@@ -74,6 +75,7 @@ public class PlayerManager : MonoBehaviour, IMessage {
         GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos + weaponPrefab.transform.position, Quaternion.identity);
         weaponB.transform.Rotate(0, 90, 0);
         playerB.GetComponent<PlayerInfo>().AttachWeapon(weaponB);
+        playerB.GetComponent<PlayerInfo>().AssignPlayer(2);
         //weaponB.GetComponent<AttachWeapon>().Attach(playerB, playerB.GetComponent<PlayerInfo>().rightRotator);
 
         healthB = (GameObject)GameObject.Instantiate(healthBarPrefab, new Vector3(960, -768, 0), Quaternion.identity);
