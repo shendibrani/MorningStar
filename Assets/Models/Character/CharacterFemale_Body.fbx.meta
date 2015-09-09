@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: b598263d95e77ae44b2dad3e64ea150e
-timeCreated: 1441734894
+guid: fdcdf1ec23c653947857cc4b82afca6b
+timeCreated: 1441799020
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Female_001
+    100004: Reference
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Plane.001
+    400002: Female_001
+    400004: Reference
+    2300000: Female_001
+    2300002: Reference
+    3300000: Female_001
+    3300002: Reference
+    4300000: Reference
+    4300002: Female_001
   materials:
     importMaterials: 1
     materialName: 0

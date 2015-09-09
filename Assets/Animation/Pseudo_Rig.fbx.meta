@@ -1,22 +1,47 @@
 fileFormatVersion: 2
-guid: 159ac30dd0100a0468df31d39487ec96
-timeCreated: 1441799174
+guid: 90170f44291060e43b7af0cc576c5d3c
+timeCreated: 1441798951
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Male_001
-    100004: Reference
-    400000: //RootNode
-    400002: Male_001
-    400004: Reference
-    2300000: Male_001
-    2300002: Reference
-    3300000: Male_001
-    3300002: Reference
+    100000: BodyP
+    100002: HeadP
+    100004: LeftFootP
+    100006: LeftHandP
+    100008: //RootNode
+    100010: Reference
+    100012: RightFootP
+    100014: RightHandP
+    400000: BodyP
+    400002: HeadP
+    400004: LeftFootP
+    400006: LeftHandP
+    400008: //RootNode
+    400010: Reference
+    400012: RightFootP
+    400014: RightHandP
+    2300000: BodyP
+    2300002: HeadP
+    2300004: LeftFootP
+    2300006: LeftHandP
+    2300008: Reference
+    2300010: RightFootP
+    2300012: RightHandP
+    3300000: BodyP
+    3300002: HeadP
+    3300004: LeftFootP
+    3300006: LeftHandP
+    3300008: Reference
+    3300010: RightFootP
+    3300012: RightHandP
     4300000: Reference
-    4300002: Male_001
+    4300002: RightHandP
+    4300004: LeftHandP
+    4300006: BodyP
+    4300008: HeadP
+    4300010: LeftFootP
+    4300012: RightFootP
   materials:
     importMaterials: 1
     materialName: 0

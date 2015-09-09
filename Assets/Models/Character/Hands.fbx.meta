@@ -1,22 +1,27 @@
 fileFormatVersion: 2
-guid: 159ac30dd0100a0468df31d39487ec96
-timeCreated: 1441799174
+guid: 4737080519f169e449bdb8deab34e51f
+timeCreated: 1441799250
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Male_001
+    100002: LeftHand
     100004: Reference
+    100006: RightHand
     400000: //RootNode
-    400002: Male_001
+    400002: LeftHand
     400004: Reference
-    2300000: Male_001
+    400006: RightHand
+    2300000: LeftHand
     2300002: Reference
-    3300000: Male_001
+    2300004: RightHand
+    3300000: LeftHand
     3300002: Reference
+    3300004: RightHand
     4300000: Reference
-    4300002: Male_001
+    4300002: RightHand
+    4300004: LeftHand
   materials:
     importMaterials: 1
     materialName: 0

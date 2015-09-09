@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 159ac30dd0100a0468df31d39487ec96
-timeCreated: 1441799174
+guid: 9847aab62306628458f7cf16473c8d18
+timeCreated: 1441799068
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Male_001
+    100000: Helmet_Female_001
+    100002: //RootNode
     100004: Reference
-    400000: //RootNode
-    400002: Male_001
+    400000: Helmet_Female_001
+    400002: //RootNode
     400004: Reference
-    2300000: Male_001
+    2300000: Helmet_Female_001
     2300002: Reference
-    3300000: Male_001
+    3300000: Helmet_Female_001
     3300002: Reference
     4300000: Reference
-    4300002: Male_001
+    4300002: Helmet_Female_001
   materials:
     importMaterials: 1
     materialName: 0

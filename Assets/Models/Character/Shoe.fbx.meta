@@ -1,22 +1,27 @@
 fileFormatVersion: 2
-guid: 159ac30dd0100a0468df31d39487ec96
-timeCreated: 1441799174
+guid: 8f4519d0d4f495f4693e1193ad6f7600
+timeCreated: 1441799244
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Male_001
-    100004: Reference
-    400000: //RootNode
-    400002: Male_001
-    400004: Reference
-    2300000: Male_001
+    100000: Left_Shoe
+    100002: Reference
+    100004: Right_Shoe
+    100006: //RootNode
+    400000: Left_Shoe
+    400002: Reference
+    400004: Right_Shoe
+    400006: //RootNode
+    2300000: Left_Shoe
     2300002: Reference
-    3300000: Male_001
+    2300004: Right_Shoe
+    3300000: Left_Shoe
     3300002: Reference
+    3300004: Right_Shoe
     4300000: Reference
-    4300002: Male_001
+    4300002: Left_Shoe
+    4300004: Right_Shoe
   materials:
     importMaterials: 1
     materialName: 0
