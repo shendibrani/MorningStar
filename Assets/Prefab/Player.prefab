@@ -104,6 +104,7 @@ GameObject:
   - 136: {fileID: 13698052}
   - 114: {fileID: 11451366}
   - 114: {fileID: 11481220}
+  - 114: {fileID: 11453216}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Untagged
@@ -691,6 +692,21 @@ MonoBehaviour:
   leftRight: {fileID: 11464922}
   dashPower: 800
   interval: 1
+--- !u!114 &11453216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deadZone: .100000001
+  invert: 0
+  direction: 0
+  type: 2
 --- !u!114 &11453480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -762,6 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34831ca30daf4cb42bbc75046be48766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityAxis: {fileID: 11453216}
   plusAbility: {fileID: 11451366}
   minusAbility: {fileID: 11451366}
 --- !u!114 &11485054

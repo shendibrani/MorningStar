@@ -13,6 +13,11 @@ public class AnalogToAxisLayer : Axis
 	string axisName {
 		get{ 
 			string AxisName = "P"+player+" ";
+            if (type == StickType.TRIGGER)
+            {
+                AxisName += "Trigger Buttons";
+                return AxisName;
+            }
 			if(direction == StickDirection.HORIZONTAL){
 				AxisName += "Horizontal ";
 			} else {
@@ -42,7 +47,7 @@ public class AnalogToAxisLayer : Axis
 }
 
 public enum StickType{
-	MOVEMENT, ATTACK
+	MOVEMENT, ATTACK, TRIGGER
 }
 
 public enum StickDirection{
