@@ -11,4 +11,6 @@ public interface IStateMachine
 	//void Back();
 	void NextSelect();
 	void PrevSelect();
+	void OnEnter();
+	void OnExit();
 }
