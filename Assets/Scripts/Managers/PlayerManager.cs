@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerManager : MonoBehaviour, IMessage {
 
-	[SerializeField] GameObject playerPrefab;
-    [SerializeField] GameObject weaponPrefab;
+
+
+	[SerializeField] List <GameObject> characterPrefabs;
+    [SerializeField] List <GameObject> weaponPrefabs;
 
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject healthBarPrefab;
@@ -12,6 +15,9 @@ public class PlayerManager : MonoBehaviour, IMessage {
 	[SerializeField] CameraRepositionBehaviour cameraReference;
 
 	[SerializeField] float engagementDistance;
+
+    PlayerCreationData player0Data;
+    PlayerCreationData player1Data;
 
     GameObject playerA;
     GameObject playerB;
@@ -21,6 +27,9 @@ public class PlayerManager : MonoBehaviour, IMessage {
 	// Use this for initialization
 	void Start () 
 	{
+        player0Data = PlayerInfoPasser.GetInfo(0);
+        player1Data = PlayerInfoPasser.GetInfo(1);
+
         CreatePlayers();
         MessagingManager.AddListener(this);
 	}
@@ -42,6 +51,10 @@ public class PlayerManager : MonoBehaviour, IMessage {
     {
         Debug.Log("A");
 
+        //get info from player data
+        GameObject playerPrefab = characterPrefabs[player0Data.characterID];
+        GameObject weaponPrefab = weaponPrefabs[player0Data.weaponID];
+
         //instantiate player prefab in random position from 0,0
         Vector3 pos = new Vector3(RNG.NextFloat() * 10, 0, RNG.NextFloat() * 10);
         playerA = (GameObject)GameObject.Instantiate(
@@ -49,7 +62,7 @@ public class PlayerManager : MonoBehaviour, IMessage {
             pos,
             Quaternion.identity);
         cameraReference.a = playerA.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
-        playerA.GetComponent<PlayerInfo>().AssignPlayer(1);
+        playerA.GetComponent<PlayerInfo>().AssignPlayer(0);
 
         //instantiate weapon prefab
         GameObject weaponA = (GameObject)GameObject.Instantiate(weaponPrefab, pos + new Vector3(0,10,0), Quaternion.identity);
@@ -65,13 +78,16 @@ public class PlayerManager : MonoBehaviour, IMessage {
 
         Debug.Log("B");
 
+        playerPrefab = characterPrefabs[player1Data.characterID];
+        weaponPrefab = weaponPrefabs[player1Data.weaponID];
+
         pos += new Vector3(RNG.NextFloat(), 0, RNG.NextFloat()).normalized * engagementDistance;
         playerB = (GameObject)GameObject.Instantiate(
             playerPrefab,
             pos,
             Quaternion.identity);
         cameraReference.b = playerB.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
-        playerB.GetComponent<PlayerInfo>().AssignPlayer(2);
+        playerB.GetComponent<PlayerInfo>().AssignPlayer(1);
 
 
         GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos + new Vector3(0, 10, 0), Quaternion.identity);
