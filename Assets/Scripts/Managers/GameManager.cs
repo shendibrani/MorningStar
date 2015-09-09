@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour, IMessage {
             else MessagingManager.Broadcast(Messages.PAUSE, this.gameObject);
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel("MainMenuTest");
+        }
+
         if ((useTimer) && (Time.time > targetTime))
         {
             RestartGame();
