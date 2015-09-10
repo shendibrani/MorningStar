@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2056c4ab38b8f7d4fbe33eba6c27f984
-timeCreated: 1441821574
+guid: 85e786809c066554e83406e1812ec7de
+timeCreated: 1441821518
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Katana
+    4300000: MorningStar
   materials:
     importMaterials: 1
     materialName: 0
