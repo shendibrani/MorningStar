@@ -58,10 +58,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
         {
             analog.player = playerID;
         }
-        foreach (AbilityButtonInput keyboard in GetComponentsInChildren<AbilityButtonInput>())
-        {
-            keyboard.player = playerID;
-        }
     }
 
     public void AttachWeapon(GameObject weapon)

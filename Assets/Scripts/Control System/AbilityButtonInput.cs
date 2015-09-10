@@ -1,37 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AbilityButtonInput : KeyboardToAxisLayer {
+public class AbilityButtonInput : MonoBehaviour {
 
-    [SerializeField]
-    Ability plusAbility;
-    [SerializeField]
-    Ability minusAbility;
+	[SerializeField] Axis abilityAxis;
+
+    [SerializeField] Ability plusAbility;
+    [SerializeField] Ability minusAbility;
 
     bool hasExecuted = false;
 
-
-
-	// Use this for initialization
-	void Start () {
-
-	}
-
     void Update()
     {
-        base.Update();
-        
-        if (axisValue == 1 && !hasExecuted)
+        if (abilityAxis.axisValue == 1 && !hasExecuted)
         {
             plusAbility.Execute();
             hasExecuted = true;
         }
-        else if (axisValue == -1 && !hasExecuted) 
+		else if (abilityAxis.axisValue == -1 && !hasExecuted) 
         {
             minusAbility.Execute();
             hasExecuted = true;
         }
-        else if (axisValue != 1 && axisValue != -1)
+		else if (abilityAxis.axisValue != 1 && abilityAxis.axisValue != -1)
         {
             hasExecuted = false;
         }

@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour, IMessage {
     float displayInterval = 10f;
     [SerializeField]
     ImageController victoryImage;
+    [SerializeField]
+    Text player0ScoreText;
+    [SerializeField]
+    Text player1ScoreText;
 
     int player0Score = 0;
     int player1Score = 0;
@@ -22,21 +26,34 @@ public class GameManager : MonoBehaviour, IMessage {
     event ImageEvent imageTimerCallback;
     event GameEvent gameTimerCallback;
 
+    float timeScale;
+
     void Start()
     {
+        player0ScoreText.text = "" + player0Score;
+        player1ScoreText.text = "" + player1Score;
         MessagingManager.AddListener(this);
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (Time.timeScale == 0) MessagingManager.Broadcast(Messages.RESUME, this.gameObject);
+            else MessagingManager.Broadcast(Messages.PAUSE, this.gameObject);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel("MainMenuTest");
+        }
+
         if ((useTimer) && (Time.time > targetTime))
         {
             RestartGame();
             //if (gameTimerCallback != null) gameTimerCallback();
             //gameTimerCallback -= RestartGame;
         }
-
-
 	}
 
     public void Message(Messages message, GameObject sender)
@@ -46,6 +63,13 @@ public class GameManager : MonoBehaviour, IMessage {
                 PlayerInfo info = sender.GetComponent<PlayerInfo>();
                 PlayerDeath(info);
                 break;
+            case Messages.PAUSE:
+                Pause();
+                break;
+            case Messages.RESUME:
+                Resume();
+                break;
+
         }
     }
 
@@ -61,11 +85,13 @@ public class GameManager : MonoBehaviour, IMessage {
                     victoryImage.Enable();
                     victoryImage.GetComponent<Image>().color = Color.red;
                     player0Score++;
+                    player0ScoreText.text = ""+ player0Score;
                     break;
                 case 2:
                     victoryImage.Enable();
                     victoryImage.GetComponent<Image>().color = Color.green;
                     player1Score++;
+                    player1ScoreText.text = "" + player1Score;
                     break;
             }
         }
@@ -81,5 +107,16 @@ public class GameManager : MonoBehaviour, IMessage {
         victoryImage.Disable();
         useTimer = false;
         //Application.LoadLevel(Application.loadedLevel);
+    }
+
+    void Pause()
+    {
+        timeScale = Time.timeScale;
+        Time.timeScale = 0;
+    }
+
+    void Resume()
+    {
+        Time.timeScale = timeScale;
     }
 }
