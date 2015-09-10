@@ -16,11 +16,17 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 
 	[SerializeField] StatbarsBehaviour statbars;
 
+	int player;
+
+	PlayerCreationData player1, player2;
+
 	protected override void Start () {
 		base.Start();
 		UpdateHighlighting ();
 		statbars.UpdateValues(character.currentStats + weapon.currentStats);
 	}
+
+	#region State Machine Interface
 
 	public override void NextState ()
 	{
@@ -31,6 +37,12 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 	public override void PrevState ()
 	{
 		base.PrevState ();
+		UpdateHighlighting();
+	}
+
+	public override void SetState (int s)
+	{
+		base.SetState (s);
 		UpdateHighlighting();
 	}
 
@@ -46,6 +58,8 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 		statbars.UpdateValues(character.currentStats + weapon.currentStats);
 	}
 
+	#endregion
+
 	void UpdateHighlighting ()
 	{
 		foreach (Highlightable h in states){
@@ -55,11 +69,30 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 		states[state].SetHighlight(true);
 	}
 
+	public override void OnEnter ()
+	{
+		player = 0;
+		SetState(0);
+	}
+
 	public override void Submit ()
 	{
 		switch (state){
 		case 2:
-			//send values to initialization, load fighting scene;
+			if(player == 0){
+				Debug.Log("Player 1 done");
+				player1.characterID = character.state;
+				player1.weaponID = weapon.state;
+				player = 1;
+				SetState(0);
+			} else if ( player == 1){
+				player2.characterID = character.state;
+				player2.weaponID = weapon.state;
+				PlayerInfoPasser.PassInfo(player1, player2);
+				Debug.Log(player1);
+				Debug.Log(player2);
+				Application.LoadLevel(1);
+			}
 			break;
 		case 3:
 			overlord.SetState(0);

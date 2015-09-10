@@ -29,11 +29,15 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 		}
 	}
 
+	public virtual void OnEnter() {}
+
+	public virtual void OnExit(){}
+
 	#region IStateBasedUI
 	
 	public void Hide()
 	{
-		Debug.Log("Hide");
+		//Debug.Log("Hide");
 		foreach(UIDrawerBehaviour ui in GetComponentsInChildren<UIDrawerBehaviour>()){
 			ui.NextPosition(1);
 		}
@@ -44,7 +48,7 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 	
 	public void Show ()
 	{
-		Debug.Log("Show");
+		//Debug.Log("Show");
 		foreach(UIDrawerBehaviour ui in GetComponentsInChildren<UIDrawerBehaviour>()){
 			ui.NextPosition(0);
 		}

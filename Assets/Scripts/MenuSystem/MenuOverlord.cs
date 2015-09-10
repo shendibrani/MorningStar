@@ -54,12 +54,15 @@ public class MenuOverlord : SubMenu<SubMenu> {
 	{
 		walkTable.Add (state);
 
+		states[state].OnExit();
+
 		base.SetState (s);
 
 		foreach (SubMenu h in states){
 			h.visible = false;
 		}
 		states[state].visible = true;
+		states[state].OnEnter();
 	}
 
 	public void Back(){
