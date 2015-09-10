@@ -27,10 +27,26 @@ public class SoundManager : MonoBehaviour{
         source = GetComponent<AudioSource>();
     }
 
-    public void playSoundFromDict (SoundEffects se)
+    public void PlaySound (SoundEffects se)
     {
         source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
         source.Play();
+    }
+
+    public void PlaySound(SoundEffects se, bool PlayOneShot)
+    {
+        source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
+        if (PlayOneShot)source.PlayOneShot(source.clip);
+        else source.Play();
+        
+    }
+
+    public void PlaySound(SoundEffects se, bool PlayOneShot, float pVolumeScale)
+    {
+        source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
+        if (PlayOneShot) source.PlayOneShot(source.clip, pVolumeScale);
+        else source.Play();
+
     }
 
 }

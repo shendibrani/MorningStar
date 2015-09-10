@@ -281,6 +281,8 @@ MonoBehaviour:
   coupledSoundList:
   - TheSoundEffect: 1
     theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
+  - TheSoundEffect: 0
+    theClip: {fileID: 8300000, guid: d94417df8c7d0d74dacf4503fa45e16e, type: 3}
 --- !u!4 &512298113
 Transform:
   m_ObjectHideFlags: 0
@@ -481,7 +483,18 @@ MonoBehaviour:
   coupledParticleList:
   - Particle: {fileID: 160952, guid: ef642a84e5f8b5b42b4d6c666356c695, type: 2}
     TheParticleEffect: 0
-  go: {fileID: 160952, guid: ef642a84e5f8b5b42b4d6c666356c695, type: 2}
+  - Particle: {fileID: 100002, guid: 51f86eac077549d4aa4627aa42653fb9, type: 2}
+    TheParticleEffect: 1
+  - Particle: {fileID: 160952, guid: ef642a84e5f8b5b42b4d6c666356c695, type: 2}
+    TheParticleEffect: 0
+  - Particle: {fileID: 160952, guid: ef642a84e5f8b5b42b4d6c666356c695, type: 2}
+    TheParticleEffect: 0
+  - Particle: {fileID: 160952, guid: ef642a84e5f8b5b42b4d6c666356c695, type: 2}
+    TheParticleEffect: 0
+  - Particle: {fileID: 160952, guid: ef642a84e5f8b5b42b4d6c666356c695, type: 2}
+    TheParticleEffect: 0
+  - Particle: {fileID: 160952, guid: ef642a84e5f8b5b42b4d6c666356c695, type: 2}
+    TheParticleEffect: 0
 --- !u!4 &1690112621
 Transform:
   m_ObjectHideFlags: 0
