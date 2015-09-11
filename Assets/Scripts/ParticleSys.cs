@@ -33,7 +33,7 @@ public class ParticleSys : MonoBehaviour {
             Destroy(gameObject);
     }
                    
-    public void spawnParticle (ParticleEffect pe, Vector3 pPosition, Transform pParent, bool looping, float lifetime)
+    public void spawnParticle (ParticleEffect pe, Vector3 pPosition, bool looping, float lifetime, Transform pParent)
     {
         GameObject go = (GameObject)Instantiate(coupledParticleList.Find(x => x.TheParticleEffect == pe).Particle, pPosition, Quaternion.identity);
         go.GetComponent<ParticleSystem>().loop = looping;
@@ -41,20 +41,19 @@ public class ParticleSys : MonoBehaviour {
         go.GetComponent<ParticleSystem>().startLifetime = lifetime;    
     }
 
-    public void spawnParticle(ParticleEffect pe, Vector3 pPosition, Transform pParent, bool looping) {
+    public void spawnParticle(ParticleEffect pe, Vector3 pPosition, bool looping, float lifetime) {
         GameObject go = (GameObject)Instantiate(coupledParticleList.Find(x => x.TheParticleEffect == pe).Particle, pPosition, Quaternion.identity);
         go.GetComponent<ParticleSystem>().loop = looping;
-        go.transform.parent = pParent;
+        go.GetComponent<ParticleSystem>().startLifetime = lifetime;
     }
 
-    public void spawnParticle(ParticleEffect pe, Vector3 pPosition, Transform pParent) {
+    public void spawnParticle(ParticleEffect pe, Vector3 pPosition, bool looping) {
         GameObject go = (GameObject)Instantiate(coupledParticleList.Find(x => x.TheParticleEffect == pe).Particle, pPosition, Quaternion.identity);
-        go.transform.parent = pParent;
-        
+        go.GetComponent<ParticleSystem>().loop = looping;
+
     }
 
     public void spawnParticle(ParticleEffect pe, Vector3 pPosition) {
         GameObject go = (GameObject)Instantiate(coupledParticleList.Find(x => x.TheParticleEffect == pe).Particle, pPosition, Quaternion.identity);
-
     }
 }
