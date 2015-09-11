@@ -16,6 +16,10 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 
 	[SerializeField] StatbarsBehaviour statbars;
 
+    [SerializeField] int minLevelIndex = 2;
+    
+    [SerializeField] int maxLevelIndex = 2;
+
 	int player;
 
 	PlayerCreationData player1, player2;
@@ -91,7 +95,8 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 				PlayerInfoPasser.PassInfo(player1, player2);
 				Debug.Log(player1);
 				Debug.Log(player2);
-				Application.LoadLevel(1);
+                int rnd = RNG.Next(minLevelIndex, maxLevelIndex);
+				Application.LoadLevel(rnd);
 			}
 			break;
 		case 3:
