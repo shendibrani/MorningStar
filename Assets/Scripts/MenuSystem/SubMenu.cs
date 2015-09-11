@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -39,10 +39,10 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 	{
 		//Debug.Log("Hide");
 		foreach(UIDrawerBehaviour ui in GetComponentsInChildren<UIDrawerBehaviour>()){
-			ui.NextPosition(1);
+			ui.SetState(1);
 		}
 		foreach(UIDrawerBehaviour ui in GetComponentsInParent<UIDrawerBehaviour>()){
-			ui.NextPosition(1);
+			ui.SetState(1);
 		}
 	}
 	
@@ -50,10 +50,10 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 	{
 		//Debug.Log("Show");
 		foreach(UIDrawerBehaviour ui in GetComponentsInChildren<UIDrawerBehaviour>()){
-			ui.NextPosition(0);
+			ui.SetState(0);
 		}
 		foreach(UIDrawerBehaviour ui in GetComponentsInParent<UIDrawerBehaviour>()){
-			ui.NextPosition(0);
+			ui.SetState(0);
 		}
 	}
 	
@@ -79,6 +79,8 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 public abstract class SubMenu<T> : SubMenu where T : MonoBehaviour
 {
 	[SerializeField] protected List<T> states;
+
+	public T stateObject {get{return states[state];}}
 
 	#region IStateMachine
 	
