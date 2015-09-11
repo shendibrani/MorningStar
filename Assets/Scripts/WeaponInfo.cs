@@ -21,11 +21,11 @@ public class WeaponInfo : MonoBehaviour {
 	
 	}
 
-    public void Attach(GameObject player, RotateAroundAxis rotator)
+    public void Attach(GameObject player, Transform pivot)
     {
         this.transform.SetParent(player.transform);
-        baseComponent.transform.SetParent(rotator.transform);
-        baseComponent.transform.position = rotator.transform.position;
+        baseComponent.transform.SetParent(pivot.transform);
+        baseComponent.transform.position = pivot.transform.position;
     }
 
     public void Death()
