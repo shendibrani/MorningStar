@@ -9,8 +9,8 @@ public interface IStateMachine
 	void SetState(int state);
 	void Submit();
 	//void Back();
-	void NextSelect();
-	void PrevSelect();
+	//void NextSelect();
+	//void PrevSelect();
 	void OnEnter();
 	void OnExit();
 }

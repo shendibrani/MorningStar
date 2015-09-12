@@ -11,9 +11,9 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 	public int playerID {get; private set;}
 
     [SerializeField]
-    public RotateAroundAxis leftRotator;
+    public Transform leftRotator;
     [SerializeField]
-    public RotateAroundAxis rightRotator;
+    public Transform rightRotator;
 
     public PlayerState State
     {

@@ -3,32 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent (typeof(RectTransform))]
-public class UIDrawerBehaviour : MonoBehaviour {
+public class UIDrawerBehaviour : MonoBehaviour, IStateMachine {
 
 	[SerializeField] List<Vector2> positions;
 	[SerializeField] float easing;
 
-	int currentPosition = 0;
+	public int state {get; private set;}
 
 	// Update is called once per frame
 	void Update () {
 		RectTransform rectTransform = GetComponent<RectTransform> ();
-		rectTransform.anchoredPosition += (positions[currentPosition] - rectTransform.anchoredPosition)*easing;
+		rectTransform.anchoredPosition += (positions[state] - rectTransform.anchoredPosition)*easing;
 
 		if (Input.GetKeyDown (KeyCode.Tab)) {
-			NextPosition ();
+			NextState ();
 		}
 	}
 
-	public void NextPosition ()
+	public void NextState ()
 	{
-		currentPosition++;
-		currentPosition %= positions.Count;
+		state++;
+		state = (state%positions.Count + positions.Count)%positions.Count;
 	}
 
-	public void NextPosition (int i)
+	public void SetState (int i)
 	{
-		currentPosition = i;
-		currentPosition %= positions.Count;
+		state = i;
+		state %= positions.Count;
 	}
+
+	public void PrevState(){
+		state++;
+		state %= positions.Count;
+	}
+
+	public void Submit(){}
+
+	public void OnEnter(){}
+
+	public void OnExit(){}
 }

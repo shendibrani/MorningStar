@@ -95,6 +95,9 @@ public class MainMenuHandler : SubMenu<LookAtTransformBehaviour> {
 		case 0 :
 			overlord.SetState(1);
 			break;
+		case 1:
+			overlord.SetState(3);
+			break;
 		case 2 :
 			overlord.SetState(2);
 			break;
