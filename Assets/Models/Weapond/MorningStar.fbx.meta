@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3f706a5bdbc375c48ba06f502d0b00c2
-timeCreated: 1442227423
+guid: cc929d6517ec79f4b9e6155df101f4a3
+timeCreated: 1442234812
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -57,7 +57,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: MorningStar
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
