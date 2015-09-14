@@ -3,11 +3,15 @@ using System.Collections;
 
 public class AxisStringBinder : SubMenu<Highlightable>
 {
-	public string[] strings;
+	public AxisSelector axisSelector;
+	public InvertSelector invertX, invertY;
+
+	public PlayerControlBindingSystem owner;
 
 	protected override void Start ()
 	{
 		base.Start ();
+		owner = FindObjectOfType<PlayerControlBindingSystem>();
 		UpdateHighlighting();
 	}
 
@@ -27,6 +31,11 @@ public class AxisStringBinder : SubMenu<Highlightable>
 	{
 		base.SetState (s);
 		UpdateHighlighting();
+	}
+
+	public override void Submit ()
+	{
+		owner.passInput = false;
 	}
 
 	void UpdateHighlighting ()

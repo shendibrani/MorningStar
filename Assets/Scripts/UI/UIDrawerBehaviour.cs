@@ -20,6 +20,8 @@ public class UIDrawerBehaviour : MonoBehaviour, IStateMachine {
 		}
 	}
 
+	#region IStateMachine Implementation
+
 	public void NextState ()
 	{
 		state++;
@@ -37,9 +39,14 @@ public class UIDrawerBehaviour : MonoBehaviour, IStateMachine {
 		state %= positions.Count;
 	}
 
+	public void NextSelect(){}
+	public void PrevSelect(){}
+
 	public void Submit(){}
 
 	public void OnEnter(){}
 
 	public void OnExit(){}
+
+	#endregion
 }

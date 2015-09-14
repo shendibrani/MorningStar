@@ -15,11 +15,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable> {
 		base.Start();
 		UpdateHighlighting();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 	public override void NextState ()
 	{
 		base.NextState ();
@@ -52,6 +48,10 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable> {
 		if(state == 4){
 			//update the statics and return to main menu
 			overlord.SetState(0);
+		} else if (!passInput){
+			passInput = true;
+		} else {
+			base.Submit();
 		}
 	}
 }
