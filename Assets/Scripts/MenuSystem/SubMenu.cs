@@ -33,6 +33,8 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 
 	public virtual void OnExit(){}
 
+	public bool passInput;
+
 	#region IStateBasedUI
 	
 	public void Hide()
@@ -86,37 +88,69 @@ public abstract class SubMenu<T> : SubMenu where T : MonoBehaviour
 	
 	public override void NextState()
 	{
-		state++;
-		state = (state%states.Count + states.Count)%states.Count;
+		if(passInput){
+			if(states[state].GetComponent<IStateMachine>() != null){
+				states[state].GetComponent<IStateMachine>().NextState();
+			}
+		} else {
+			state++;
+			state = (state%states.Count + states.Count)%states.Count;
+		}
 	}
 	
 	public override void PrevState()
 	{
-		state--;
-		state = (state%states.Count + states.Count)%states.Count;
+		if(passInput){
+			if(states[state].GetComponent<IStateMachine>() != null){
+				states[state].GetComponent<IStateMachine>().PrevState();
+			}
+		} else {
+			state--;
+			state = (state%states.Count + states.Count)%states.Count;
+		}
 	}
 
 	public override void SetState (int s)
 	{
-		state = s;
-		state = (state%states.Count + states.Count)%states.Count;
+		if(passInput){
+			if(states[state].GetComponent<IStateMachine>() != null){
+				states[state].GetComponent<IStateMachine>().SetState(s);
+			}
+		} else {
+			state = s;
+			state = (state%states.Count + states.Count)%states.Count;
+		}
 	}
 
 	public override void NextSelect()
 	{
-		if(states[state].GetComponent<IStateMachine>() != null){
+		if(passInput){
+			if(states[state].GetComponent<IStateMachine>() != null){
+				states[state].GetComponent<IStateMachine>().NextSelect();
+			}
+		} else if(states[state].GetComponent<IStateMachine>() != null){
 			states[state].GetComponent<IStateMachine>().NextState();
 		}
 	}
 	
 	public override void PrevSelect()
 	{
-		if(states[state].GetComponent<IStateMachine>() != null){
+		if(passInput){
+			if(states[state].GetComponent<IStateMachine>() != null){
+				states[state].GetComponent<IStateMachine>().PrevSelect();
+			}
+		} else if(states[state].GetComponent<IStateMachine>() != null){
 			states[state].GetComponent<IStateMachine>().PrevState();
 		}
 	}
 
-	public override void Submit(){}
+	public override void Submit(){
+		if(passInput){
+			if(states[state].GetComponent<IStateMachine>() != null){
+				states[state].GetComponent<IStateMachine>().Submit();
+			}
+		}
+	}
 
 	#endregion
 }
