@@ -26,13 +26,6 @@ public class DestroyBreakable : MonoBehaviour
 
     }
 
-   
-
-    void Start()
-    {
-
-        
-    }
 
     void Update()
     {
