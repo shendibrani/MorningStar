@@ -34,8 +34,9 @@ public class ShieldAbility : Ability {
         if (Input.GetKeyDown(KeyCode.P)) Execute();
         if (Time.time > offTimer)
         {
-            if (shield) GameObject.Destroy(shield);
-            GetComponent<ReceiveDamageOnCollision>().enabled = true;
+            //Debug.Log("Derp");
+            //Destroy(shield);
+            //GetComponent<ReceiveDamageOnCollision>().enabled = true;
         }
     }
 
