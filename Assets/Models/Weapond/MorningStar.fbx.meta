@@ -1,15 +1,61 @@
 fileFormatVersion: 2
-guid: 85e786809c066554e83406e1812ec7de
-timeCreated: 1441821518
+guid: 3f706a5bdbc375c48ba06f502d0b00c2
+timeCreated: 1442227423
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Armature
+    100002: Ball
+    100004: Ball_end
+    100006: Chain.001
+    100008: Chain.002
+    100010: Chain.003
+    100012: Chain.004
+    100014: Chain.005
+    100016: Chain.006
+    100018: Chain.007
+    100020: Chain.008
+    100022: Chain.009
+    100024: Chain.010
+    100026: Chain.011
+    100028: Chain.012
+    100030: Chain.013
+    100032: Chain.014
+    100034: Chain.015
+    100036: Chain.016
+    100038: Chain.017
+    100040: Chain.018
+    100042: Handle
+    100044: //RootNode
+    100046: MorningStar
+    400000: Armature
+    400002: Ball
+    400004: Ball_end
+    400006: Chain.001
+    400008: Chain.002
+    400010: Chain.003
+    400012: Chain.004
+    400014: Chain.005
+    400016: Chain.006
+    400018: Chain.007
+    400020: Chain.008
+    400022: Chain.009
+    400024: Chain.010
+    400026: Chain.011
+    400028: Chain.012
+    400030: Chain.013
+    400032: Chain.014
+    400034: Chain.015
+    400036: Chain.016
+    400038: Chain.017
+    400040: Chain.018
+    400042: Handle
+    400044: //RootNode
+    400046: MorningStar
     4300000: MorningStar
+    9500000: //RootNode
+    13700000: MorningStar
   materials:
     importMaterials: 1
     materialName: 0
@@ -67,7 +113,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
