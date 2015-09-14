@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ddc2b01115d0547896d09e897cdfa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayInterval: 10
+  displayInterval: 3
   victoryImage: {fileID: 1798980792}
   player0ScoreText: {fileID: 1603105159}
   player1ScoreText: {fileID: 554734059}

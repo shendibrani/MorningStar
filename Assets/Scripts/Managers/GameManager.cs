@@ -81,13 +81,13 @@ public class GameManager : MonoBehaviour, IMessage {
             
             switch (info.playerID)
             {
-                case 1:
+                case 0:
                     victoryImage.Enable();
                     victoryImage.GetComponent<Image>().color = Color.red;
                     player0Score++;
                     player0ScoreText.text = ""+ player0Score;
                     break;
-                case 2:
+                case 1:
                     victoryImage.Enable();
                     victoryImage.GetComponent<Image>().color = Color.green;
                     player1Score++;
