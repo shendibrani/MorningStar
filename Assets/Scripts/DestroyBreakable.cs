@@ -1,26 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyBreakable : MonoBehaviour {
-    Vector3 downPosition;
-    public float DestructionTime;
-   [SerializeField] float timer = 100f;
+public class DestroyBreakable : MonoBehaviour
+{
 
-    void customDestroy(float destroyInTime) {
+    [SerializeField]
+    float timer = 150f;
 
-        Destroy(this.gameObject, destroyInTime);
-        if (timer <= 0) this.GetComponent<BoxCollider>().enabled = false;
+    private Rigidbody rb { get { return GetComponent<Rigidbody>(); } }
 
-    }
+    void customDestroy()
+    {
+        if (this.transform.position.y < 0) Destroy(gameObject);
 
-    void Start() {
-      
-        customDestroy(5f);
-    }
-
-    void Update() {
         timer -= 1f;
         
+        Destroy(this.gameObject, 10f);
+        if (timer <= 0)
+        {
+       
+            rb.WakeUp();
+            rb.isKinematic = false;
+            this.GetComponent<BoxCollider>().enabled = false;
+        }
+
+    }
+
+   
+
+    void Start()
+    {
+
+        
+    }
+
+    void Update()
+    {
+        
+        customDestroy();
 
     }
 }

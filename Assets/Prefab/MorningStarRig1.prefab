@@ -78,6 +78,7 @@ GameObject:
   - 144: {fileID: 14476726}
   - 114: {fileID: 11403462}
   - 135: {fileID: 13554120}
+  - 114: {fileID: 11436144}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -159,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.3497171, y: -5.24520874e-06, z: 8.10077286}
+  m_LocalPosition: {x: 9.71543026, y: -5.24520874e-06, z: 4.220891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445140}
@@ -387,6 +388,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
+--- !u!114 &11436144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a460a61dce99c4fbc72f66dd554fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11493068
 MonoBehaviour:
   m_ObjectHideFlags: 1
