@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent (typeof(RectTransform))]
-public class UIDrawerBehaviour : MonoBehaviour, IStateMachine {
+public class UIDrawerBehaviour : MonoBehaviour {
 
 	[SerializeField] List<Vector2> positions;
 	[SerializeField] float easing;
@@ -31,12 +31,13 @@ public class UIDrawerBehaviour : MonoBehaviour, IStateMachine {
 	public void SetState (int i)
 	{
 		state = i;
-		state %= positions.Count;
+		state = (state%positions.Count + positions.Count)%positions.Count;	
 	}
 
-	public void PrevState(){
+	public void PrevState()
+	{
 		state++;
-		state %= positions.Count;
+		state = (state%positions.Count + positions.Count)%positions.Count;	
 	}
 
 	public void NextSelect(){}
