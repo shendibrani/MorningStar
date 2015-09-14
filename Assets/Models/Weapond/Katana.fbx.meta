@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2056c4ab38b8f7d4fbe33eba6c27f984
-timeCreated: 1441821574
+guid: cd84e3805afb8174cba06266e1a09663
+timeCreated: 1442236339
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -11,7 +11,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: Katana
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
