@@ -21,7 +21,7 @@ public class CameraRepositionBehaviour : MonoBehaviour {
         {
             Vector3 center = (b.transform.position - a.transform.position) / 2 + a.transform.position;
             targetPosition = new Vector3(center.x, yPosition, center.z);
-            transform.LookAt(center);
+            //transform.LookAt(center);
 
             transform.position += (targetPosition - transform.position) * easing;
         }
