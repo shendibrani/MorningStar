@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerAnimationHandler : MonoBehaviour {
 
 	[SerializeField] Rigidbody mover;
@@ -13,7 +14,8 @@ public class PlayerAnimationHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//TODO FIX
-		GetComponent<Animator>().SetBool("Walking", Mathf.Abs(Vector3.Dot(mover.velocity.normalized, transform.forward)) > 0);
+		GetComponent<Animator>().SetFloat("FrontSpeed", Vector3.Dot(mover.velocity.normalized, transform.forward));
+		GetComponent<Animator>().SetFloat("RightSpeed", Vector3.Dot(mover.velocity.normalized, transform.right));
+
 	}
 }
