@@ -34,6 +34,7 @@ GameObject:
   - 114: {fileID: 11440712}
   - 114: {fileID: 11452516}
   - 114: {fileID: 11499806}
+  - 114: {fileID: 11433558}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -282,6 +283,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &188130
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400346}
+  m_Layer: 0
+  m_Name: ArrowSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &195058
 GameObject:
   m_ObjectHideFlags: 1
@@ -314,6 +330,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &400346
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 489996}
+  m_RootOrder: 5
 --- !u!4 &402680
 Transform:
   m_ObjectHideFlags: 1
@@ -531,6 +559,7 @@ Transform:
   - {fileID: 402680}
   - {fileID: 496136}
   - {fileID: 435204}
+  - {fileID: 400346}
   m_Father: {fileID: 474212}
   m_RootOrder: 0
 --- !u!4 &496136
@@ -951,6 +980,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11433558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70c291296047784b918d5d9346ca285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 400346}
+  arrowObject: {fileID: 109806, guid: 452dfd78629ae944487039b5ced03df8, type: 2}
+  interval: 4
 --- !u!114 &11436628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -992,7 +1035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11452516}
   plusAbility: {fileID: 11479466}
-  minusAbility: {fileID: 11479466}
+  minusAbility: {fileID: 11433558}
 --- !u!114 &11442594
 MonoBehaviour:
   m_ObjectHideFlags: 1
