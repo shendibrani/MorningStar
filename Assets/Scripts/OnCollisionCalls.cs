@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 public class OnCollisionCalls : MonoBehaviour
 {
- 
+   
+    private Rigidbody rb { get { return GetComponent<Rigidbody>(); } }
+
+    Transform newTransform;
+
     void OnCollisionEnter(Collision col)
     {
-        OnBreakableEnter(col);
-        if (col.gameObject.name == "Ball")
-        {
-            Debug.Log("Ball contact call");
-        }
+        OnBreakableDestroyAll(col);
 
         if (col.gameObject.GetComponent<ReceiveDamageOnCollision>())
         {
@@ -24,7 +24,7 @@ public class OnCollisionCalls : MonoBehaviour
         {
             for (int i = 0; i < col.contacts.Length; i++)
             {
-                ParticleSys.instance.spawnParticle(ParticleEffect.Explosion, col.contacts[i].point, false);
+                ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Spark, col.contacts[i].point, 1f);
                 SoundManager.instance.PlaySound(SoundEffects.Hit, false);
             }
         }
@@ -33,29 +33,48 @@ public class OnCollisionCalls : MonoBehaviour
     void OnCollidePlayer(Collision col)
     {
 
-        Debug.Log("touching player");
+        Debug.Log("Colliding with Player");
         for (int i = 0; i < col.contacts.Length; i++)
         {
-            ParticleSys.instance.spawnParticle(ParticleEffect.Explosion, col.contacts[i].point, false);
+            ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Blood, col.contacts[i].point, 1f);
             SoundManager.instance.PlaySound(SoundEffects.Hit, false);
         }
 
     }
 
-    void OnBreakableEnter(Collision col) {
-      
-        if (col.gameObject.GetComponent<Breakable>()) {
+    void OnBreakableDestroyOnPoint(Collision col) //destruct on collision Point! requires tweaking
+    {
+
+        if (col.gameObject.GetComponent<Breakable>() && rb.velocity.magnitude > 3f )
+        {
             Debug.Log("Touching Breakable Object");
+            SoundManager.instance.PlaySound(SoundEffects.Hit);
+
+            for (int i = 0; i < col.contacts.Length; i++)
+            {
+                newTransform = col.contacts[i].otherCollider.transform;
+                newTransform.gameObject.AddComponent<Rigidbody>();
+                newTransform.gameObject.AddComponent<DestroyBreakable>();
+                //tweak somehow to check for structural integrity
+                col.contacts[i].otherCollider.transform.parent = null; 
+
+            }
+
+        }
+    }
+
+    void OnBreakableDestroyAll(Collision col) { //Destruct all at once! 
+      
+        if (col.gameObject.GetComponent<Breakable>() ) {
+            Debug.Log("Touching Breakable Object");
+            SoundManager.instance.PlaySound(SoundEffects.Hit);
+
             for (int i = 0; i < col.transform.childCount; i++)
             {
-                Transform go = col.transform.GetChild(i);
-                go.gameObject.AddComponent<Rigidbody>();
-                go.gameObject.AddComponent<DestroyBreakable>();
-                if (i == col.transform.childCount)
-                {
-                    Debug.Log("Disabled Collider");
-                    col.collider.enabled = false;
-                }
+                newTransform = col.transform.GetChild(i);
+                newTransform.gameObject.AddComponent<Rigidbody>();
+                newTransform.gameObject.AddComponent<DestroyBreakable>();
+                
             }
 
             foreach (Rigidbody r in col.gameObject.GetComponentsInChildren<Rigidbody>())
