@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 9fd357229d817ba4a9c9903b05ef3923
+timeCreated: 1442221427
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Egg_Fracture
+    100002: Egg_Fracture.001
+    100004: Egg_Fracture.002
+    100006: Egg_Fracture.003
+    100008: Egg_Fracture.004
+    100010: Egg_Fracture.005
+    100012: Egg_Fracture.006
+    100014: Egg_Fracture.007
+    100016: Egg_Fracture.008
+    100018: Egg_Fracture.009
+    100020: Egg_Fracture.010
+    100022: Egg_Fracture.011
+    100024: Egg_Fracture.012
+    100026: Egg_Fracture.013
+    100028: Egg_Fracture.014
+    100030: Egg_Fracture.015
+    100032: Egg_Fracture.016
+    100034: Egg_Fracture.017
+    100036: Egg_Fracture.018
+    100038: Egg_Fracture.019
+    100040: //RootNode
+    400000: Egg_Fracture
+    400002: Egg_Fracture.001
+    400004: Egg_Fracture.002
+    400006: Egg_Fracture.003
+    400008: Egg_Fracture.004
+    400010: Egg_Fracture.005
+    400012: Egg_Fracture.006
+    400014: Egg_Fracture.007
+    400016: Egg_Fracture.008
+    400018: Egg_Fracture.009
+    400020: Egg_Fracture.010
+    400022: Egg_Fracture.011
+    400024: Egg_Fracture.012
+    400026: Egg_Fracture.013
+    400028: Egg_Fracture.014
+    400030: Egg_Fracture.015
+    400032: Egg_Fracture.016
+    400034: Egg_Fracture.017
+    400036: Egg_Fracture.018
+    400038: Egg_Fracture.019
+    400040: //RootNode
+    2300000: Egg_Fracture
+    2300002: Egg_Fracture.001
+    2300004: Egg_Fracture.002
+    2300006: Egg_Fracture.003
+    2300008: Egg_Fracture.004
+    2300010: Egg_Fracture.005
+    2300012: Egg_Fracture.006
+    2300014: Egg_Fracture.007
+    2300016: Egg_Fracture.008
+    2300018: Egg_Fracture.009
+    2300020: Egg_Fracture.010
+    2300022: Egg_Fracture.011
+    2300024: Egg_Fracture.012
+    2300026: Egg_Fracture.013
+    2300028: Egg_Fracture.014
+    2300030: Egg_Fracture.015
+    2300032: Egg_Fracture.016
+    2300034: Egg_Fracture.017
+    2300036: Egg_Fracture.018
+    2300038: Egg_Fracture.019
+    3300000: Egg_Fracture
+    3300002: Egg_Fracture.001
+    3300004: Egg_Fracture.002
+    3300006: Egg_Fracture.003
+    3300008: Egg_Fracture.004
+    3300010: Egg_Fracture.005
+    3300012: Egg_Fracture.006
+    3300014: Egg_Fracture.007
+    3300016: Egg_Fracture.008
+    3300018: Egg_Fracture.009
+    3300020: Egg_Fracture.010
+    3300022: Egg_Fracture.011
+    3300024: Egg_Fracture.012
+    3300026: Egg_Fracture.013
+    3300028: Egg_Fracture.014
+    3300030: Egg_Fracture.015
+    3300032: Egg_Fracture.016
+    3300034: Egg_Fracture.017
+    3300036: Egg_Fracture.018
+    3300038: Egg_Fracture.019
+    4300000: Egg_Fracture
+    4300002: Egg_Fracture.018
+    4300004: Egg_Fracture.017
+    4300006: Egg_Fracture.016
+    4300008: Egg_Fracture.015
+    4300010: Egg_Fracture.014
+    4300012: Egg_Fracture.013
+    4300014: Egg_Fracture.012
+    4300016: Egg_Fracture.011
+    4300018: Egg_Fracture.010
+    4300020: Egg_Fracture.019
+    4300022: Egg_Fracture.009
+    4300024: Egg_Fracture.008
+    4300026: Egg_Fracture.007
+    4300028: Egg_Fracture.006
+    4300030: Egg_Fracture.005
+    4300032: Egg_Fracture.004
+    4300034: Egg_Fracture.001
+    4300036: Egg_Fracture.003
+    4300038: Egg_Fracture.002
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
