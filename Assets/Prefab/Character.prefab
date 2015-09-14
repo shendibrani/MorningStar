@@ -35,6 +35,7 @@ GameObject:
   - 114: {fileID: 11452516}
   - 114: {fileID: 11499806}
   - 114: {fileID: 11433558}
+  - 114: {fileID: 11489008}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -1035,7 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11452516}
   plusAbility: {fileID: 11479466}
-  minusAbility: {fileID: 11433558}
+  minusAbility: {fileID: 11489008}
 --- !u!114 &11442594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1181,6 +1182,19 @@ MonoBehaviour:
   upDown: {fileID: 11471822}
   leftRight: {fileID: 11472848}
   speed: 200
+--- !u!114 &11489008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976cfe0f17527a643b55c06c8912af1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldObject: {fileID: 108276, guid: 1bf50159410afb44fa06bbb5c5fc74b8, type: 2}
+  interval: 6
 --- !u!114 &11492466
 MonoBehaviour:
   m_ObjectHideFlags: 1
