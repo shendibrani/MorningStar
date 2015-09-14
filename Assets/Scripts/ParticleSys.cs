@@ -9,8 +9,8 @@ public class CoupledParticle {
 }
 
 public enum ParticleEffect {
-    Explosion,
-    Light
+    Blood,
+    Spark
 }
 
 public class ParticleSys : MonoBehaviour {
@@ -32,7 +32,9 @@ public class ParticleSys : MonoBehaviour {
         else if (instance != this)
             Destroy(gameObject);
     }
-                   
+        
+    
+               
     public void spawnParticle (ParticleEffect pe, Vector3 pPosition, bool looping, float lifetime, Transform pParent)
     {
         GameObject go = (GameObject)Instantiate(coupledParticleList.Find(x => x.TheParticleEffect == pe).Particle, pPosition, Quaternion.identity);
@@ -53,7 +55,14 @@ public class ParticleSys : MonoBehaviour {
 
     }
 
-    public void spawnParticle(ParticleEffect pe, Vector3 pPosition) {
+    public void spawnParticle(ParticleEffect pe, Vector3 pPosition)
+    {
         GameObject go = (GameObject)Instantiate(coupledParticleList.Find(x => x.TheParticleEffect == pe).Particle, pPosition, Quaternion.identity);
+    }
+
+    public void spawnParticleDestroyable(ParticleEffect pe, Vector3 pPosition, float delay)
+    {
+        GameObject go = (GameObject)Instantiate(coupledParticleList.Find(x => x.TheParticleEffect == pe).Particle, pPosition, Quaternion.identity);
+        Destroy(go, delay);
     }
 }

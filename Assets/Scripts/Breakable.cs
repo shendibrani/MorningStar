@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Breakable : MonoBehaviour {
+    
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +13,12 @@ public class Breakable : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void GetChildren() {
+        for (int i = 0; i < transform.childCount; i++) {
+            Transform go = transform.GetChild(i);
+            Collider col = transform.GetChild(i).GetComponent<Collider>();
+            
+        }
+    }
 }
