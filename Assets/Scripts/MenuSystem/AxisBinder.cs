@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class AxisStringBinder : SubMenu<Highlightable>
+public class AxisBinder : SubMenu<Highlightable>
 {
 	public AxisSelector axisSelector;
 	public InvertSelector invertX, invertY;

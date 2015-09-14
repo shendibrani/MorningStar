@@ -43,18 +43,18 @@ public class MenuOverlord : SubMenu<SubMenu> {
 				states[state].PrevSelect();
 			}
 			break;
-		case 3:
-			if (Input.GetKeyDown(KeyCode.LeftArrow)){
-				PrevSelect();
-			} else if (Input.GetKeyDown(KeyCode.RightArrow)){
-				NextSelect();
-			}
-			if(Input.GetKeyDown(KeyCode.DownArrow)){
-				states[state].NextSelect();
-			} else if (Input.GetKeyDown(KeyCode.UpArrow)){
-				states[state].PrevSelect();
-			}
-			break;
+//		case 3:
+//			if (Input.GetKeyDown(KeyCode.LeftArrow)){
+//				PrevSelect();
+//			} else if (Input.GetKeyDown(KeyCode.RightArrow)){
+//				NextSelect();
+//			}
+//			if(Input.GetKeyDown(KeyCode.DownArrow)){
+//				states[state].NextSelect();
+//			} else if (Input.GetKeyDown(KeyCode.UpArrow)){
+//				states[state].PrevSelect();
+//			}
+//			break;
 		}
 		if(Input.GetKeyDown(KeyCode.Return)){
 			states[state].Submit();
