@@ -340,7 +340,7 @@ MonoBehaviour:
   baseComponent: {fileID: 5475088}
   headComponents:
   - {fileID: 13568488}
-  rotation: {x: 0, y: 90, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
 --- !u!135 &13568488
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -378,7 +378,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rotation.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
