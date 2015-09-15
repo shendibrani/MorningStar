@@ -210,6 +210,7 @@ MonoBehaviour:
   coupledSoundList:
   - TheSoundEffect: 1
     theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
+    secondClip: {fileID: 0}
 --- !u!4 &512298113
 Transform:
   m_ObjectHideFlags: 0
