@@ -210,6 +210,7 @@ MonoBehaviour:
   coupledSoundList:
   - TheSoundEffect: 1
     theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
+    secondClip: {fileID: 0}
 --- !u!4 &512298113
 Transform:
   m_ObjectHideFlags: 0
@@ -418,7 +419,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412590, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11489054, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
       propertyPath: m_Enabled

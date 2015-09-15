@@ -8,6 +8,8 @@ public class WeaponInfo : MonoBehaviour {
     Rigidbody baseComponent;
     [SerializeField]
     List <Collider> headComponents;
+    [SerializeField]
+    Vector3 rotation;
     //[SerializeField]
     //RotateAroundAxis rotator;
 
@@ -26,6 +28,7 @@ public class WeaponInfo : MonoBehaviour {
         this.transform.SetParent(player.transform);
         baseComponent.transform.SetParent(pivot.transform);
         baseComponent.transform.position = pivot.transform.position;
+        baseComponent.transform.eulerAngles = rotation;
     }
 
     public void Death()
