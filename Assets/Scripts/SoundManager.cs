@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class CoupledSound {
     public SoundEffects TheSoundEffect;
     public AudioClip theClip;
+    public AudioClip secondClip;
 }
 
 public class SoundManager : MonoBehaviour{
@@ -27,12 +28,24 @@ public class SoundManager : MonoBehaviour{
         source = GetComponent<AudioSource>();
     }
 
+
     public void PlaySound (SoundEffects se)
     {
         source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
         source.Play();
     }
 
+    public void PlaySoundSwappable(SoundEffects se, bool randomize) {
+        source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
+        int randomedNumber = Random.Range(0, 2);
+        
+        if (randomize)
+        {
+            source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).secondClip;
+        }
+        source.Play();
+    }
+    
     public void PlaySound(SoundEffects se, bool PlayOneShot)
     {
         source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
