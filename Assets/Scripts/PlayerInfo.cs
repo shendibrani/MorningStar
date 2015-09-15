@@ -15,6 +15,9 @@ public class PlayerInfo : MonoBehaviour, IMessage {
     [SerializeField]
     public Transform rightRotator;
 
+	public AxisInversionPair movementAxisX,movementAxisY;
+	public AxisInversionPair attackAxisX,attackAxisY;
+
     public PlayerState State
     {
         get
@@ -57,6 +60,23 @@ public class PlayerInfo : MonoBehaviour, IMessage {
         foreach (AnalogToAxisLayer analog in GetComponentsInChildren<AnalogToAxisLayer>())
         {
             analog.player = playerID;
+			if (analog.type == StickType.MOVEMENT){
+				if(analog.direction == StickDirection.HORIZONTAL){
+					analog.axisName = movementAxisX.axisName;
+					analog.invert = movementAxisX.invert;
+				} else {
+					analog.axisName = movementAxisY.axisName;
+					analog.invert = movementAxisY.invert;
+				}
+			} else if (analog.type == StickType.ATTACK){
+				if(analog.direction == StickDirection.HORIZONTAL){
+					analog.axisName = attackAxisX.axisName;
+					analog.invert = attackAxisX.invert;
+				} else {
+					analog.axisName = attackAxisY.axisName;
+					analog.invert = attackAxisY.invert;
+				}
+			}
         }
     }
 

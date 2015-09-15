@@ -7,6 +7,18 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable> {
 
 	bool getInput;
 
+	/* 
+	 * Bindings:
+	 * 0 == player 1 Movement X
+	 * 1 == player 1 Movement Y
+	 * 2 == player 1 Attack X
+	 * 3 == player 1 Attack Y
+	 * 4 == player 2 Movement X
+	 * 5 == player 2 Movement Y
+	 * 6 == player 2 Attack X
+	 * 7 == player 2 Attack Y
+	 */
+
 	[SerializeField] AxisInversionPair[] bindings;
 
 	// Use this for initialization
@@ -14,6 +26,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable> {
 	{
 		base.Start();
 		UpdateHighlighting();
+		PlayerInfoPasser.SetBindings(bindings);
 	}
 
 	void Update()

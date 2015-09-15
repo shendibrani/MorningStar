@@ -2,9 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerManager : MonoBehaviour, IMessage {
-
-
+public class PlayerManager : MonoBehaviour, IMessage 
+{
 
 	[SerializeField] List <GameObject> characterPrefabs;
     [SerializeField] List <GameObject> weaponPrefabs;
@@ -31,6 +30,8 @@ public class PlayerManager : MonoBehaviour, IMessage {
         player1Data = PlayerInfoPasser.GetInfo(1);
 
         CreatePlayers();
+		SetupBindings();
+
         MessagingManager.AddListener(this);
 	}
 
@@ -103,4 +104,17 @@ public class PlayerManager : MonoBehaviour, IMessage {
 
         Debug.Log("Done");
     }
+
+	void SetupBindings()
+	{
+		playerA.GetComponent<PlayerInfo>().movementAxisX = PlayerInfoPasser.GetBinding(0);
+		playerA.GetComponent<PlayerInfo>().movementAxisY = PlayerInfoPasser.GetBinding(1);
+		playerA.GetComponent<PlayerInfo>().attackAxisX = PlayerInfoPasser.GetBinding(2);
+		playerA.GetComponent<PlayerInfo>().attackAxisY = PlayerInfoPasser.GetBinding(3);
+
+		playerB.GetComponent<PlayerInfo>().movementAxisX = PlayerInfoPasser.GetBinding(4);
+		playerB.GetComponent<PlayerInfo>().movementAxisY = PlayerInfoPasser.GetBinding(5);
+		playerB.GetComponent<PlayerInfo>().attackAxisX = PlayerInfoPasser.GetBinding(6);
+		playerB.GetComponent<PlayerInfo>().attackAxisY = PlayerInfoPasser.GetBinding(7);
+	}
 }
