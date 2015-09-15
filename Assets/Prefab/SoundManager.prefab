@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.37668896, y: 3.71846867, z: 3.64002562}
+  m_LocalPosition: {x: 4.15294218, y: 1.28041961e-06, z: 7.16062546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,12 +110,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coupledSoundList:
-  - TheSoundEffect: 1
-    theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
   - TheSoundEffect: 0
-    theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
+    PlayClips:
+    - {fileID: 8300000, guid: 09c709e04550b7049a2426c077d7df09, type: 3}
+    - {fileID: 8300000, guid: c0c231e92758f874c8173a07bd8073a7, type: 3}
+    - {fileID: 8300000, guid: ef6dc93c121fb5043b9cc9c36264858c, type: 3}
+    - {fileID: 8300000, guid: 85a3dfbae1f672a4cbcf85fdcc50f804, type: 3}
+    - {fileID: 8300000, guid: 3181d9b3567c3c0408cad0b90815d30b, type: 3}
   - TheSoundEffect: 1
-    theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
+    PlayClips: []
+  - TheSoundEffect: 2
+    PlayClips:
+    - {fileID: 8300000, guid: fef56c08253344a4e9c39b30609130f6, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3349246}
   - 23: {fileID: 2306068}
   - 54: {fileID: 5439274}
+  - 114: {fileID: 11480604}
   m_Layer: 0
   m_Name: Katana
   m_TagString: Untagged
@@ -173,6 +174,17 @@ MonoBehaviour:
   baseComponent: {fileID: 5439274}
   headComponents:
   - {fileID: 6528186}
+--- !u!114 &11480604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a460a61dce99c4fbc72f66dd554fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
