@@ -418,7 +418,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412590, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11489054, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
       propertyPath: m_Enabled
@@ -595,8 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs:
-  - {fileID: 153144, guid: db2d2644c8fa96d4989b7f68e61cf92e, type: 2}
-  - {fileID: 153144, guid: db2d2644c8fa96d4989b7f68e61cf92e, type: 2}
+  - {fileID: 168794, guid: e6ddb02709ebef442a63c295c395bb1b, type: 2}
+  - {fileID: 178982, guid: 47b32172b70ce5d488d15cd440de166b, type: 2}
   weaponPrefabs:
   - {fileID: 152718, guid: a90452e24bdc2d94daebb7c40b3a9e91, type: 2}
   - {fileID: 164400, guid: ac05460d8007065489ead92583652091, type: 2}
