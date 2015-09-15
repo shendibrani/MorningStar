@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class OnCollisionCalls : MonoBehaviour
 {
 
+   
     private Rigidbody rb { get { return GetComponent<Rigidbody>(); } }
 
     Transform newTransform;
@@ -60,7 +61,7 @@ public class OnCollisionCalls : MonoBehaviour
     void OnBreakableDestroyOnPoint(Collision col) //destruct on collision Point! requires tweaking
     {
 
-        if (col.gameObject.GetComponent<Breakable>() && col.relativeVelocity.magnitude > 2)
+        if (col.gameObject.GetComponent<Breakable>() && col.relativeVelocity.magnitude > 10)
         {
             Debug.Log("Touching Breakable Object");
             SoundManager.instance.PlaySound(SoundEffects.Hit);
@@ -85,7 +86,7 @@ public class OnCollisionCalls : MonoBehaviour
     void OnBreakableDestroyAll(Collision col)
     { //Destruct all at once! 
 
-        if (col.gameObject.GetComponent<Breakable>() && col.relativeVelocity.magnitude > 2)
+        if (col.gameObject.GetComponent<Breakable>() && col.relativeVelocity.magnitude > 15)
         {
             Debug.Log("Touching Breakable Object");
             SoundManager.instance.PlaySound(SoundEffects.Hit);
