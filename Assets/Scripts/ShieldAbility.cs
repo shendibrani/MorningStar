@@ -13,8 +13,13 @@ public class ShieldAbility : Ability {
     [SerializeField]
     float interval = 6f;
 
-    float timer = 0;
+    [SerializeField]
+    float activeTime = 2f;
 
+    float timer = 0;
+    float offTimer = 0f;
+
+    GameObject shield;
 
     // Use this for initialization
     void Start()
@@ -26,7 +31,13 @@ public class ShieldAbility : Ability {
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.P)) Execute();
+        if (Time.time > offTimer)
+        {
+            //Debug.Log("Derp");
+            //Destroy(shield);
+            //GetComponent<ReceiveDamageOnCollision>().enabled = true;
+        }
     }
 
     public override void Execute()
@@ -34,8 +45,12 @@ public class ShieldAbility : Ability {
         if (Time.time >= timer)
         {
             Quaternion rot = transform.rotation;
-            Instantiate(shieldObject, transform.position, Quaternion.identity);
+            GameObject shield = (GameObject)Instantiate(shieldObject, transform.position, Quaternion.identity);
+            shield.transform.SetParent(transform);
+            GetComponent<ReceiveDamageOnCollision>().enabled = false;
+
             timer = interval + Time.time;
+            offTimer = activeTime + Time.time;
         }
 
     }
