@@ -581,7 +581,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 144506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81ad64e666fbed47bdf6d01ba9e82a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 42ce0046e00211a4a8db8704d57e9409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   passInput: 0
@@ -903,8 +903,16 @@ MonoBehaviour:
   states:
   - {fileID: 11490170}
   - {fileID: 11401600}
-  xAxisNames: []
-  yAxisNames: []
+  xAxisNames:
+  - P1 LeftStick X
+  - P1 RightStick X
+  - P1 DPad X
+  - P1 ABXY X
+  yAxisNames:
+  - P1 LeftStick Y
+  - P1 RightStick Y
+  - P1 DPad Y
+  - P1 ABXY Y
 --- !u!222 &22217184
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1063,7 +1071,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -110, y: 0}
+  m_AnchoredPosition: {x: -90, y: 0}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22417588
@@ -1102,7 +1110,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -600, y: 360}
+  m_AnchoredPosition: {x: -600, y: 250}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22420242
@@ -1244,7 +1252,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -110, y: 0}
+  m_AnchoredPosition: {x: -90, y: 0}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22446094
@@ -1368,7 +1376,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 110, y: 0}
+  m_AnchoredPosition: {x: 90, y: 0}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22488850
@@ -1405,7 +1413,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 110, y: 0}
+  m_AnchoredPosition: {x: 90, y: 0}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

@@ -598,7 +598,7 @@ MonoBehaviour:
   - {fileID: 153144, guid: db2d2644c8fa96d4989b7f68e61cf92e, type: 2}
   - {fileID: 153144, guid: db2d2644c8fa96d4989b7f68e61cf92e, type: 2}
   weaponPrefabs:
-  - {fileID: 188306, guid: 826a96ed69a2c8549bb7f22be05666f7, type: 2}
+  - {fileID: 152718, guid: a90452e24bdc2d94daebb7c40b3a9e91, type: 2}
   - {fileID: 164400, guid: ac05460d8007065489ead92583652091, type: 2}
   canvas: {fileID: 186594822}
   healthBarPrefab: {fileID: 135124, guid: b460834a84651db4bbcc5aeb4ed6dfe5, type: 2}
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ddc2b01115d0547896d09e897cdfa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayInterval: 10
+  displayInterval: 3
   victoryImage: {fileID: 1798980792}
   player0ScoreText: {fileID: 1603105159}
   player1ScoreText: {fileID: 554734059}
