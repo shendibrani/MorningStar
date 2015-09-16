@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class OnCollisionCalls : MonoBehaviour
 {
 
+   
     private Rigidbody rb { get { return GetComponent<Rigidbody>(); } }
 
     Transform newTransform;
@@ -29,7 +30,7 @@ public class OnCollisionCalls : MonoBehaviour
             for (int i = 0; i < col.contacts.Length; i++)
             {
                 ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Spark, col.contacts[i].point, 1f);
-                SoundManager.instance.PlaySound(SoundEffects.Hit, false);
+                SoundManager.instance.PlaySound(SoundEffects.HitWeapon);
             }
         }
     }
@@ -41,14 +42,14 @@ public class OnCollisionCalls : MonoBehaviour
     void OnPlayerCollision(Collision col)
     {
 
-        if (col.gameObject.GetComponent<ReceiveDamageOnCollision>() && col.relativeVelocity.magnitude > 2)
+        if (col.gameObject.GetComponent<ReceiveDamageOnCollision>() )
         {
 
             Debug.Log("Colliding with Player");
             for (int i = 0; i < col.contacts.Length; i++)
             {
                 ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Blood, col.contacts[i].point, 1f);
-                SoundManager.instance.PlaySound(SoundEffects.Hit, false);
+                SoundManager.instance.PlaySound(SoundEffects.HitPlayer);
             }
         }
     }
@@ -60,10 +61,10 @@ public class OnCollisionCalls : MonoBehaviour
     void OnBreakableDestroyOnPoint(Collision col) //destruct on collision Point! requires tweaking
     {
 
-        if (col.gameObject.GetComponent<Breakable>() && col.relativeVelocity.magnitude > 2)
+        if (col.gameObject.GetComponent<Breakable>() && col.relativeVelocity.magnitude > 10)
         {
             Debug.Log("Touching Breakable Object");
-            SoundManager.instance.PlaySound(SoundEffects.Hit);
+            SoundManager.instance.PlaySound(SoundEffects.HitBreakable);
 
             for (int i = 0; i < col.contacts.Length; i++)
             {
@@ -85,29 +86,24 @@ public class OnCollisionCalls : MonoBehaviour
     void OnBreakableDestroyAll(Collision col)
     { //Destruct all at once! 
 
-        if (col.gameObject.GetComponent<Breakable>() && col.relativeVelocity.magnitude > 2)
+        if (col.gameObject.GetComponent<Breakable>())
         {
             Debug.Log("Touching Breakable Object");
-            SoundManager.instance.PlaySound(SoundEffects.Hit);
+            //SoundManager.instance.PlaySound(SoundEffects.Hit);
+            SoundManager.instance.PlaySound(SoundEffects.HitBreakable);
 
             for (int i = 0; i < col.transform.childCount; i++)
             {
                 newTransform = col.transform.GetChild(i);
+
                 if (!newTransform.GetComponent<Rigidbody>())
                 newTransform.gameObject.AddComponent<Rigidbody>();
+
                 if (!newTransform.GetComponent<DestroyBreakable>())
                     newTransform.gameObject.AddComponent<DestroyBreakable>();
 
-                //newTransform.gameObject.GetComponent<Rigidbody>().useGravity = true;
-                //newTransform.gameObject.transform.parent = null;
-                
             }
 
-            //foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
-            //{
-            //    rb.useGravity = true;
-            //    rb.transform.parent = null;
-            //}
         }
     }
 

@@ -210,6 +210,7 @@ MonoBehaviour:
   coupledSoundList:
   - TheSoundEffect: 1
     theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
+    secondClip: {fileID: 0}
 --- !u!4 &512298113
 Transform:
   m_ObjectHideFlags: 0
@@ -595,10 +596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs:
-  - {fileID: 153144, guid: db2d2644c8fa96d4989b7f68e61cf92e, type: 2}
-  - {fileID: 153144, guid: db2d2644c8fa96d4989b7f68e61cf92e, type: 2}
+  - {fileID: 168794, guid: e6ddb02709ebef442a63c295c395bb1b, type: 2}
+  - {fileID: 178982, guid: 47b32172b70ce5d488d15cd440de166b, type: 2}
   weaponPrefabs:
-  - {fileID: 132738, guid: a329bd6cabcfd4c4f9d537d5793d5321, type: 2}
+  - {fileID: 152718, guid: a90452e24bdc2d94daebb7c40b3a9e91, type: 2}
   - {fileID: 164400, guid: ac05460d8007065489ead92583652091, type: 2}
   canvas: {fileID: 186594822}
   healthBarPrefab: {fileID: 135124, guid: b460834a84651db4bbcc5aeb4ed6dfe5, type: 2}

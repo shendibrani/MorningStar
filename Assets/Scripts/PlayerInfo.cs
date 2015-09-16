@@ -10,8 +10,8 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 
 	public int playerID {get; private set;}
 
-    [SerializeField]
-    public Transform leftRotator;
+    //[SerializeField]
+    //public Transform leftRotator;
     [SerializeField]
     public Transform rightRotator;
 

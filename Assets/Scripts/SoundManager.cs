@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+
 [System.Serializable]
 public class CoupledSound {
     public SoundEffects TheSoundEffect;
-    public AudioClip theClip;
+    public AudioClip[] PlayClips;
 }
 
 public class SoundManager : MonoBehaviour{
 
-    AudioSource source;
-
+    private AudioSource source;
+  
     public static SoundManager instance = null;
 
     [SerializeField]
@@ -29,13 +30,20 @@ public class SoundManager : MonoBehaviour{
 
     public void PlaySound (SoundEffects se)
     {
-        source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
+        AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
+        int index = RNG.Next(0, clipArray.Length);
+        source.clip = clipArray[index];
         source.Play();
     }
 
+    
     public void PlaySound(SoundEffects se, bool PlayOneShot)
     {
-        source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
+        AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
+        int index = RNG.Next(0, clipArray.Length);
+        source.clip = clipArray[index];
+        
+
         if (PlayOneShot)source.PlayOneShot(source.clip);
         else source.Play();
         
@@ -43,7 +51,11 @@ public class SoundManager : MonoBehaviour{
 
     public void PlaySound(SoundEffects se, bool PlayOneShot, float pVolumeScale)
     {
-        source.clip = coupledSoundList.Find(x => x.TheSoundEffect == se).theClip;
+        AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
+        int index = RNG.Next(0, clipArray.Length);
+        source.clip = clipArray[index];
+
+
         if (PlayOneShot) source.PlayOneShot(source.clip, pVolumeScale);
         else source.Play();
 

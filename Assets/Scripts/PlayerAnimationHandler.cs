@@ -14,8 +14,8 @@ public class PlayerAnimationHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Animator>().SetFloat("FrontSpeed", Vector3.Dot(mover.velocity.normalized, transform.forward));
-		GetComponent<Animator>().SetFloat("RightSpeed", Vector3.Dot(mover.velocity.normalized, transform.right));
+		GetComponent<Animator>().SetFloat("FrontSpeed", Vector3.Dot(mover.velocity, mover.transform.forward));
+		GetComponent<Animator>().SetFloat("RightSpeed", Vector3.Dot(mover.velocity, mover.transform.right));
 
 	}
 }

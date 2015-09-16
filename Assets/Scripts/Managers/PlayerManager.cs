@@ -66,7 +66,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerA.GetComponent<PlayerInfo>().AssignPlayer(0);
 
         //instantiate weapon prefab
-        GameObject weaponA = (GameObject)GameObject.Instantiate(weaponPrefab, pos + new Vector3(0,10,0), Quaternion.identity);
+        GameObject weaponA = (GameObject)GameObject.Instantiate(weaponPrefab, pos, Quaternion.identity);
         playerA.GetComponent<PlayerInfo>().AttachWeapon(weaponA);
         
         //weaponA.GetComponent<AttachWeapon>().Attach(playerA, playerA.GetComponent<PlayerInfo>().rightRotator);
@@ -91,8 +91,8 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerB.GetComponent<PlayerInfo>().AssignPlayer(1);
 
 
-        GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos + new Vector3(0, 10, 0), Quaternion.identity);
-
+        GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos, Quaternion.identity);
+        //weaponB.transform.Rotate(0, 0, 90);
         playerB.GetComponent<PlayerInfo>().AttachWeapon(weaponB);
         
         //weaponB.GetComponent<AttachWeapon>().Attach(playerB, playerB.GetComponent<PlayerInfo>().rightRotator);

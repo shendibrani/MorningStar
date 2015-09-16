@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShieldAbility : Ability {
+public class ShieldAbility : Ability
+{
 
     Transform other;
     //[SerializeField]
@@ -20,6 +21,7 @@ public class ShieldAbility : Ability {
     float offTimer = 0f;
 
     GameObject shield;
+    bool isActive = false;
 
     // Use this for initialization
     void Start()
@@ -34,8 +36,22 @@ public class ShieldAbility : Ability {
         if (Input.GetKeyDown(KeyCode.P)) Execute();
         if (Time.time > offTimer)
         {
-            if (shield) GameObject.Destroy(shield);
-            GetComponent<ReceiveDamageOnCollision>().enabled = true;
+            isActive = false;
+        }
+    }
+
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.collider.GetComponent<DealDamageOnCollision>() != null)
+        {
+            if (isActive)
+            {
+                GetComponent<ReceiveDamageOnCollision>().RecieveDamage(-c.collider.GetComponent<DealDamageOnCollision>().damage);
+                if (GetComponent<ReceiveDamageOnCollision>().Health > GetComponent<ReceiveDamageOnCollision>().MaxHealth)
+                {
+                    GetComponent<ReceiveDamageOnCollision>().RecieveDamage(GetComponent<ReceiveDamageOnCollision>().Health - GetComponent<ReceiveDamageOnCollision>().MaxHealth);
+                }
+            }
         }
     }
 
@@ -44,13 +60,12 @@ public class ShieldAbility : Ability {
         if (Time.time >= timer)
         {
             Quaternion rot = transform.rotation;
-            GameObject shield = (GameObject)Instantiate(shieldObject, transform.position, Quaternion.identity);
+            shield = (GameObject)GameObject.Instantiate(shieldObject, transform.position, Quaternion.identity);
             shield.transform.SetParent(transform);
-            GetComponent<ReceiveDamageOnCollision>().enabled = false;
-
+            isActive = true;
             timer = interval + Time.time;
             offTimer = activeTime + Time.time;
+            shield.GetComponent<ShieldDecay>().SetTimer(offTimer);
         }
-
     }
 }

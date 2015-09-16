@@ -13,7 +13,7 @@ public class RotateAroundAxis : MonoBehaviour
 	
 	void Start()
 	{
-		targetRot = transform.localRotation;
+        targetRot = transform.rotation;
 	}
 	
 	
@@ -27,12 +27,12 @@ public class RotateAroundAxis : MonoBehaviour
 
 		if(smooth)
 		{
-			transform.localRotation = Quaternion.Slerp (transform.localRotation, targetRot,
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot,
 			                                            smoothTime * Time.deltaTime);
 		}
 		else
 		{
-			transform.localRotation = targetRot;
+			transform.rotation = targetRot;
 		}
 	}
 
