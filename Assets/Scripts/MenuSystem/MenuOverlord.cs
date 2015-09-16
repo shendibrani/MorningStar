@@ -7,14 +7,15 @@ public class MenuOverlord : SubMenu<SubMenu> {
 	/* 
 	 * 0 Main Menu
 	 * 1 Char Menu
+	 * 3 Settings Menu
 	 */
 
-	List<int> walkTable;
+	[SerializeField] Axis UpDown, LeftRight;
+
+	[SerializeField] PlayerControlBindingSystem PCBS;
 
 	void Start()
 	{
-		walkTable = new List<int>();
-
 		foreach (SubMenu h in states){
 			h.visible = false;
 		}
@@ -25,25 +26,25 @@ public class MenuOverlord : SubMenu<SubMenu> {
 	void Update () {
 		switch (state){
 		case 0:
-			if (Input.GetKeyDown(KeyCode.LeftArrow)){
+			if (LeftRight <= -0.9){
 				PrevSelect();
-			} else if (Input.GetKeyDown(KeyCode.RightArrow)){
+			} else if (LeftRight >= 0.9){
 				NextSelect();
 			}
 			break;
 		case 1:
-			if (Input.GetKeyDown(KeyCode.UpArrow)){
+			if (UpDown >= 0.9){
 				PrevSelect();
-			} else if (Input.GetKeyDown(KeyCode.DownArrow)){
+			} else if (UpDown <= -0.9){
 				NextSelect();
 			}
-			if(Input.GetKeyDown(KeyCode.RightArrow)){
+			if(LeftRight >= 0.9){
 				states[state].NextSelect();
-			} else if (Input.GetKeyDown(KeyCode.LeftArrow)){
+			} else if (LeftRight <= -0.9){
 				states[state].PrevSelect();
 			}
 			break;
-//		case 3:
+		case 3:
 //			if (Input.GetKeyDown(KeyCode.LeftArrow)){
 //				PrevSelect();
 //			} else if (Input.GetKeyDown(KeyCode.RightArrow)){
@@ -54,17 +55,16 @@ public class MenuOverlord : SubMenu<SubMenu> {
 //			} else if (Input.GetKeyDown(KeyCode.UpArrow)){
 //				states[state].PrevSelect();
 //			}
-//			break;
+			PCBS.SendAxes(LeftRight,UpDown);
+			break;
 		}
-		if(Input.GetKeyDown(KeyCode.Return)){
+		if(Input.GetKeyDown("joystick 1 button 0")){
 			states[state].Submit();
 		}
 	}
 
 	public override void SetState (int s)
 	{
-		walkTable.Add (state);
-
 		states[state].OnExit();
 
 		base.SetState (s);
@@ -74,16 +74,6 @@ public class MenuOverlord : SubMenu<SubMenu> {
 		}
 		states[state].visible = true;
 		states[state].OnEnter();
-	}
-
-	public void Back(){
-		walkTable.Remove(walkTable.Count-1);
-		base.SetState (walkTable.Count-1);
-		
-		foreach (SubMenu h in states){
-			h.visible = false;
-		}
-		states[state].visible = true;
 	}
 
 	public override void Submit ()
