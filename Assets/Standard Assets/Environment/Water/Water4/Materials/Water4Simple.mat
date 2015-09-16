@@ -89,7 +89,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 51
+        second: 389
       data:
         first:
           name: _FresnelScale
