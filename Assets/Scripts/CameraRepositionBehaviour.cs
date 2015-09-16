@@ -19,6 +19,8 @@ public class CameraRepositionBehaviour : MonoBehaviour {
 
         if (a != null && b != null)
         {
+			yPosition = (b.transform.position - a.transform.position).magnitude;
+
             Vector3 center = (b.transform.position - a.transform.position) / 2 + a.transform.position;
             targetPosition = new Vector3(center.x, yPosition, center.z);
             //transform.LookAt(center);
