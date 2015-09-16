@@ -77,7 +77,44 @@ public class PlayerInfo : MonoBehaviour, IMessage {
 					analog.invert = attackAxisY.invert;
 				}
 			}
+            if (analog.type == StickType.TRIGGER)
+            {
+                analog.axisName = "J" + (playerID + 1) + " Triggers";
+            }
         }
+        foreach (AnalogToAxisLayer analog in rightRotator.GetComponentsInParent<AnalogToAxisLayer>())
+        {
+            analog.player = playerID;
+            if (analog.type == StickType.MOVEMENT)
+            {
+                if (analog.direction == StickDirection.HORIZONTAL)
+                {
+                    Debug.Log(movementAxisX.axisName);
+                    analog.axisName = movementAxisX.axisName;
+                    analog.invert = movementAxisX.invert;
+                }
+                else
+                {
+                    Debug.Log(movementAxisY.axisName);
+                    analog.axisName = movementAxisY.axisName;
+                    analog.invert = movementAxisY.invert;
+                }
+            }
+            else if (analog.type == StickType.ATTACK)
+            {
+                if (analog.direction == StickDirection.HORIZONTAL)
+                {
+                    analog.axisName = attackAxisX.axisName;
+                    analog.invert = attackAxisX.invert;
+                }
+                else
+                {
+                    analog.axisName = attackAxisY.axisName;
+                    analog.invert = attackAxisY.invert;
+                }
+            }
+        }
+
     }
 
     public void AttachWeapon(GameObject weapon)
