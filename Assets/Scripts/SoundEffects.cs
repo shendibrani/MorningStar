@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum SoundEffects {
-    Hit,
-    Walk
-    }
-
-
+public enum SoundEffects
+{
+    HitPlayer,
+    HitWeapon,
+    HitBreakable
+}
