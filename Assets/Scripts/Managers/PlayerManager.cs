@@ -14,6 +14,10 @@ public class PlayerManager : MonoBehaviour, IMessage
 	[SerializeField] CameraRepositionBehaviour cameraReference;
 
 	[SerializeField] float engagementDistance;
+    [SerializeField]
+    int minSpawnDistance;
+    [SerializeField]
+    int maxSpawnDistance;
 
     PlayerCreationData player0Data;
     PlayerCreationData player1Data;
@@ -57,7 +61,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         GameObject weaponPrefab = weaponPrefabs[player0Data.weaponID];
 
         //instantiate player prefab in random position from 0,0
-        Vector3 pos = new Vector3(RNG.NextFloat() * 10, 0, RNG.NextFloat() * 10);
+        Vector3 pos = new Vector3(RNG.NextFloat(minSpawnDistance, maxSpawnDistance), 0, RNG.NextFloat(minSpawnDistance, maxSpawnDistance));
         playerA = (GameObject)GameObject.Instantiate(
             playerPrefab,
             pos,
@@ -82,7 +86,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerPrefab = characterPrefabs[player1Data.characterID];
         weaponPrefab = weaponPrefabs[player1Data.weaponID];
 
-        pos += new Vector3(RNG.NextFloat(), 0, RNG.NextFloat()).normalized * engagementDistance;
+        pos += new Vector3(RNG.NextFloat(minSpawnDistance, maxSpawnDistance), 0, RNG.NextFloat()).normalized * engagementDistance;
         playerB = (GameObject)GameObject.Instantiate(
             playerPrefab,
             pos,
