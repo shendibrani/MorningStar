@@ -21,6 +21,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
     {
         Transform parent = transform.parent;
 
+        
+
         foreach (Collider c in parent.GetComponentsInChildren<Collider>())
         {
             c.enabled = true;
@@ -44,9 +46,16 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        GetComponentInParent<PlayerAnimationHandler>().enabled = false;
+        GetComponentInParent<Animator>().enabled = false;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
 
         GetComponentInChildren<LookAtEachotherBehaviour>().enabled = false;
+
+        foreach (Transform t in GetComponentInChildren<Transform>())
+        {
+            t.parent = transform.parent;
+        }
 
         MessagingManager.Broadcast(Messages.DEATH, this.transform.parent.gameObject);
 

@@ -12,4 +12,13 @@ public class PitKillZone : MonoBehaviour {
             c.GetComponent<ReceiveDamageOnCollision>().CheckDeath();
         }
     }
+
+    void OnTriggerStay(Collider c)
+    {
+        if (c.GetComponent<ReceiveDamageOnCollision>() != null)
+        {
+            c.GetComponent<ReceiveDamageOnCollision>().RecieveDamage(GetComponent<DealDamageOnCollision>().damage);
+            c.GetComponent<ReceiveDamageOnCollision>().CheckDeath();
+        }
+    }
 }

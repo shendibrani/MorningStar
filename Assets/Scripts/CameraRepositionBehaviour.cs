@@ -19,7 +19,7 @@ public class CameraRepositionBehaviour : MonoBehaviour {
 
         if (a != null && b != null)
         {
-			yPosition = (b.transform.position - a.transform.position).magnitude;
+			yPosition = (b.transform.position - a.transform.position).magnitude + 5;
 
             Vector3 center = (b.transform.position - a.transform.position) / 2 + a.transform.position;
             targetPosition = new Vector3(center.x, yPosition, center.z);
@@ -35,8 +35,5 @@ public class CameraRepositionBehaviour : MonoBehaviour {
             if (Input.GetKey(KeyCode.A)) transform.Translate(Vector3.left);
             if (Input.GetKey(KeyCode.S)) transform.Translate(Vector3.back);
         }
-
-        
-
     }
 }
