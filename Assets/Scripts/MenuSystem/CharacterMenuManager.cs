@@ -87,6 +87,9 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 				Debug.Log("Player 1 done");
 				player1.characterID = character.state;
 				player1.weaponID = weapon.state;
+				weapon.SetState(0);
+				character.SetState(0);
+				statbars.UpdateValues(character.currentStats + weapon.currentStats);
 				player = 1;
 				SetState(0);
 			} else if ( player == 1){
