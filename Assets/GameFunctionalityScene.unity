@@ -209,8 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coupledSoundList:
   - TheSoundEffect: 1
-    theClip: {fileID: 8300000, guid: 9045a8e84e07fe743bd5fe016c7f6ff4, type: 3}
-    secondClip: {fileID: 0}
+    PlayClips: []
 --- !u!4 &512298113
 Transform:
   m_ObjectHideFlags: 0
@@ -605,6 +604,8 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 135124, guid: b460834a84651db4bbcc5aeb4ed6dfe5, type: 2}
   cameraReference: {fileID: 1098789432}
   engagementDistance: 8
+  minSpawnDistance: 8
+  maxSpawnDistance: 10
 --- !u!114 &1707060246
 MonoBehaviour:
   m_ObjectHideFlags: 0

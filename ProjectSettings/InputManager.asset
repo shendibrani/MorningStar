@@ -17,7 +17,7 @@ InputManager:
     dead: .100000001
     sensitivity: 1
     snap: 0
-    invert: 1
+    invert: 0
     type: 2
     axis: 0
     joyNum: 1
@@ -35,7 +35,7 @@ InputManager:
     snap: 0
     invert: 1
     type: 2
-    axis: 0
+    axis: 1
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1 Right Stick X
@@ -49,7 +49,7 @@ InputManager:
     dead: .100000001
     sensitivity: 1
     snap: 0
-    invert: 1
+    invert: 0
     type: 2
     axis: 3
     joyNum: 1
@@ -112,8 +112,8 @@ InputManager:
     gravity: 1
     dead: .00100000005
     sensitivity: 1000
-    snap: 1
-    invert: 1
+    snap: 0
+    invert: 0
     type: 0
     axis: 0
     joyNum: 1
@@ -128,7 +128,7 @@ InputManager:
     gravity: 1
     dead: .00100000005
     sensitivity: 1000
-    snap: 1
+    snap: 0
     invert: 0
     type: 0
     axis: 1
@@ -144,7 +144,7 @@ InputManager:
     gravity: 3
     dead: .00100000005
     sensitivity: 1
-    snap: 1
+    snap: 0
     invert: 0
     type: 0
     axis: 0
@@ -160,8 +160,8 @@ InputManager:
     gravity: 3
     dead: .00100000005
     sensitivity: 1
-    snap: 1
-    invert: 0
+    snap: 0
+    invert: 1
     type: 0
     axis: 1
     joyNum: 2
@@ -176,7 +176,7 @@ InputManager:
     gravity: 3
     dead: .00100000005
     sensitivity: 1
-    snap: 1
+    snap: 0
     invert: 0
     type: 0
     axis: 3
@@ -192,8 +192,8 @@ InputManager:
     gravity: 3
     dead: .00100000005
     sensitivity: 1
-    snap: 1
-    invert: 0
+    snap: 0
+    invert: 1
     type: 0
     axis: 4
     joyNum: 2
@@ -208,8 +208,8 @@ InputManager:
     gravity: 3
     dead: .00100000005
     sensitivity: 1
-    snap: 1
-    invert: 0
+    snap: 0
+    invert: 1
     type: 0
     axis: 5
     joyNum: 2
@@ -240,7 +240,7 @@ InputManager:
     gravity: 1
     dead: .00100000005
     sensitivity: 1000
-    snap: 1
+    snap: 0
     invert: 0
     type: 0
     axis: 1
@@ -256,8 +256,40 @@ InputManager:
     gravity: 1
     dead: .00100000005
     sensitivity: 1000
-    snap: 1
+    snap: 0
     invert: 0
     type: 0
     axis: 1
     joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1 Triggers
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 2
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J2 Triggers
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 2
+    joyNum: 2

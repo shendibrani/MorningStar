@@ -3,13 +3,13 @@ using System.Collections;
 
 public class PitKillZone : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    void OnTriggerEnter(Collider c)
+    {
+        if (c.GetComponent<ReceiveDamageOnCollision>() != null)
+        {
+            c.GetComponent<ReceiveDamageOnCollision>().RecieveDamage(GetComponent<DealDamageOnCollision>().damage);
+            c.GetComponent<ReceiveDamageOnCollision>().CheckDeath();
+        }
+    }
 }

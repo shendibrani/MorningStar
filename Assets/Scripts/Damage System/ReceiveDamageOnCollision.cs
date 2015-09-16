@@ -43,12 +43,7 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
 	{
 		if(c.collider.GetComponent<DealDamageOnCollision>() != null){
             RecieveDamage(c.collider.GetComponent<DealDamageOnCollision>().damage);
-			if (health <= 0){
-				IDeath[] deathList = GetComponents<IDeath>();
-				foreach (IDeath death in deathList){
-					death.OnDeath();
-				}
-			}
+            //CheckDeath();
 		}
 	}
 
@@ -56,6 +51,19 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
     {
         health -= damage;
         if (healthBar != null) healthBar.SetHealth(health);
+        CheckDeath();
+    }
+
+    public void CheckDeath()
+    {
+        if ((health <= 0) && (GetComponentInParent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE))
+        {
+            IDeath[] deathList = GetComponents<IDeath>();
+            foreach (IDeath death in deathList)
+            {
+                death.OnDeath();
+            }
+        }
     }
 
 	public void OnDeath()

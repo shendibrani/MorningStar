@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2392368}
   - 64: {fileID: 6463752}
   - 114: {fileID: 11437212}
+  - 114: {fileID: 11423184}
   m_Layer: 0
   m_Name: HoleHitbox
   m_TagString: Untagged
@@ -74,6 +75,17 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 3012777d771f7814f8ee9a5a119b94fe, type: 3}
+--- !u!114 &11423184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587138404aab0df49aef0883d2241716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11437212
 MonoBehaviour:
   m_ObjectHideFlags: 1
