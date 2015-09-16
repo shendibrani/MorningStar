@@ -39,7 +39,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172478}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -87,8 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da459a48ef55a114989db03b855bd04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallSpeed: 1
-  maxMotionDistance: 7
+  wallSpeed: .300000012
+  maxMotionDistance: 5
 --- !u!114 &11469460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470b9622cd615a64481605a337ba20bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 300
+  force: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

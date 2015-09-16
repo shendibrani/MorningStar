@@ -34,7 +34,6 @@ public class PlayerManager : MonoBehaviour, IMessage
         player1Data = PlayerInfoPasser.GetInfo(1);
 
         CreatePlayers();
-		SetupBindings();
 
         MessagingManager.AddListener(this);
 	}
@@ -67,6 +66,8 @@ public class PlayerManager : MonoBehaviour, IMessage
             pos,
             Quaternion.identity);
         cameraReference.a = playerA.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
+
+        SetupABindings();
         playerA.GetComponent<PlayerInfo>().AssignPlayer(0);
 
         //instantiate weapon prefab
@@ -86,12 +87,14 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerPrefab = characterPrefabs[player1Data.characterID];
         weaponPrefab = weaponPrefabs[player1Data.weaponID];
 
-        pos += new Vector3(RNG.NextFloat(minSpawnDistance, maxSpawnDistance), 0, RNG.NextFloat()).normalized * engagementDistance;
+        pos += new Vector3(RNG.NextFloat(minSpawnDistance, maxSpawnDistance), 0, RNG.NextFloat(minSpawnDistance, maxSpawnDistance));
         playerB = (GameObject)GameObject.Instantiate(
             playerPrefab,
             pos,
             Quaternion.identity);
         cameraReference.b = playerB.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
+
+        SetupBBindings();
         playerB.GetComponent<PlayerInfo>().AssignPlayer(1);
 
 
@@ -107,18 +110,22 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerB.GetComponentInChildren<ReceiveDamageOnCollision>().HealthBar = healthB.GetComponent<HealthBar>();
 
         Debug.Log("Done");
+
     }
 
-	void SetupBindings()
+	void SetupABindings()
 	{
 		playerA.GetComponent<PlayerInfo>().movementAxisX = PlayerInfoPasser.GetBinding(0);
 		playerA.GetComponent<PlayerInfo>().movementAxisY = PlayerInfoPasser.GetBinding(1);
 		playerA.GetComponent<PlayerInfo>().attackAxisX = PlayerInfoPasser.GetBinding(2);
 		playerA.GetComponent<PlayerInfo>().attackAxisY = PlayerInfoPasser.GetBinding(3);
-
-		playerB.GetComponent<PlayerInfo>().movementAxisX = PlayerInfoPasser.GetBinding(4);
-		playerB.GetComponent<PlayerInfo>().movementAxisY = PlayerInfoPasser.GetBinding(5);
-		playerB.GetComponent<PlayerInfo>().attackAxisX = PlayerInfoPasser.GetBinding(6);
-		playerB.GetComponent<PlayerInfo>().attackAxisY = PlayerInfoPasser.GetBinding(7);
 	}
+
+    void SetupBBindings()
+    {
+        playerB.GetComponent<PlayerInfo>().movementAxisX = PlayerInfoPasser.GetBinding(4);
+        playerB.GetComponent<PlayerInfo>().movementAxisY = PlayerInfoPasser.GetBinding(5);
+        playerB.GetComponent<PlayerInfo>().attackAxisX = PlayerInfoPasser.GetBinding(6);
+        playerB.GetComponent<PlayerInfo>().attackAxisY = PlayerInfoPasser.GetBinding(7);
+    }
 }

@@ -1935,7 +1935,23 @@ MonoBehaviour:
   - {fileID: 109535843}
   - {fileID: 1861127172}
   - {fileID: 1469572804}
-  bindings: []
+  bindings:
+  - axisName: J1 Left Stick X
+    invert: 0
+  - axisName: J1 Left Stick Y
+    invert: 0
+  - axisName: J1 Right Stick X
+    invert: 0
+  - axisName: J1 Right Stick Y
+    invert: 0
+  - axisName: J2 Left Stick X
+    invert: 0
+  - axisName: J2 Left Stick Y
+    invert: 0
+  - axisName: J2 Right Stick X
+    invert: 0
+  - axisName: J2 Right Stick Y
+    invert: 0
 --- !u!1 &1245122859
 GameObject:
   m_ObjectHideFlags: 0

@@ -268,10 +268,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 2300024, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -568,10 +564,6 @@ Prefab:
       propertyPath: m_Name
       value: FireWallCollider (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 2300024, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -691,6 +683,10 @@ Prefab:
     - target: {fileID: 11489054, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
       propertyPath: edgeDetectShader
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 102432, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11489054, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
@@ -2181,6 +2177,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2392368, guid: 5745ff046a4deab469566c018d39864d, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463752, guid: 5745ff046a4deab469566c018d39864d, type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463752, guid: 5745ff046a4deab469566c018d39864d, type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2620,10 +2624,6 @@ Prefab:
     - target: {fileID: 172478, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
       propertyPath: m_Name
       value: FireWallCollider (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300024, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
@@ -3272,18 +3272,6 @@ Prefab:
       propertyPath: m_Name
       value: FireWallCollider (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 465996, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 465996, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300024, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -3398,8 +3386,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163068701}
-  m_LocalRotation: {x: .0173410475, y: -.747176111, z: .0195050482, w: .664113522}
-  m_LocalPosition: {x: -6.9030304, y: -2.80157971, z: 25.7606487}
+  m_LocalRotation: {x: .318385422, y: .0681742206, z: .0229634978, w: -.945227861}
+  m_LocalPosition: {x: 7.90999413, y: -98.971077, z: -138.310089}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
