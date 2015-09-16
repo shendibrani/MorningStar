@@ -21,6 +21,8 @@ public class PlayerInfoPasser {
     static PlayerCreationData player0Data;
     static PlayerCreationData player1Data;
 
+	static AxisInversionPair[] bindings;
+
     PlayerInfoPasser()
     {
         defaultData = new PlayerCreationData();
@@ -41,7 +43,15 @@ public class PlayerInfoPasser {
         if (PlayerID == 1) return player1Data;
         else return defaultData;
     }
+	public static void SetBindings( AxisInversionPair[] b)
+	{
+		bindings = b;
+	}
 
+	public static AxisInversionPair GetBinding(int i)
+	{
+		return bindings[i];
+	}
 }
 
 public struct PlayerCreationData{
