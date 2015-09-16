@@ -1583,11 +1583,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 9587676, guid: 7e024de06857a694ea9c497d7d73a494, type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ed7c8fed576e9954d99180464e6457e2, type: 2}
-    - target: {fileID: 9582640, guid: 7e024de06857a694ea9c497d7d73a494, type: 2}
+    - target: {fileID: 9534342, guid: 7e024de06857a694ea9c497d7d73a494, type: 2}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ed7c8fed576e9954d99180464e6457e2, type: 2}
@@ -1595,7 +1591,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ed7c8fed576e9954d99180464e6457e2, type: 2}
-    - target: {fileID: 9534342, guid: 7e024de06857a694ea9c497d7d73a494, type: 2}
+    - target: {fileID: 9582640, guid: 7e024de06857a694ea9c497d7d73a494, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ed7c8fed576e9954d99180464e6457e2, type: 2}
+    - target: {fileID: 9587676, guid: 7e024de06857a694ea9c497d7d73a494, type: 2}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ed7c8fed576e9954d99180464e6457e2, type: 2}
