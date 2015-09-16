@@ -1373,6 +1373,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 820632739}
   - 114: {fileID: 820632738}
+  - 114: {fileID: 820632741}
+  - 114: {fileID: 820632740}
   m_Layer: 0
   m_Name: Menu Overlord
   m_TagString: Untagged
@@ -1397,6 +1399,9 @@ MonoBehaviour:
   - {fileID: 91284542}
   - {fileID: 2065346452}
   - {fileID: 1190159445}
+  UpDown: {fileID: 820632740}
+  LeftRight: {fileID: 820632741}
+  PCBS: {fileID: 1190159445}
 --- !u!4 &820632739
 Transform:
   m_ObjectHideFlags: 0
@@ -1409,6 +1414,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &820632740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820632737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 1
+  type: 0
+  axisName: J1 Left Stick Y
+--- !u!114 &820632741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820632737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 0
+  axisName: J1 Left Stick X
 --- !u!1 &1002696685
 GameObject:
   m_ObjectHideFlags: 0
