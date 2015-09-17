@@ -601,8 +601,10 @@ MonoBehaviour:
   - {fileID: 125594, guid: f7be66a24da0e4849bef2c551ff98493, type: 2}
   - {fileID: 166168, guid: fdbef443b91ef4f4eb35ad0549162e35, type: 2}
   weaponPrefabs:
-  - {fileID: 152718, guid: a90452e24bdc2d94daebb7c40b3a9e91, type: 2}
+  - {fileID: 106172, guid: 7c16093c8465e8f48a4a56b17e1710b3, type: 2}
   - {fileID: 164400, guid: ac05460d8007065489ead92583652091, type: 2}
+  - {fileID: 152718, guid: a90452e24bdc2d94daebb7c40b3a9e91, type: 2}
+  - {fileID: 132738, guid: a329bd6cabcfd4c4f9d537d5793d5321, type: 2}
   canvas: {fileID: 186594822}
   healthBarPrefab: {fileID: 135124, guid: b460834a84651db4bbcc5aeb4ed6dfe5, type: 2}
   cameraReference: {fileID: 1098789432}
@@ -621,8 +623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInterval: 3
-  victory0Image: {fileID: 0}
-  victory1Image: {fileID: 0}
+  victory0Image: {fileID: 1798980792}
+  victory1Image: {fileID: 1733367983}
   player0ScoreText: {fileID: 1603105159}
   player1ScoreText: {fileID: 554734059}
 --- !u!1 &1733367982
@@ -669,7 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: d7d0bbc9636ef2b4b98c247735668c38, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e3945c5c0f0e914dab3d2ccd2657376, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -761,7 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: d7d0bbc9636ef2b4b98c247735668c38, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98c69a900307dc8429cec61c25411f2f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
