@@ -5,7 +5,7 @@ public class DestroyBreakable : MonoBehaviour
 {
 
     [SerializeField]
-    float timer = 150f;
+    float timer = 100f;
 
     private Rigidbody rb { get { return GetComponent<Rigidbody>(); } }
 
@@ -15,7 +15,7 @@ public class DestroyBreakable : MonoBehaviour
 
         timer -= 1f;
         
-        Destroy(this.gameObject, 10f);
+        Destroy(this.gameObject, 12f);
         if (timer <= 0)
         {
        
