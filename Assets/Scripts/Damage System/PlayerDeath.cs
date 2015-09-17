@@ -39,6 +39,11 @@ public class PlayerDeath : MonoBehaviour, IDeath
             //r.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         //}
 
+        foreach (RotateAroundAxis r in GetComponentsInChildren<RotateAroundAxis>())
+        {
+            r.enabled = false;
+        }
+
         if (weaponBase != null)
         {
             weaponBase.transform.parent = this.transform.parent;
@@ -53,8 +58,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
         GetComponentInParent<PlayerAnimationHandler>().enabled = false;
         GetComponentInParent<Animator>().enabled = false;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
-
-        transform.FindChild("BodyP/HeadP").parent = transform.parent;
+        //transform.FindChild("BodyP/HeadP").parent = transform.parent;
 
         foreach (Transform t in GetComponentInChildren<Transform>())
         {
