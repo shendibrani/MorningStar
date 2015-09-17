@@ -47,7 +47,11 @@ public class GameManager : MonoBehaviour, IMessage {
 
 		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick 1 button 6"))
         {
-			if (Time.timeScale == 0) Application.LoadLevel("MainMenuTest");
+			if (Time.timeScale == 0) 
+			{
+				Resume ();
+				Application.LoadLevel("MainMenuTest");
+			}
         }
 
         if ((useTimer) && (Time.time > targetTime))
