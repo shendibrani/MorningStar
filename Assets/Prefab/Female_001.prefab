@@ -209,6 +209,7 @@ GameObject:
   - 114: {fileID: 11407230}
   - 114: {fileID: 11457540}
   - 114: {fileID: 11455526}
+  - 82: {fileID: 8297646}
   m_Layer: 0
   m_Name: Female_001
   m_TagString: Untagged
@@ -1081,6 +1082,75 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: fdcdf1ec23c653947857cc4b82afca6b, type: 3}
+--- !u!82 &8297646
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168794}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9586972
 Animator:
   serializedVersion: 3
@@ -1154,6 +1224,7 @@ MonoBehaviour:
   leftRight: {fileID: 11448788}
   baseSpeed: 200
   _speedMultiplier: 1
+  pushThreshold: 1
 --- !u!114 &11448788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1197,8 +1268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11416068}
-  plusAbility: {fileID: 11450142}
-  minusAbility: {fileID: 11460402}
 --- !u!114 &11454694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1222,6 +1291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: 5473972}
+  footSteps: {fileID: 8300000, guid: 710414d758d5f9848999974133c36616, type: 3}
 --- !u!114 &11457540
 MonoBehaviour:
   m_ObjectHideFlags: 1
