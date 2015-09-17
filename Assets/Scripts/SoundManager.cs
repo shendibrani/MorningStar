@@ -3,50 +3,78 @@ using System.Collections.Generic;
 
 
 [System.Serializable]
-public class CoupledSound {
+public class CoupledSound
+{
     public SoundEffects TheSoundEffect;
     public AudioClip[] PlayClips;
 }
 
-public class SoundManager : MonoBehaviour{
+public class SoundManager : MonoBehaviour
+{
 
     private AudioSource source;
-  
+
+    private AudioSource musicPlayer;
+    public AudioClip music;
+
     public static SoundManager instance = null;
 
     [SerializeField]
     private List<CoupledSound> coupledSoundList;
 
-    void Awake() {
+    void Awake()
+    {
         if (instance == null)
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
     }
 
-    void Start() {
+    void Start()
+    {
         source = GetComponent<AudioSource>();
+        musicPlayer = gameObject.AddComponent<AudioSource>();
+        musicPlayer.clip = music;
+        musicPlayer.loop = true;
+        musicPlayer.playOnAwake = true;
+        musicPlayer.Play();
+
     }
 
-    public void PlaySound (SoundEffects se)
+    public void PlaySound(SoundEffects se)
     {
+        
         AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
         int index = RNG.Next(0, clipArray.Length);
         source.clip = clipArray[index];
-        source.Play();
+
+        if (!source.isPlaying)
+        {
+            source.Play();
+        }
+
+        else
+        {
+            
+            AudioSource newSource = gameObject.AddComponent<AudioSource>();
+            newSource.clip = clipArray[index];
+            newSource.Play();
+           
+        }
+
     }
 
-    
     public void PlaySound(SoundEffects se, bool PlayOneShot)
     {
+
         AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
         int index = RNG.Next(0, clipArray.Length);
         source.clip = clipArray[index];
-        
 
-        if (PlayOneShot)source.PlayOneShot(source.clip);
+        if (PlayOneShot) source.PlayOneShot(source.clip);
         else source.Play();
-        
+
+
     }
 
     public void PlaySound(SoundEffects se, bool PlayOneShot, float pVolumeScale)
@@ -54,11 +82,12 @@ public class SoundManager : MonoBehaviour{
         AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
         int index = RNG.Next(0, clipArray.Length);
         source.clip = clipArray[index];
-        
+
 
         if (PlayOneShot) source.PlayOneShot(source.clip, pVolumeScale);
         else source.Play();
 
     }
+
 
 }
