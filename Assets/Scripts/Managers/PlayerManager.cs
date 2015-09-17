@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         GameObject weaponPrefab = weaponPrefabs[player0Data.weaponID];
 
         //instantiate player prefab in random position from 0,0
-        Vector3 pos = new Vector3(RNG.NextFloat(minSpawnDistance, maxSpawnDistance), 0, RNG.NextFloat(minSpawnDistance, maxSpawnDistance));
+        Vector3 pos = new Vector3(RNG.NextFloat(-1, 1), 0, RNG.NextFloat(-1, 1)).normalized * RNG.NextFloat(minSpawnDistance, maxSpawnDistance);
         playerA = (GameObject)GameObject.Instantiate(
             playerPrefab,
             pos,
@@ -87,7 +87,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerPrefab = characterPrefabs[player1Data.characterID];
         weaponPrefab = weaponPrefabs[player1Data.weaponID];
 
-        pos += new Vector3(RNG.NextFloat(minSpawnDistance, maxSpawnDistance), 0, RNG.NextFloat(minSpawnDistance, maxSpawnDistance));
+        pos = new Vector3(RNG.NextFloat(-1, 1), 0, RNG.NextFloat(-1, 1)).normalized * RNG.NextFloat(minSpawnDistance,maxSpawnDistance);
         playerB = (GameObject)GameObject.Instantiate(
             playerPrefab,
             pos,
