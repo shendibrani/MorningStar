@@ -23,6 +23,9 @@ public class PlayerInfoPasser {
 
 	static AxisInversionPair[] bindings;
 
+	static CharacterStats player0Stats;
+	static CharacterStats player1Stats;
+
     PlayerInfoPasser()
     {
         defaultData = new PlayerCreationData();
@@ -57,5 +60,6 @@ public class PlayerInfoPasser {
 public struct PlayerCreationData{
     public int characterID;
     public int weaponID;
+	public CharacterStats stats;
 }
 

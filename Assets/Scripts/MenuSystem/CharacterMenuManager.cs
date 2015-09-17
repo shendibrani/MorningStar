@@ -87,6 +87,7 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 				Debug.Log("Player 1 done");
 				player1.characterID = character.state;
 				player1.weaponID = weapon.state;
+				player1.stats = character.currentStats + weapon.currentStats;
 				weapon.SetState(0);
 				character.SetState(0);
 				statbars.UpdateValues(character.currentStats + weapon.currentStats);
@@ -95,6 +96,7 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 			} else if ( player == 1){
 				player2.characterID = character.state;
 				player2.weaponID = weapon.state;
+				player2.stats = character.currentStats + weapon.currentStats;
 				PlayerInfoPasser.PassInfo(player1, player2);
 				Debug.Log(player1);
 				Debug.Log(player2);
