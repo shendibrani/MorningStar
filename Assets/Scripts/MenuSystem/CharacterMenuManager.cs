@@ -16,13 +16,23 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 
 	[SerializeField] StatbarsBehaviour statbars;
 
+	[SerializeField] Selector currentPlayer;
+
     [SerializeField] int minLevelIndex = 2;
     
     [SerializeField] int maxLevelIndex = 2;
 
 	[SerializeField] List<Sprite> characterPortraits;
 
-	int player;
+	int _player;
+
+	int player {
+		get {return _player;}
+		set {
+			_player = value;
+			currentPlayer.SetState(value);
+		}
+	}
 
 	PlayerCreationData player1, player2;
 

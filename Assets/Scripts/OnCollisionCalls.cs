@@ -90,7 +90,7 @@ public class OnCollisionCalls : MonoBehaviour
         if (col.gameObject.GetComponent<Breakable>())
         {
             Debug.Log("Touching Breakable Object");
-            //SoundManager.instance.PlaySound(SoundEffects.Hit);
+  
             SoundManager.instance.PlaySound(SoundEffects.HitBreakable);
 
             for (int i = 0; i < col.transform.childCount; i++)

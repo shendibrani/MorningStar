@@ -5,20 +5,32 @@ using System.Collections;
 public class PlayerAnimationHandler : MonoBehaviour {
 
 	[SerializeField] Rigidbody mover;
-
-
-	// Use this for initialization
-	void Start () {
-	
+    public AudioClip footSteps;
+    AudioSource source;
+    // Use this for initialization
+    void Start () {
+        source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		GetComponent<Animator>().SetFloat("FrontSpeed", Vector3.Dot(mover.velocity, mover.transform.forward));
 		GetComponent<Animator>().SetFloat("RightSpeed", Vector3.Dot(mover.velocity, mover.transform.right));
-        if (mover.velocity.magnitude > 0)
+
+        if (GetComponent<Animator>().IsInTransition(0) && !source.isPlaying)
         {
-            SoundManager.instance.PlaySound(SoundEffects.Walking, true);
+            source.clip = footSteps;
+            source.loop = true;
+            source.time = 0.15f;
+            if (source.time == 0.25f) source.time = 0.70f;
+
+            source.Play();
         }
+        else if (mover.velocity.magnitude < 1)
+        {
+            source.Pause();
+           
+        }
+
 	}
 }
