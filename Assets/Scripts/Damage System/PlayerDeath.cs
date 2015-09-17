@@ -19,21 +19,25 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     public void OnDeath()
     {
+        Debug.Log("This");
         Transform parent = transform.parent;
 
-        
+        //foreach (DetonatePlayer d in GetComponentInChildren<DetonatePlayer>())
+        //{
+        //    d.OnDeath();
+        //}
 
-        foreach (Collider c in parent.GetComponentsInChildren<Collider>())
-        {
-            c.enabled = true;
-            if (c.GetComponent<DealDamageOnCollision>()) c.GetComponent<DealDamageOnCollision>().enabled = false;
-        }
+        //foreach (Collider c in parent.GetComponentsInChildren<Collider>())
+        //{
+            //c.enabled = true;
+            //if (c.GetComponent<DealDamageOnCollision>()) c.GetComponent<DealDamageOnCollision>().enabled = false;
+        //}
 
-        foreach (Rigidbody r in parent.GetComponentsInChildren<Rigidbody>())
-        {
-            r.GetComponent<Rigidbody>().useGravity = true;
-            r.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        }
+        //foreach (Rigidbody r in parent.GetComponentsInChildren<Rigidbody>())
+        //{
+            //r.GetComponent<Rigidbody>().useGravity = true;
+            //r.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        //}
 
         if (weaponBase != null)
         {
@@ -49,8 +53,6 @@ public class PlayerDeath : MonoBehaviour, IDeath
         GetComponentInParent<PlayerAnimationHandler>().enabled = false;
         GetComponentInParent<Animator>().enabled = false;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
-
-        GetComponentInChildren<LookAtEachotherBehaviour>().enabled = false;
 
         foreach (Transform t in GetComponentInChildren<Transform>())
         {
