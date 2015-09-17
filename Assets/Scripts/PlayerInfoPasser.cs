@@ -61,5 +61,6 @@ public struct PlayerCreationData{
     public int characterID;
     public int weaponID;
 	public CharacterStats stats;
+    public Sprite characterIcon;
 }
 

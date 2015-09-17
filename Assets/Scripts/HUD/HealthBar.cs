@@ -11,6 +11,8 @@ public class HealthBar : MonoBehaviour {
 
     [SerializeField]
 	Image lifeBar;
+    [SerializeField]
+    Image playerIcon;
 
 
 	// Use this for initialization
@@ -18,6 +20,11 @@ public class HealthBar : MonoBehaviour {
 
 		//lifeBar = this.gameObject.GetComponent<Image>();
 	}
+
+    public void SetIcon(Sprite icon)
+    {
+        playerIcon.sprite = icon;
+    }
 
     public void SetMaxHealth(float value)
     {
