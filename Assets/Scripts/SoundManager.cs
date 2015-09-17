@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource musicPlayer;
     public AudioClip music;
+    public AudioClip menuMusic;
 
     public static SoundManager instance = null;
 
@@ -28,22 +29,24 @@ public class SoundManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+        source = GetComponent<AudioSource>();
+
     }
 
     void Start()
     {
-        source = GetComponent<AudioSource>();
+    
         musicPlayer = gameObject.AddComponent<AudioSource>();
         musicPlayer.clip = music;
         musicPlayer.loop = true;
         musicPlayer.playOnAwake = true;
         musicPlayer.Play();
-
+        
     }
 
     public void PlaySound(SoundEffects se)
     {
-        
+
         AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
         int index = RNG.Next(0, clipArray.Length);
         source.clip = clipArray[index];
@@ -55,11 +58,11 @@ public class SoundManager : MonoBehaviour
 
         else
         {
-            
+
             AudioSource newSource = gameObject.AddComponent<AudioSource>();
             newSource.clip = clipArray[index];
             newSource.Play();
-           
+
         }
 
     }
