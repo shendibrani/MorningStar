@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour, IMessage {
     [SerializeField]
     ImageController victory1Image;
     [SerializeField]
-    Text player0ScoreText;
+    List<Image> player0ScoreList; 
     [SerializeField]
-    Text player1ScoreText;
+    List<Image> player1ScoreList;
 
     int player0Score = 0;
     int player1Score = 0;
@@ -32,8 +32,14 @@ public class GameManager : MonoBehaviour, IMessage {
 
     void Start()
     {
-        player0ScoreText.text = "" + player0Score;
-        player1ScoreText.text = "" + player1Score;
+        foreach (Image i in player0ScoreList)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, 30f/255f);
+        }
+        foreach (Image i in player1ScoreList)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, 30f/255f);
+        }
         MessagingManager.AddListener(this);
     }
 	
@@ -56,8 +62,8 @@ public class GameManager : MonoBehaviour, IMessage {
 
         if ((useTimer) && (Time.time > targetTime))
         {
+            if (victory0Image.enabled || victory1Image.enabled) Application.LoadLevel("MainMenuTest");
             RestartGame();
-            //if (gameTimerCallback != null) gameTimerCallback();
             //gameTimerCallback -= RestartGame;
         }
 	}
@@ -88,20 +94,31 @@ public class GameManager : MonoBehaviour, IMessage {
             switch (info.playerID)
             {
                 case 0:
-                    victory0Image.Enable();
+                    //victory0Image.Enable();
                     player0Score++;
-                    player0ScoreText.text = ""+ player0Score;
+                    //player0ScoreText.text = ""+ player0Score;
                     break;
                 case 1:
-                    victory1Image.Enable();
+                    //victory1Image.Enable();
                     player1Score++;
-                    player1ScoreText.text = "" + player1Score;
+                    //player1ScoreText.text = "" + player1Score;
                     break;
             }
         }
         //imageTimerCallback += RestartGame;
         targetTime = Time.time + displayInterval;
         useTimer = true;
+
+        if (player0Score == 3)
+        {
+            victory0Image.Enable();
+            targetTime += displayInterval;
+        }
+        if (player1Score == 3)
+        {
+            victory1Image.Enable();
+            targetTime += displayInterval;
+        }
     }
 
     void RestartGame()
@@ -123,5 +140,21 @@ public class GameManager : MonoBehaviour, IMessage {
     void Resume()
     {
         Time.timeScale = timeScale;
+    }
+
+    void DisplayScore()
+    {
+        for (int i = 0; i < player0ScoreList.Count; i++)
+        {
+            Color c = player0ScoreList[i].color;
+            player0ScoreList[i].color = new Color(c.r, c.g, c.b);
+            //player0ScoreList[i].enabled = true;
+        }
+        for (int i = 0; i < player1ScoreList.Count; i++)
+        {
+            Color c = player1ScoreList[i].color;
+            player1ScoreList[i].color = new Color(c.r, c.g, c.b);
+            //player1ScoreList[i].enabled = true;
+        }
     }
 }

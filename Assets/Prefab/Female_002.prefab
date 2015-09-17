@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 433798}
-  hookPrefab: {fileID: 0}
+  hookPrefab: {fileID: 182290, guid: 445d7e39e8db1c94ca37a5bc535fab78, type: 2}
   interval: 4
 --- !u!114 &11484894
 MonoBehaviour:
