@@ -17,7 +17,10 @@ public class DetonatePlayer : MonoBehaviour, IDeath {
     {
         Debug.Log(this);
         //this.GetComponent<BoxCollider>().enabled = false;
-        GetComponent<Collider>().enabled = true;
+        foreach (Collider c in GetComponentsInChildren<Collider>())
+        {
+            c.enabled = true;
+        }
         gameObject.AddComponent<Rigidbody>();
         GetComponent<Rigidbody>().WakeUp();
         GetComponent<Rigidbody>().isKinematic = false;

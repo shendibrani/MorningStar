@@ -54,6 +54,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
         GetComponentInParent<Animator>().enabled = false;
         GetComponent<RigidBodyTopDownMovement>().enabled = false;
 
+        transform.FindChild("BodyP/HeadP").parent = transform.parent;
+
         foreach (Transform t in GetComponentInChildren<Transform>())
         {
             t.parent = transform.parent;
