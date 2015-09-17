@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class HookAbility : MonoBehaviour, Ability
 {
-	GameObject hookPrefab;
 
 	float speed;
 
@@ -14,7 +13,7 @@ public class HookAbility : MonoBehaviour, Ability
     Transform spawnPoint;
 
     [SerializeField]
-    GameObject arrowObject;
+    GameObject hookPrefab;
 
     [SerializeField]
     float interval = 4f;

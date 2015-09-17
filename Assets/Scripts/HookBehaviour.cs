@@ -11,9 +11,14 @@ public class HookBehaviour : MonoBehaviour
     float arrowSpeed = 600f;
 
     [SerializeField]
-    float cancelDistance = 4f;
+    float cancelDistance = 10f;
+
+    [SerializeField]
+    float cancelSpeed = 0.5f;
 
     float force;
+
+    GameObject dragObject;
 
     bool deathActive = false;
 
@@ -32,21 +37,34 @@ public class HookBehaviour : MonoBehaviour
     {
         if (c.gameObject.GetComponent<RigidBodyTopDownMovement>())
         {
-            Vector3 direction = c.transform.position - target.transform.position;
-            GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
-            c.gameObject.GetComponent<RigidBodyTopDownMovement>().Push(direction, direction.magnitude);
+            Debug.Log("Contact Player");
+            //Vector3 direction = c.transform.position - target.transform.position;
+            //GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
+            //c.gameObject.GetComponent<RigidBodyTopDownMovement>().Push(-direction, direction.magnitude * 10);
+            //GetComponent<Rigidbody>().AddForce(-direction, ForceMode.Impulse);
             //GetComponent<DealDamageOnCollision>().enabled = false;
             //GetComponent<ArrowControl>().enabled = false;
             //GetComponent<Rigidbody>().freezeRotation = true;
             //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+            GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
+            dragObject = c.gameObject;
             GetComponent<Collider>().enabled = false;
             transform.SetParent(c.transform);
             deathActive = true;
         }
         else if (c.gameObject.GetComponent<Rigidbody>())
         {
-            c.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.back * -arrowSpeed, ForceMode.Impulse);
+            Debug.Log("Contact Else");
+            //Vector3 direction = c.transform.position - target.transform.position;
+            //c.gameObject.GetComponent<Rigidbody>().AddForce(-direction, ForceMode.Impulse);
+
+
+            //GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
+            //GetComponent<Rigidbody>().AddForce(-direction, ForceMode.Impulse);
+
             GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
+            dragObject = c.gameObject;
             GetComponent<Collider>().enabled = false;
             transform.SetParent(c.transform);
             deathActive = true;
@@ -62,7 +80,19 @@ public class HookBehaviour : MonoBehaviour
     {
         if (deathActive)
         {
-            if ((Vector3.Magnitude(transform.position - target.transform.position) < cancelDistance)) GameObject.Destroy(this.gameObject);
+            Vector3 direction = dragObject.transform.position - target.transform.position;
+            if (dragObject.GetComponent<RigidBodyTopDownMovement>() != null){
+                dragObject.GetComponent<RigidBodyTopDownMovement>().Push(-direction, direction.magnitude);
+            }
+            else if (dragObject.GetComponent<Rigidbody>() != null)
+            {
+               dragObject.GetComponent<Rigidbody>().AddForce(-direction, ForceMode.Force);
+            }
+            if (Vector3.Magnitude(transform.position - target.transform.position) < cancelDistance)
+            {
+                Debug.Log("Destroy");
+                GameObject.Destroy(this.gameObject);
+            }
         }
     }
 }

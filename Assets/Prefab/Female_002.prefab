@@ -332,7 +332,7 @@ GameObject:
   - 114: {fileID: 11440760}
   - 114: {fileID: 11461678}
   - 114: {fileID: 11494624}
-  - 114: {fileID: 11405956}
+  - 114: {fileID: 11476260}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -770,7 +770,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 264a8bc9b0a79344caf0ba418b2f03ec, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1215,20 +1215,6 @@ MonoBehaviour:
   smoothTime: 4
   xAxis: {fileID: 11495022}
   zAxis: {fileID: 11491398}
---- !u!114 &11405956
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70c291296047784b918d5d9346ca285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 433798}
-  arrowObject: {fileID: 109806, guid: 452dfd78629ae944487039b5ced03df8, type: 2}
-  interval: 4
 --- !u!114 &11415548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1412,6 +1398,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decayTime: 10
   state: 0
+--- !u!114 &11476260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522a95700ae3fdf409efadaa99d04bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 433798}
+  hookPrefab: {fileID: 182366, guid: 26d6bfa4fb2d62647a17f859be11f3da, type: 2}
+  interval: 4
 --- !u!114 &11484894
 MonoBehaviour:
   m_ObjectHideFlags: 1
