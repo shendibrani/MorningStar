@@ -61,7 +61,7 @@ GameObject:
   - 95: {fileID: 9516172}
   - 114: {fileID: 11458752}
   m_Layer: 0
-  m_Name: MorningStar
+  m_Name: MorningStarOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
