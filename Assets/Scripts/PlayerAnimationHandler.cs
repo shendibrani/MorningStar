@@ -22,7 +22,7 @@ public class PlayerAnimationHandler : MonoBehaviour {
             source.clip = footSteps;
             source.loop = true;
             source.time = 0.15f;
-            if (source.time == 0.25f) source.time = 0.70f;
+            if (source.time == 0.3f) source.time = 0.70f;
 
             source.Play();
         }
