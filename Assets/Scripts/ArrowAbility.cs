@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ArrowAbility : Ability {
+public class ArrowAbility : MonoBehaviour, Ability {
 
     Transform other;
     [SerializeField]
@@ -16,7 +16,6 @@ public class ArrowAbility : Ability {
 
     float timer = 0;
 
-
 	// Use this for initialization
 	void Start () {
         List<LookAtEachotherBehaviour> list = new List<LookAtEachotherBehaviour>(FindObjectsOfType<LookAtEachotherBehaviour>());
@@ -28,7 +27,7 @@ public class ArrowAbility : Ability {
 	
 	}
 
-    public override void Execute()
+    public void Execute()
     {
         if (Time.time >= timer)
         {
