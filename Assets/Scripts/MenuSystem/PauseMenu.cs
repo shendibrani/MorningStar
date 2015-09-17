@@ -4,6 +4,11 @@ using System.Collections;
 [RequireComponent(typeof(UIDrawerBehaviour))]
 public class PauseMenu : MonoBehaviour, IMessage
 {
+	void Start()
+	{
+		MessagingManager.AddListener(this);
+	}
+
 	public void Message(Messages message, GameObject sender)
 	{
 		switch (message)

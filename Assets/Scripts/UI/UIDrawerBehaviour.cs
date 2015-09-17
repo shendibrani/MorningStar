@@ -14,10 +14,6 @@ public class UIDrawerBehaviour : MonoBehaviour {
 	void Update () {
 		RectTransform rectTransform = GetComponent<RectTransform> ();
 		rectTransform.anchoredPosition += (positions[state] - rectTransform.anchoredPosition)*easing;
-
-		if (Input.GetKeyDown (KeyCode.Tab)) {
-			NextState ();
-		}
 	}
 
 	#region IStateMachine Implementation
