@@ -249,7 +249,11 @@ MonoBehaviour:
   currentPlayer: {fileID: 117664757}
   minLevelIndex: 2
   maxLevelIndex: 2
-  characterPortraits: []
+  characterPortraits:
+  - {fileID: 21300000, guid: c4c08afd571f2be4cba4830cda8d329e, type: 3}
+  - {fileID: 21300000, guid: aeff6e9a580dc1848b12c8cfce25d14a, type: 3}
+  - {fileID: 21300000, guid: 422be45397dffc647a766897db5a6e33, type: 3}
+  - {fileID: 21300000, guid: 6a4e8ab0deb95874caa7a14c8e0d238b, type: 3}
 --- !u!114 &91284543
 MonoBehaviour:
   m_ObjectHideFlags: 0
