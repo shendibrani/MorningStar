@@ -5,37 +5,39 @@ using System.Collections;
 public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
 {
     [SerializeField]
-	float health;
-    HealthBar healthBar;
-    float maxHealth;
+	float _health;
+    HealthBar _healthBar;
+    float _maxHealth;
 
-    void Start()
-    {
-        maxHealth = health;
-        if (healthBar != null) healthBar.SetMaxHealth(health);
-    }
-
-    public float Health
+    public float health
     {
         get
         {
-            return health;
+            return _health;
         }
+
+		set
+		{
+			_health = value;
+			_maxHealth = _health;
+			if (_healthBar != null) _healthBar.SetMaxHealth(_health);
+		}
     }
 
-    public float MaxHealth
+    public float maxHealth
     {
         get
         {
-            return maxHealth;
+            return _maxHealth;
         }
     }
 
-    public HealthBar HealthBar
+    public HealthBar healthBar
     {
         set
         {
-            healthBar = value;
+            _healthBar = value;
+			if (_healthBar != null) _healthBar.SetMaxHealth(_health);
         }
     }
 
@@ -49,14 +51,14 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
 
     public void RecieveDamage(float damage)
     {
-        health -= damage;
-        if (healthBar != null) healthBar.SetHealth(health);
+        _health -= damage;
+        if (_healthBar != null) _healthBar.SetHealth(_health);
         CheckDeath();
     }
 
     public void CheckDeath()
     {
-        if ((health <= 0) && (GetComponentInParent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE))
+        if ((_health <= 0) && (GetComponentInParent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE))
         {
             IDeath[] list = GetComponentsInChildren<IDeath>();
             foreach (IDeath death in list)

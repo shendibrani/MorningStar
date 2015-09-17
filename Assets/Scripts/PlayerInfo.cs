@@ -31,11 +31,8 @@ public class PlayerInfo : MonoBehaviour, IMessage {
     }
 
 	// Use this for initialization
-	void Start () {
-		//playerID = players;
-		//players++;
-
-
+	void Start () 
+	{
 		Debug.Log(GetComponentsInChildren<AnalogToAxisLayer>().Length);
 
         MessagingManager.AddListener(this);
@@ -114,7 +111,6 @@ public class PlayerInfo : MonoBehaviour, IMessage {
                 }
             }
         }
-
     }
 
     public void AttachWeapon(GameObject weapon)

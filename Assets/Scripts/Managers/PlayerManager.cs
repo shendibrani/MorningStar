@@ -79,7 +79,10 @@ public class PlayerManager : MonoBehaviour, IMessage
         //set up HUD 
         healthA = (GameObject)GameObject.Instantiate(healthBarPrefab, new Vector3(960, -768, 0), Quaternion.identity);
         healthA.transform.SetParent(canvas.transform, false);
-        playerA.GetComponentInChildren<ReceiveDamageOnCollision>().HealthBar = healthA.GetComponent<HealthBar>();
+        playerA.GetComponentInChildren<ReceiveDamageOnCollision>().healthBar = healthA.GetComponent<HealthBar>();
+		playerA.GetComponentInChildren<ReceiveDamageOnCollision>().health *= player0Data.stats.health;
+
+		playerA.GetComponentInChildren<RigidBodyTopDownMovement>().speedMultiplier = player0Data.stats.speed;
 
 
         Debug.Log("B");
@@ -96,8 +99,7 @@ public class PlayerManager : MonoBehaviour, IMessage
 
         SetupBBindings();
         playerB.GetComponent<PlayerInfo>().AssignPlayer(1);
-
-
+		
         GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos, Quaternion.identity);
         //weaponB.transform.Rotate(0, 0, 90);
         playerB.GetComponent<PlayerInfo>().AttachWeapon(weaponB);
@@ -107,7 +109,10 @@ public class PlayerManager : MonoBehaviour, IMessage
         healthB = (GameObject)GameObject.Instantiate(healthBarPrefab, new Vector3(960, -768, 0), Quaternion.identity);
         healthB.transform.SetParent(canvas.transform, false);
         healthB.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
-        playerB.GetComponentInChildren<ReceiveDamageOnCollision>().HealthBar = healthB.GetComponent<HealthBar>();
+        playerB.GetComponentInChildren<ReceiveDamageOnCollision>().healthBar = healthB.GetComponent<HealthBar>();
+		playerB.GetComponentInChildren<ReceiveDamageOnCollision>().health *= player1Data.stats.health;
+
+		playerB.GetComponentInChildren<RigidBodyTopDownMovement>().speedMultiplier = player1Data.stats.speed;
 
         Debug.Log("Done");
 

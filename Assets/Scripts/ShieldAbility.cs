@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ShieldAbility : Ability
@@ -47,9 +47,9 @@ public class ShieldAbility : Ability
             if (isActive)
             {
                 GetComponent<ReceiveDamageOnCollision>().RecieveDamage(-c.collider.GetComponent<DealDamageOnCollision>().damage);
-                if (GetComponent<ReceiveDamageOnCollision>().Health > GetComponent<ReceiveDamageOnCollision>().MaxHealth)
+                if (GetComponent<ReceiveDamageOnCollision>().health > GetComponent<ReceiveDamageOnCollision>().maxHealth)
                 {
-                    GetComponent<ReceiveDamageOnCollision>().RecieveDamage(GetComponent<ReceiveDamageOnCollision>().Health - GetComponent<ReceiveDamageOnCollision>().MaxHealth);
+                    GetComponent<ReceiveDamageOnCollision>().RecieveDamage(GetComponent<ReceiveDamageOnCollision>().health - GetComponent<ReceiveDamageOnCollision>().maxHealth);
                 }
             }
         }
