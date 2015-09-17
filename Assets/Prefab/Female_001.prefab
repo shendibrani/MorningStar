@@ -42,6 +42,8 @@ GameObject:
   - 4: {fileID: 424846}
   - 33: {fileID: 3341226}
   - 23: {fileID: 2313340}
+  - 64: {fileID: 6491456}
+  - 114: {fileID: 11485092}
   m_Layer: 0
   m_Name: LeftFootP
   m_TagString: Untagged
@@ -239,6 +241,8 @@ GameObject:
   - 4: {fileID: 443100}
   - 33: {fileID: 3368246}
   - 23: {fileID: 2395014}
+  - 64: {fileID: 6476454}
+  - 114: {fileID: 11494802}
   m_Layer: 0
   m_Name: RightFootP
   m_TagString: Untagged
@@ -341,6 +345,8 @@ GameObject:
   - 4: {fileID: 421090}
   - 33: {fileID: 3366236}
   - 23: {fileID: 2392676}
+  - 64: {fileID: 6427296}
+  - 114: {fileID: 11458310}
   m_Layer: 0
   m_Name: BodyP
   m_TagString: Untagged
@@ -1033,6 +1039,42 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!64 &6427296
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300006, guid: 90170f44291060e43b7af0cc576c5d3c, type: 3}
+--- !u!64 &6476454
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300012, guid: 90170f44291060e43b7af0cc576c5d3c, type: 3}
+--- !u!64 &6491456
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300010, guid: 90170f44291060e43b7af0cc576c5d3c, type: 3}
 --- !u!95 &9586972
 Animator:
   serializedVersion: 3
@@ -1074,10 +1116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .100000001
   invert: 0
+  deadZone: .100000001
   direction: 0
   type: 2
+  axisName: 
 --- !u!114 &11421650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1115,10 +1158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 1
+  deadZone: .200000003
   direction: 0
   type: 0
+  axisName: 
 --- !u!114 &11450142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1172,6 +1216,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightRotator: {fileID: 410458}
+  movementAxisX:
+    axisName: 
+    invert: 0
+  movementAxisY:
+    axisName: 
+    invert: 0
+  attackAxisX:
+    axisName: 
+    invert: 0
+  attackAxisY:
+    axisName: 
+    invert: 0
+--- !u!114 &11458310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa028bfcba51e24daa7bc260f27368b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11458318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1212,10 +1279,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 1
   type: 1
+  axisName: 
 --- !u!114 &11476870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1227,10 +1295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 1
   type: 0
+  axisName: 
 --- !u!114 &11481984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1253,10 +1322,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 1
   type: 1
+  axisName: 
+--- !u!114 &11485092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa028bfcba51e24daa7bc260f27368b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11487600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1283,10 +1364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 0
   type: 1
+  axisName: 
 --- !u!114 &11491602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1296,6 +1378,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40e17339cd125c64894b17975f7108dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11494802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa028bfcba51e24daa7bc260f27368b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11496366
@@ -1309,10 +1402,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 1
+  deadZone: .200000003
   direction: 0
   type: 1
+  axisName: 
 --- !u!136 &13641058
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -58,11 +58,23 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
     {
         if ((health <= 0) && (GetComponentInParent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE))
         {
+            IDeath[] list = GetComponentsInChildren<IDeath>();
+            foreach (IDeath death in list)
+            {
+                Debug.Log(death);
+                death.OnDeath();
+            }
             IDeath[] deathList = GetComponents<IDeath>();
             foreach (IDeath death in deathList)
             {
+                Debug.Log(death);
                 death.OnDeath();
             }
+            //deathList = GetComponentsInParent<IDeath>();
+            //foreach (IDeath death in deathList)
+            //{
+             //   death.OnDeath();
+            //}
         }
     }
 

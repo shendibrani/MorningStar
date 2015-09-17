@@ -53,6 +53,8 @@ GameObject:
   - 4: {fileID: 435204}
   - 33: {fileID: 3325790}
   - 23: {fileID: 2318700}
+  - 114: {fileID: 11471016}
+  - 64: {fileID: 6418954}
   m_Layer: 0
   m_Name: RightFootP
   m_TagString: Untagged
@@ -244,6 +246,8 @@ GameObject:
   - 4: {fileID: 434028}
   - 33: {fileID: 3354276}
   - 23: {fileID: 2300272}
+  - 64: {fileID: 6449492}
+  - 114: {fileID: 11407826}
   m_Layer: 0
   m_Name: BodyP
   m_TagString: Untagged
@@ -325,6 +329,8 @@ GameObject:
   - 4: {fileID: 402680}
   - 33: {fileID: 3347794}
   - 23: {fileID: 2394744}
+  - 64: {fileID: 6402442}
+  - 114: {fileID: 11483788}
   m_Layer: 0
   m_Name: LeftFootP
   m_TagString: Untagged
@@ -965,6 +971,42 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!64 &6402442
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300010, guid: 90170f44291060e43b7af0cc576c5d3c, type: 3}
+--- !u!64 &6418954
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121434}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300012, guid: 90170f44291060e43b7af0cc576c5d3c, type: 3}
+--- !u!64 &6449492
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300006, guid: 90170f44291060e43b7af0cc576c5d3c, type: 3}
 --- !u!95 &9573062
 Animator:
   serializedVersion: 3
@@ -982,6 +1024,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11407826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa028bfcba51e24daa7bc260f27368b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11433558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1007,10 +1060,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 0
   type: 1
+  axisName: 
 --- !u!114 &11439342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1022,8 +1076,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331dcdccfc3204b43805bb19fa092ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftRotator: {fileID: 441104}
   rightRotator: {fileID: 458752}
+  movementAxisX:
+    axisName: 
+    invert: 0
+  movementAxisY:
+    axisName: 
+    invert: 0
+  attackAxisX:
+    axisName: 
+    invert: 0
+  attackAxisY:
+    axisName: 
+    invert: 0
 --- !u!114 &11440712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1075,10 +1140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .100000001
   invert: 0
+  deadZone: .100000001
   direction: 0
   type: 2
+  axisName: 
 --- !u!114 &11454746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1106,6 +1172,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: 5406078}
+--- !u!114 &11471016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa028bfcba51e24daa7bc260f27368b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11471740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1117,10 +1194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 1
+  deadZone: .200000003
   direction: 0
   type: 1
+  axisName: 
 --- !u!114 &11471772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1132,10 +1210,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 1
   type: 1
+  axisName: 
 --- !u!114 &11471822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1147,10 +1226,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 1
   type: 0
+  axisName: 
 --- !u!114 &11472848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1162,10 +1242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 1
+  deadZone: .200000003
   direction: 0
   type: 0
+  axisName: 
 --- !u!114 &11479466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1195,6 +1276,17 @@ MonoBehaviour:
   upDown: {fileID: 11471822}
   leftRight: {fileID: 11472848}
   speed: 200
+--- !u!114 &11483788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa028bfcba51e24daa7bc260f27368b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11489008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1220,10 +1312,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZone: .200000003
   invert: 0
+  deadZone: .200000003
   direction: 1
   type: 1
+  axisName: 
 --- !u!114 &11493026
 MonoBehaviour:
   m_ObjectHideFlags: 1

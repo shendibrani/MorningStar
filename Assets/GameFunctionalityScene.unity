@@ -604,8 +604,8 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 135124, guid: b460834a84651db4bbcc5aeb4ed6dfe5, type: 2}
   cameraReference: {fileID: 1098789432}
   engagementDistance: 8
-  minSpawnDistance: 10
-  maxSpawnDistance: 13
+  minSpawnDistance: 12
+  maxSpawnDistance: 15
 --- !u!114 &1707060246
 MonoBehaviour:
   m_ObjectHideFlags: 0

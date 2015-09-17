@@ -12,6 +12,7 @@ public class LookAtEachotherBehaviour : MonoBehaviour,IMessage {
 	{
 		List<LookAtEachotherBehaviour> list = new List<LookAtEachotherBehaviour>(FindObjectsOfType<LookAtEachotherBehaviour>());
 		other = list.Find(x => x != this).transform;
+        MessagingManager.AddListener(this);
 	}
 	
 	// Update is called once per frame
@@ -19,15 +20,16 @@ public class LookAtEachotherBehaviour : MonoBehaviour,IMessage {
         if (active) transform.LookAt(other);
 	}
 
-    void Message(Messages message, GameObject sender)
+    public void Message(Messages message, GameObject sender)
     {
         switch (message){
-            case Messages.DEATH: 
+            case Messages.DEATH:
                 active = false;
                 break;
             case Messages.RESTART:
                 active = true;
                 break;
         }
+        Debug.Log(active);
     }
 }
