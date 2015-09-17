@@ -8,10 +8,13 @@ public class AxisBinder : SubMenu<Highlightable>
 
 	public PlayerControlBindingSystem owner;
 
+	[SerializeField] int startingState;
+
 	protected override void Start ()
 	{
 		base.Start ();
 		owner = FindObjectOfType<PlayerControlBindingSystem>();
+		axisSelector.SetState(startingState);
 		UpdateHighlighting();
 	}
 
