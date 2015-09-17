@@ -118,17 +118,33 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 85a3dfbae1f672a4cbcf85fdcc50f804, type: 3}
     - {fileID: 8300000, guid: 3181d9b3567c3c0408cad0b90815d30b, type: 3}
   - TheSoundEffect: 1
-    PlayClips: []
+    PlayClips:
+    - {fileID: 8300000, guid: bb04f7b857cabcc4d8f96fd030d8f690, type: 3}
   - TheSoundEffect: 2
     PlayClips:
     - {fileID: 8300000, guid: fef56c08253344a4e9c39b30609130f6, type: 3}
+  - TheSoundEffect: 3
+    PlayClips:
+    - {fileID: 8300000, guid: 710414d758d5f9848999974133c36616, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: coupledSoundList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: coupledSoundList.Array.data[3].TheSoundEffect
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: coupledSoundList.Array.data[3].PlayClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 710414d758d5f9848999974133c36616, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114540}

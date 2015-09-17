@@ -16,6 +16,9 @@ public class PlayerAnimationHandler : MonoBehaviour {
 	void Update () {
 		GetComponent<Animator>().SetFloat("FrontSpeed", Vector3.Dot(mover.velocity, mover.transform.forward));
 		GetComponent<Animator>().SetFloat("RightSpeed", Vector3.Dot(mover.velocity, mover.transform.right));
-
+        if (mover.velocity.magnitude > 0)
+        {
+            SoundManager.instance.PlaySound(SoundEffects.Walking, true);
+        }
 	}
 }
