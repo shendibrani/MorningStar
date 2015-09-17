@@ -28,7 +28,7 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 				pushing = false;
 			}
 		} else {
-			GetComponent<Rigidbody>().velocity = (new Vector3(leftRight.axisValue, GetComponent<Rigidbody>().velocity.y, upDown.axisValue)).normalized * baseSpeed * _speedMultiplier * Time.deltaTime;
+			GetComponent<Rigidbody>().velocity = (new Vector3(leftRight.axisValue, 0, upDown.axisValue)).normalized * baseSpeed * _speedMultiplier * Time.deltaTime + new Vector3 (0,GetComponent<Rigidbody>().velocity.y,0);
 		}
 	}
 
