@@ -116,6 +116,7 @@ MonoBehaviour:
   a: {fileID: 0}
   b: {fileID: 0}
   easing: .200000003
+  cameraDistance: 5
 --- !u!114 &11470882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,6 +131,7 @@ MonoBehaviour:
   a: {fileID: 0}
   b: {fileID: 0}
   easing: .200000003
+  cameraDistance: 10
 --- !u!114 &11471948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,7 +211,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: cameraDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102432}
