@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upDown: {fileID: 11476870}
   leftRight: {fileID: 11448788}
-  dashPower: 800
+  dashPower: 5
   interval: 1
 --- !u!114 &11454584
 MonoBehaviour:
@@ -1534,6 +1534,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _speedMultiplier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dashPower
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
