@@ -125,7 +125,7 @@ GameObject:
   - 114: {fileID: 11477408}
   - 114: {fileID: 11499554}
   - 114: {fileID: 11432464}
-  - 114: {fileID: 11416012}
+  - 114: {fileID: 11458198}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -1028,10 +1028,10 @@ Rigidbody:
   m_Mass: 10
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!64 &6423964
 MeshCollider:
@@ -1098,20 +1098,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11416012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976cfe0f17527a643b55c06c8912af1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldObject: {fileID: 0}
-  interval: 6
-  activeTime: 2
 --- !u!114 &11425244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1192,6 +1178,7 @@ MonoBehaviour:
   leftRight: {fileID: 11456584}
   baseSpeed: 200
   _speedMultiplier: 1
+  pushThreshold: 1
 --- !u!114 &11436646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1287,7 +1274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upDown: {fileID: 11440374}
   leftRight: {fileID: 11456584}
-  dashPower: 800
+  dashPower: 80
   interval: 1
 --- !u!114 &11451340
 MonoBehaviour:
@@ -1334,6 +1321,19 @@ MonoBehaviour:
   direction: 0
   type: 0
   axisName: 
+--- !u!114 &11458198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc29046f590041840bbc62d622fef1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 4
+  force: 10
 --- !u!114 &11467000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1368,8 +1368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11499554}
-  plusAbility: {fileID: 11451138}
-  minusAbility: {fileID: 11416012}
 --- !u!114 &11481238
 MonoBehaviour:
   m_ObjectHideFlags: 1
