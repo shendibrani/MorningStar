@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcde423a8bf94748a5d212bda09685d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 93ec3d190b815f34f9cb76862be3d95e, type: 3}
   coupledSoundList:
   - TheSoundEffect: 0
     PlayClips:
