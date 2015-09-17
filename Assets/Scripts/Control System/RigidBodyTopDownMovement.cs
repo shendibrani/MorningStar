@@ -7,8 +7,8 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 	[SerializeField] Axis upDown;
 	[SerializeField] Axis leftRight;
 
-	[SerializeField] float baseSpeed;
-	[SerializeField] float _speedMultiplier;
+	[SerializeField] float baseSpeed = 200;
+	[SerializeField] float _speedMultiplier = 1;
 
 	public float speedMultiplier{
 		set
@@ -19,6 +19,6 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 
 	void Update () 
 	{
-		GetComponent<Rigidbody>().velocity = (new Vector3(leftRight.axisValue, 0, upDown.axisValue)).normalized * baseSpeed * _speedMultiplier * Time.deltaTime;
+		GetComponent<Rigidbody>().velocity = (new Vector3(leftRight.axisValue, GetComponent<Rigidbody>().velocity.y, upDown.axisValue)).normalized * baseSpeed * _speedMultiplier * Time.deltaTime;
 	}
 }
