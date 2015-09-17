@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976cfe0f17527a643b55c06c8912af1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldObject: {fileID: 0}
+  shieldObject: {fileID: 175164, guid: 8a6dcfb5fbfbbb145be368f42504cbb7, type: 2}
   interval: 6
   activeTime: 2
 --- !u!114 &11480800
@@ -1547,6 +1547,10 @@ Prefab:
       propertyPath: dashPower
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shieldObject
+      value: 
+      objectReference: {fileID: 175164, guid: 8a6dcfb5fbfbbb145be368f42504cbb7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 178982}
