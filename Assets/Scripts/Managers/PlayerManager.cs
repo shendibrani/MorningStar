@@ -81,7 +81,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         healthA.transform.SetParent(canvas.transform, false);
         healthA.GetComponent<HealthBar>().SetIcon(player0Data.characterIcon);
         playerA.GetComponentInChildren<ReceiveDamageOnCollision>().healthBar = healthA.GetComponent<HealthBar>();
-		playerA.GetComponentInChildren<ReceiveDamageOnCollision>().health *= player0Data.stats.health;
+		playerA.GetComponentInChildren<ReceiveDamageOnCollision>().health = 100 * player0Data.stats.health;
 
 		playerA.GetComponentInChildren<RigidBodyTopDownMovement>().speedMultiplier = player0Data.stats.speed;
 
@@ -112,9 +112,9 @@ public class PlayerManager : MonoBehaviour, IMessage
         healthB.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
         healthB.GetComponent<HealthBar>().SetIcon(player1Data.characterIcon);
         playerB.GetComponentInChildren<ReceiveDamageOnCollision>().healthBar = healthB.GetComponent<HealthBar>();
-		playerB.GetComponentInChildren<ReceiveDamageOnCollision>().health *= player1Data.stats.health;
+		playerB.GetComponentInChildren<ReceiveDamageOnCollision>().health = 100 * player1Data.stats.health;
         
-		playerB.GetComponentInChildren<RigidBodyTopDownMovement>().speedMultiplier = player1Data.stats.speed;
+		playerB.GetComponentInChildren<RigidBodyTopDownMovement>().speedMultiplier = 1 + player1Data.stats.speed * 0.2f;
 
         Debug.Log("Done");
 
