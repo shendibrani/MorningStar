@@ -35,13 +35,13 @@ public class DashAbility : MonoBehaviour, Ability {
             if (leftRight.axisValue != 0 || upDown.axisValue != 0)
             {
                 Debug.Log("Aimed");
-                GetComponent<Rigidbody>().AddForce((new Vector3(leftRight.axisValue, 0, upDown.axisValue).normalized) * dashPower, ForceMode.Impulse);
+                GetComponent<RigidBodyTopDownMovement>().Push(new Vector3(leftRight.axisValue, 0, upDown.axisValue), dashPower);
             }
             else
             {
                 Debug.Log("Auto");
                 Vector3 difference = this.transform.position - other.transform.position;
-                GetComponent<Rigidbody>().AddForce((new Vector3(difference.x, 0, difference.y).normalized) * dashPower, ForceMode.Impulse);
+				GetComponent<RigidBodyTopDownMovement>().Push(new Vector3(difference.x, 0, difference.y), dashPower);
             }
             timer = interval + Time.time;
         }
