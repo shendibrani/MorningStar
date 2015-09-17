@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour{
         AudioClip[] clipArray = coupledSoundList.Find(x => x.TheSoundEffect == se).PlayClips;
         int index = RNG.Next(0, clipArray.Length);
         source.clip = clipArray[index];
-
+        
 
         if (PlayOneShot) source.PlayOneShot(source.clip, pVolumeScale);
         else source.Play();

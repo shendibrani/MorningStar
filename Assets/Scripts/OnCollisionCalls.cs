@@ -16,16 +16,17 @@ public class OnCollisionCalls : MonoBehaviour
         OnBreakableDestroyAll(col);
         OnWeaponsCollide(col);
         OnPlayerCollision(col);
-      
+        
     }
-    
+
+  
     /// <summary>
     /// Collision callback from this obj touching other weapon //morningStar Ball
     /// </summary>
     /// <param name="col"></param>
     void OnWeaponsCollide(Collision col)
     {
-        if (col.transform != this.transform && col.gameObject.name == "Ball")
+        if (col.transform != this.transform && col.gameObject.CompareTag("Weapon"))
         {
             for (int i = 0; i < col.contacts.Length; i++)
             {
