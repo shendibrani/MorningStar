@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upDown: {fileID: 11446220}
   leftRight: {fileID: 11465290}
-  dashPower: 800
+  dashPower: 80
   interval: 1
 --- !u!114 &11472812
 MonoBehaviour:
@@ -1419,6 +1419,7 @@ MonoBehaviour:
   leftRight: {fileID: 11465290}
   baseSpeed: 200
   _speedMultiplier: 1
+  pushThreshold: 1
 --- !u!114 &11497634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1431,8 +1432,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11465218}
-  plusAbility: {fileID: 11470842}
-  minusAbility: {fileID: 11472812}
 --- !u!136 &13626392
 CapsuleCollider:
   m_ObjectHideFlags: 1

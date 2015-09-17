@@ -22,6 +22,12 @@ public class Selector : SubMenu<Image> {
 		UpdateImage();
 	}
 
+	public override void SetState (int s)
+	{
+		base.SetState (s);
+		UpdateImage();
+	}
+
 	void UpdateImage ()
 	{
 		foreach (Image i in states) {
