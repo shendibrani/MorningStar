@@ -426,7 +426,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.74073553, y: 10.6237869, z: -7.78379202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 450426}
@@ -770,7 +770,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: eb568ed12fa93ce4d9bc34020d08d5c0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -842,7 +842,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: b16e49a0794135b45a9f28aac7945506, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 433798}
-  hookPrefab: {fileID: 182366, guid: 26d6bfa4fb2d62647a17f859be11f3da, type: 2}
+  hookPrefab: {fileID: 0}
   interval: 4
 --- !u!114 &11484894
 MonoBehaviour:
