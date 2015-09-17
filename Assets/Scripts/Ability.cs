@@ -1,17 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Ability : MonoBehaviour {
+public interface Ability {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    public abstract void Execute();
+	void Execute();
 }
