@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour, IMessage {
     [SerializeField]
     float displayInterval = 10f;
     [SerializeField]
-    ImageController victoryImage;
+    ImageController victory0Image;
+    [SerializeField]
+    ImageController victory1Image;
     [SerializeField]
     Text player0ScoreText;
     [SerializeField]
@@ -76,20 +78,18 @@ public class GameManager : MonoBehaviour, IMessage {
     public void PlayerDeath(PlayerInfo info)
     {
  
-        if (victoryImage != null)
+        if (victory0Image != null)
         {
             
             switch (info.playerID)
             {
                 case 0:
-                    victoryImage.Enable();
-                    victoryImage.GetComponent<Image>().color = Color.red;
+                    victory0Image.Enable();
                     player0Score++;
                     player0ScoreText.text = ""+ player0Score;
                     break;
                 case 1:
-                    victoryImage.Enable();
-                    victoryImage.GetComponent<Image>().color = Color.green;
+                    victory1Image.Enable();
                     player1Score++;
                     player1ScoreText.text = "" + player1Score;
                     break;
@@ -104,7 +104,8 @@ public class GameManager : MonoBehaviour, IMessage {
     {
         Debug.Log("reload");
         MessagingManager.Broadcast(Messages.RESTART, this.gameObject);
-        victoryImage.Disable();
+        victory0Image.Disable();
+        victory1Image.Disable();
         useTimer = false;
         //Application.LoadLevel(Application.loadedLevel);
     }
