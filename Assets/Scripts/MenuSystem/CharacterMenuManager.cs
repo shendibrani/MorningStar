@@ -20,11 +20,14 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
     
     [SerializeField] int maxLevelIndex = 2;
 
+	[SerializeField] List<Sprite> characterPortraits;
+
 	int player;
 
 	PlayerCreationData player1, player2;
 
-	protected override void Start () {
+	protected override void Start () 
+	{
 		base.Start();
 		UpdateHighlighting ();
 		statbars.UpdateValues(character.currentStats + weapon.currentStats);
@@ -88,7 +91,7 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 				player1.characterID = character.state;
 				player1.weaponID = weapon.state;
 				player1.stats = character.currentStats + weapon.currentStats;
-                player1.characterIcon = character.stateObject.sprite;
+                player1.characterIcon = characterPortraits[character.state];
 				weapon.SetState(0);
 				character.SetState(0);
 				statbars.UpdateValues(character.currentStats + weapon.currentStats);
@@ -98,7 +101,7 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 				player2.characterID = character.state;
 				player2.weaponID = weapon.state;
 				player2.stats = character.currentStats + weapon.currentStats;
-                player2.characterIcon = character.stateObject.sprite;
+				player2.characterIcon = characterPortraits[character.state];
 				PlayerInfoPasser.PassInfo(player1, player2);
 				Debug.Log(player1);
 				Debug.Log(player2);
