@@ -5,5 +5,6 @@ public enum SoundEffects
 {
     HitPlayer,
     HitWeapon,
-    HitBreakable
+    HitBreakable,
+    Walking
 }

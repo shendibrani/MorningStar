@@ -88,6 +88,7 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 				player1.characterID = character.state;
 				player1.weaponID = weapon.state;
 				player1.stats = character.currentStats + weapon.currentStats;
+                player1.characterIcon = character.stateObject.sprite;
 				weapon.SetState(0);
 				character.SetState(0);
 				statbars.UpdateValues(character.currentStats + weapon.currentStats);
@@ -97,6 +98,7 @@ public class CharacterMenuManager : SubMenu<Highlightable> {
 				player2.characterID = character.state;
 				player2.weaponID = weapon.state;
 				player2.stats = character.currentStats + weapon.currentStats;
+                player2.characterIcon = character.stateObject.sprite;
 				PlayerInfoPasser.PassInfo(player1, player2);
 				Debug.Log(player1);
 				Debug.Log(player2);
