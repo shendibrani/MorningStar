@@ -53,6 +53,11 @@ public class PlayerDeath : MonoBehaviour, IDeath
             Debug.LogError("Need to set weapon base for process");
         }
 
+        foreach (DealDamageOnCollision d in GetComponentsInChildren<DealDamageOnCollision>())
+        {
+            d.enabled = false;
+        }
+
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponentInParent<PlayerAnimationHandler>().enabled = false;
