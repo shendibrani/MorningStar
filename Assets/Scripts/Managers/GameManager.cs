@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour, IMessage {
             }
         }
         //imageTimerCallback += RestartGame;
+        DisplayScore();
         targetTime = Time.time + displayInterval;
         useTimer = true;
 
