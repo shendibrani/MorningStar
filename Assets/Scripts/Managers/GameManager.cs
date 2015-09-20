@@ -145,13 +145,13 @@ public class GameManager : MonoBehaviour, IMessage {
 
     void DisplayScore()
     {
-        for (int i = 0; i < player0ScoreList.Count; i++)
+        for (int i = 0; i < player0Score; i++)
         {
             Color c = player0ScoreList[i].color;
             player0ScoreList[i].color = new Color(c.r, c.g, c.b);
             //player0ScoreList[i].enabled = true;
         }
-        for (int i = 0; i < player1ScoreList.Count; i++)
+        for (int i = 0; i < player1Score; i++)
         {
             Color c = player1ScoreList[i].color;
             player1ScoreList[i].color = new Color(c.r, c.g, c.b);
