@@ -1350,11 +1350,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 154966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70c291296047784b918d5d9346ca285, type: 3}
+  m_Script: {fileID: 11500000, guid: 7825a1ffee083f242a7692070c55aa31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BoomerangPrefab: {fileID: 106330, guid: 3b8ca80b302c3d847ad42d03cbc54a9b, type: 2}
   spawnPoint: {fileID: 476898}
-  arrowObject: {fileID: 109806, guid: 452dfd78629ae944487039b5ced03df8, type: 2}
   interval: 4
 --- !u!114 &11469274
 MonoBehaviour:
