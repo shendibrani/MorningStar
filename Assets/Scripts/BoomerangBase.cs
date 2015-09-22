@@ -5,9 +5,9 @@ public class BoomerangBase : MonoBehaviour {
 
 	private Transform _baseTrans;
 	public Transform _boomerangTransform;
-
-	public Transform _aim;
-	public Transform _back;
+    
+    Transform target;
+	Transform player;
 	
 	public float _range = 15f;
 
@@ -36,19 +36,25 @@ public class BoomerangBase : MonoBehaviour {
 		_rotSet.transform.rotation = _baseTrans.rotation;
 	}
 
+    public void SetTargets(Transform iPlayer, Transform iTarget)
+    {
+        player = iPlayer;
+        target = iTarget;
+    }
+
 	void Update () {
 	
 		if (_state == 0)
 		{
-			_rotSet.GetComponent<Transform> ().LookAt (_aim);
+			_rotSet.GetComponent<Transform> ().LookAt (target);
 			_aimVector = _rotSet.GetComponent<Transform>().rotation;
 		}
 		else if (_state == 1)
 		{
-			_rotSet.GetComponent<Transform> ().LookAt (_aim);
+			_rotSet.GetComponent<Transform> ().LookAt (target);
 			Quaternion _aimStore = _rotSet.transform.rotation;
 
-			_rotSet.GetComponent<Transform>().LookAt (_back);
+			_rotSet.GetComponent<Transform>().LookAt (player);
 			_rotSet.GetComponent<Transform>().Rotate(0,180,0);
 			Quaternion _backStore = _rotSet.transform.rotation;
 
@@ -59,7 +65,7 @@ public class BoomerangBase : MonoBehaviour {
 		}
 		else if (_state == 2)
 		{
-			_rotSet.GetComponent<Transform>().LookAt (_back);
+			_rotSet.GetComponent<Transform>().LookAt (player);
 			_rotSet.GetComponent<Transform>().Rotate(0,180,0);
 			_aimVector = _rotSet.GetComponent<Transform>().rotation;
 		}
@@ -89,7 +95,7 @@ public class BoomerangBase : MonoBehaviour {
 		}
 		else if (_state == 2)
 		{
-			_range = Vector3.Distance(_baseTrans.position,_back.position);
+			_range = Vector3.Distance(_baseTrans.position,player.position);
 
 			if (_distance > -_range + 0.2) {
 				_distance -= _speed;
@@ -99,7 +105,7 @@ public class BoomerangBase : MonoBehaviour {
 			}
 			else if (_distance > -_range - 0.2 && _distance < -_range + 0.2 ){
 
-				if (Vector3.Distance(_back.position, _boomerangTransform.position) < 0.2) {
+				if (Vector3.Distance(player.position, _boomerangTransform.position) < 0.2) {
 					Object.Destroy(_rotSet.gameObject);
 					Object.Destroy(this.gameObject);
 				}
