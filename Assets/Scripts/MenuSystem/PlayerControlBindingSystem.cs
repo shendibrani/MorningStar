@@ -21,7 +21,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
      */
 
     [SerializeField]
-    AxisInversionPair[] bindings;
+    Controller[] controllers;
 
     bool hasExecuted = false;
 
@@ -30,7 +30,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
     {
         base.Start();
         UpdateHighlighting();
-        PlayerInfoPasser.SetBindings(bindings);
+        PlayerInfoPasser.SetControllers(controllers);
     }
 
     void Update()
@@ -144,16 +144,12 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
     public override void Submit()
     {
-        if (state == 4)
+        if (state == 2)
         {
-            bindings = new AxisInversionPair[8];
-            for (int counter = 0; counter < 4; counter++)
+            controllers = new Controller[2];
+            for (int counter = 0; counter < 2; counter++)
             {
-                bindings[counter].axisName = states[counter].GetComponent<AxisBinder>().axisSelector.xAxis;
-                bindings[counter].invert = states[counter].GetComponent<AxisBinder>().invertX;
-
-                bindings[counter + 1].axisName = states[counter].GetComponent<AxisBinder>().axisSelector.yAxis;
-                bindings[counter + 1].invert = states[counter].GetComponent<AxisBinder>().invertY;
+				controllers[counter] = states[counter].GetComponent<Controller>();
             }
             overlord.SetState(0);
         }
@@ -178,11 +174,4 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
         states[state].SetHighlight(true);
     }
-}
-
-[System.Serializable]
-public struct AxisInversionPair
-{
-    public string axisName;
-    public bool invert;
 }

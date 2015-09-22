@@ -51,6 +51,26 @@ public static class UtilityFunctions
 		return FindGameObjectThroughNetID(id).GetComponent<T>();
 	}
 
+	public static T GetComponentInHierarchy<T>(this GameObject go) where T : MonoBehaviour
+	{
+		T component = go.GetComponentInParent<T> ();
+
+		if (component != null) {
+			component = go.GetComponentInChildren<T>();
+		}
+
+		return component;
+	}
+
+	public static T[] GetComponentsInHierarchy<T>(this GameObject go) where T : MonoBehaviour
+	{
+		List<T> components = new List<T>(go.GetComponentsInParent<T> ());
+
+		components.AddRange (go.GetComponentsInChildren<T>());
+		
+		return components.ToArray();
+	}
+
 	public static void Shuffle<T>(this IList<T> list)  
 	{  
 		int n = list.Count;  

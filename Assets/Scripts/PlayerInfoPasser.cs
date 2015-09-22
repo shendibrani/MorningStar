@@ -21,8 +21,7 @@ public class PlayerInfoPasser {
     static PlayerCreationData player0Data;
     static PlayerCreationData player1Data;
 
-	static AxisInversionPair[] bindings;
-
+	static Controller[] controllers;
 	static CharacterStats player0Stats;
 	static CharacterStats player1Stats;
 
@@ -46,14 +45,14 @@ public class PlayerInfoPasser {
         if (PlayerID == 1) return player1Data;
         else return defaultData;
     }
-	public static void SetBindings( AxisInversionPair[] b)
+	public static void SetControllers (Controller[] b)
 	{
-		bindings = b;
+		controllers = b;
 	}
 
-	public static AxisInversionPair GetBinding(int i)
+	public static Controller GetController(int i)
 	{
-		return bindings[i];
+		return controllers[i];
 	}
 }
 
