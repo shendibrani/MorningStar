@@ -1833,7 +1833,7 @@ MonoBehaviour:
   - {fileID: 1559700637}
   - {fileID: 91284542}
   - {fileID: 2065346452}
-  - {fileID: 1190159445}
+  - {fileID: 1326561413}
   UpDown: {fileID: 820632740}
   LeftRight: {fileID: 820632741}
   PCBS: {fileID: 1326561413}
@@ -3091,7 +3091,7 @@ MonoBehaviour:
   positions:
   - {x: 0, y: 0}
   - {x: 2000, y: 0}
-  easing: 0
+  easing: .200000003
 --- !u!1 &1329714960
 GameObject:
   m_ObjectHideFlags: 0

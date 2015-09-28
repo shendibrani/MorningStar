@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class UIDrawerBehaviour : MonoBehaviour {
 
 	[SerializeField] List<Vector2> positions;
-	[SerializeField] float easing;
+	[SerializeField] float easing = 0.2f;
 
 	public int state {get; private set;}
 
