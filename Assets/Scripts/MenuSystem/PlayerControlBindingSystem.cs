@@ -33,95 +33,6 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
         PlayerInfoPasser.SetControllers(controllers);
     }
 
-    void Update()
-    {
-
-    }
-
-    public void SendAxes(float x, float y)
-    {
-        //		if(getInput){
-        //			if (passInput){
-        //				if (Input.GetKeyDown(KeyCode.LeftArrow)){
-        //					PrevSelect();
-        //				} else if (Input.GetKeyDown(KeyCode.RightArrow)){
-        //					NextSelect();
-        //				}
-        //				if(Input.GetKeyDown(KeyCode.DownArrow)){
-        //					NextState();
-        //				} else if (Input.GetKeyDown(KeyCode.UpArrow)){
-        //					PrevState();
-        //				}
-        //			}else{
-        //				if (Input.GetKeyDown(KeyCode.LeftArrow)){
-        //					PrevState();
-        //				} else if (Input.GetKeyDown(KeyCode.RightArrow)){
-        //					NextState();
-        //				}
-        //				if(Input.GetKeyDown(KeyCode.DownArrow)){
-        //					NextSelect();
-        //				} else if (Input.GetKeyDown(KeyCode.UpArrow)){
-        //					PrevSelect();
-        //				}
-        //			}
-        //		}
-
-        if (passInput)
-        {
-            if (x <= -0.9)
-            {
-                if (!hasExecuted) PrevSelect();
-                hasExecuted = true;
-            }
-            else if (x >= 0.9)
-            {
-                if (!hasExecuted) NextSelect();
-                hasExecuted = true;
-            }
-            else if (y <= -0.9)
-            {
-                if (!hasExecuted) NextState();
-                hasExecuted = true;
-            }
-            else if (y == 1)
-            {
-                if (!hasExecuted) PrevState();
-                hasExecuted = true;
-            }
-            else
-            {
-                hasExecuted = false;
-            }
-        }
-        else
-        {
-            if (x <= -0.9)
-            {
-                if (!hasExecuted) PrevState();
-                hasExecuted = true;
-            }
-            else if (x >= 0.9)
-            {
-                if (!hasExecuted) NextState();
-                hasExecuted = true;
-            }
-            else if (y <= -0.9)
-            {
-                if (!hasExecuted) NextSelect();
-                hasExecuted = true;
-            }
-            else if (y >= 0.9)
-            {
-                if (!hasExecuted) PrevSelect();
-                hasExecuted = true;
-            }
-            else
-            {
-                hasExecuted = false;
-            }
-        }
-    }
-
     #region IStateMachine
 
     public override void NextState()
@@ -152,10 +63,6 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 				controllers[counter] = states[counter].GetComponent<Controller>();
             }
             overlord.SetState(0);
-        }
-        else if (!passInput)
-        {
-            passInput = true;
         }
         else
         {
