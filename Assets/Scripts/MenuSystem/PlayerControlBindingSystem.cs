@@ -68,24 +68,24 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
         if (passInput)
         {
-            if (x <= -0.9)
-            {
-                if (!hasExecuted) PrevSelect();
-                hasExecuted = true;
-            }
-            else if (x >= 0.9)
+            if ((x <= -0.9)||(Input.GetKeyDown(KeyCode.LeftArrow)))
             {
                 if (!hasExecuted) NextSelect();
                 hasExecuted = true;
             }
-            else if (y <= -0.9)
+            else if ((x >= 0.9)||(Input.GetKeyDown(KeyCode.RightArrow)))
             {
-                if (!hasExecuted) NextState();
+                if (!hasExecuted) PrevSelect();
                 hasExecuted = true;
             }
-            else if (y == 1)
+            else if ((y <= -0.9)||(Input.GetKeyDown(KeyCode.DownArrow)))
             {
-                if (!hasExecuted) PrevState();
+                if (!hasExecuted) PrevState(); 
+                hasExecuted = true;
+            }
+            else if ((y == 1)||(Input.GetKeyDown(KeyCode.UpArrow)))
+            {
+                if (!hasExecuted) NextState(); 
                 hasExecuted = true;
             }
             else
@@ -95,22 +95,22 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
         }
         else
         {
-            if (x <= -0.9)
+            if ((x <= -0.9)||(Input.GetKeyDown(KeyCode.LeftArrow)))
             {
                 if (!hasExecuted) PrevState();
                 hasExecuted = true;
             }
-            else if (x >= 0.9)
+            else if ((x >= 0.9)||(Input.GetKeyDown(KeyCode.RightArrow)))
             {
                 if (!hasExecuted) NextState();
                 hasExecuted = true;
             }
-            else if (y <= -0.9)
+            else if ((y <= -0.9)||(Input.GetKeyDown(KeyCode.DownArrow)))
             {
                 if (!hasExecuted) NextSelect();
                 hasExecuted = true;
             }
-            else if (y >= 0.9)
+            else if ((y >= 0.9)||(Input.GetKeyDown(KeyCode.UpArrow)))
             {
                 if (!hasExecuted) PrevSelect();
                 hasExecuted = true;
