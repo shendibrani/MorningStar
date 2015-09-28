@@ -3,9 +3,8 @@ using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class RigidBodyTopDownMovement: MonoBehaviour {
-	
-	[SerializeField] Axis upDown;
-	[SerializeField] Axis leftRight;
+
+	Controller controller;
 
 	[SerializeField] float baseSpeed = 200;
 	[SerializeField] float _speedMultiplier = 1;
@@ -21,6 +20,11 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 		}
 	}
 
+	void Start()
+	{
+		controller = gameObject.GetComponentInHierarchy<PlayerInfo> ().controller;
+	}
+
 	void Update () 
 	{
 		if(pushing){
@@ -28,7 +32,7 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 				pushing = false;
 			}
 		} else {
-			GetComponent<Rigidbody>().velocity = (new Vector3(leftRight.axisValue, 0, upDown.axisValue)).normalized * baseSpeed * _speedMultiplier * Time.deltaTime + new Vector3 (0,GetComponent<Rigidbody>().velocity.y,0);
+			GetComponent<Rigidbody>().velocity = (new Vector3(controller.movement.x, 0, controller.movement.y.axisValue)).normalized * baseSpeed * _speedMultiplier * Time.deltaTime + new Vector3 (0,GetComponent<Rigidbody>().velocity.y,0);
 		}
 	}
 
