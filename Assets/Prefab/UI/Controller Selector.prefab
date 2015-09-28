@@ -383,7 +383,7 @@ MonoBehaviour:
   deadZone: .100000001
   direction: 0
   type: 2
-  axisName: J1 Trigger
+  axisName: J1 Triggers
 --- !u!114 &11465900
 MonoBehaviour:
   m_ObjectHideFlags: 1
