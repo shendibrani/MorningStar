@@ -48,8 +48,6 @@ public class ChickenAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		print (_Instance);
 
 		if (Time.time > _timer + _deltaTime)
 		{
@@ -67,7 +65,6 @@ public class ChickenAI : MonoBehaviour {
 
 			_anim.SetFloat("Speed",2);
 		}
-		//print (Vector3.Distance (this.transform.position, _destination.transform.position));
 
 		if(Time.time > _stayTimer + _deltaStay && _moving == false){
 			_chicken.SetDestination (_destination.transform.position);
@@ -92,8 +89,8 @@ public class ChickenAI : MonoBehaviour {
 		_destination.transform.position = new Vector3 (_x, 0,_y);
 
 		while (NavMesh.SamplePosition (_destination.GetComponent<Transform> ().position, out _hit, 0.4f, NavMesh.AllAreas) == false) {
-			_x = Random.Range (-50, 50) * 0.1f;
-			_y = Random.Range (-50, 50) * 0.1f;
+			_x = Random.Range (-45, 45);
+			_y = Random.Range (-45, 45);
 			_destination.transform.position = new Vector3 (_x, 0,_y);
 		}
 	}
