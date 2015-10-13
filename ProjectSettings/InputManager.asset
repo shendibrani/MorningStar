@@ -405,3 +405,67 @@ InputManager:
     type: 2
     axis: 5
     joyNum: 1
+  - serializedVersion: 3
+    m_Name: FF Button X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: .100000001
+    sensitivity: 3
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 5
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: FF Button Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: .100000001
+    sensitivity: 3
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 5
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: FF Left Triggers
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: .100000001
+    sensitivity: 3
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 5
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: FF Right Triggers
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: .100000001
+    sensitivity: 3
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 5
+    joyNum: 1
