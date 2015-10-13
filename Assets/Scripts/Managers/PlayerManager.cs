@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         player0Data = PlayerInfoPasser.GetInfo(0);
         player1Data = PlayerInfoPasser.GetInfo(1);
 
-        Debug.Log(PlayerInfoPasser.GetController(0).movement.array[0]);
+        //Debug.Log(PlayerInfoPasser.GetController(0).movement.array[0]);
 
         CreatePlayers();
 
