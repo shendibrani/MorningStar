@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class RigidBodyTopDownMovement: MonoBehaviour {
 
-	Controller controller;
+	public Controller controller;
 
 	[SerializeField] float baseSpeed = 200;
 	[SerializeField] float _speedMultiplier = 1;
@@ -22,7 +22,7 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 
 	void Start()
 	{
-		controller = gameObject.GetComponentInHierarchy<PlayerInfo> ().controller;
+		//controller = gameObject.GetComponentInHierarchy<PlayerInfo> ().controller;
 	}
 
 	void Update () 

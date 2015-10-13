@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &101116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22485002}
+  - 222: {fileID: 22286130}
+  - 114: {fileID: 11424406}
+  - 114: {fileID: 11407486}
+  - 114: {fileID: 11416288}
+  - 114: {fileID: 11400264}
+  - 114: {fileID: 11437242}
+  - 114: {fileID: 11442950}
+  - 114: {fileID: 11461900}
+  m_Layer: 5
+  m_Name: FF Left Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &104716
 GameObject:
   m_ObjectHideFlags: 1
@@ -12,6 +35,29 @@ GameObject:
   - 114: {fileID: 11446116}
   m_Layer: 5
   m_Name: RightArrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &154024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22488630}
+  - 222: {fileID: 22244260}
+  - 114: {fileID: 11448004}
+  - 114: {fileID: 11439966}
+  - 114: {fileID: 11496598}
+  - 114: {fileID: 11431848}
+  - 114: {fileID: 11492452}
+  - 114: {fileID: 11435142}
+  - 114: {fileID: 11406448}
+  m_Layer: 5
+  m_Name: P2 Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +80,7 @@ GameObject:
   - 114: {fileID: 11420400}
   - 114: {fileID: 11424568}
   m_Layer: 5
-  m_Name: P2 Controller
+  m_Name: FF Right Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +99,29 @@ GameObject:
   - 95: {fileID: 9518928}
   m_Layer: 5
   m_Name: LeftArrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &171910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22445890}
+  - 222: {fileID: 22216254}
+  - 114: {fileID: 11480816}
+  - 114: {fileID: 11467088}
+  - 114: {fileID: 11413096}
+  - 114: {fileID: 11427594}
+  - 114: {fileID: 11406834}
+  - 114: {fileID: 11479606}
+  - 114: {fileID: 11427270}
+  m_Layer: 5
+  m_Name: FF Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,6 +216,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11400264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 1
+  type: 0
+  axisName: FF Left Stick Y
 --- !u!114 &11405630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,7 +247,57 @@ MonoBehaviour:
   deadZone: .100000001
   direction: 0
   type: 1
-  axisName: J2 Right Stick X
+  axisName: FF Right Stick X
+--- !u!114 &11406448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 2
+  axisName: J2 Triggers
+--- !u!114 &11406834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 1
+  axisName: FF Right Stick X
+--- !u!114 &11407486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41ec6502b586eb4d9a92f8f99b6c001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement:
+    x: {fileID: 11416288}
+    y: {fileID: 11400264}
+  attack:
+    x: {fileID: 11437242}
+    y: {fileID: 11442950}
+  triggers: {fileID: 11461900}
 --- !u!114 &11411280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,7 +313,23 @@ MonoBehaviour:
   deadZone: .100000001
   direction: 0
   type: 0
-  axisName: J2 Left Stick X
+  axisName: FF Button X
+--- !u!114 &11413096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 0
+  axisName: FF Left Stick X
 --- !u!114 &11414192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,6 +348,22 @@ MonoBehaviour:
     x: {fileID: 11498844}
     y: {fileID: 11426168}
   triggers: {fileID: 11464826}
+--- !u!114 &11416288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 0
+  axisName: FF Left Stick X
 --- !u!114 &11420400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,7 +379,7 @@ MonoBehaviour:
   deadZone: .100000001
   direction: 1
   type: 1
-  axisName: J2 Right Stick Y
+  axisName: FF Right Stick Y
 --- !u!114 &11420522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,7 +412,31 @@ MonoBehaviour:
   passInput: 0
   states:
   - {fileID: 11498202}
+  - {fileID: 11448004}
+  - {fileID: 11480816}
+  - {fileID: 11424406}
   - {fileID: 11464544}
+--- !u!114 &11424406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2e3efe4d40608e544bb34f987568d343, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &11424568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,7 +452,7 @@ MonoBehaviour:
   deadZone: .100000001
   direction: 0
   type: 2
-  axisName: J2 Triggers
+  axisName: FF Triggers
 --- !u!114 &11426168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,6 +469,104 @@ MonoBehaviour:
   direction: 1
   type: 1
   axisName: J1 Right Stick Y
+--- !u!114 &11427270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 2
+  axisName: FF Triggers
+--- !u!114 &11427594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 1
+  type: 0
+  axisName: FF Left Stick Y
+--- !u!114 &11431848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 1
+  type: 0
+  axisName: J2 Left Stick Y
+--- !u!114 &11435142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 1
+  type: 1
+  axisName: J2 Right Stick Y
+--- !u!114 &11437242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 1
+  axisName: FF DPad X
+--- !u!114 &11439966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41ec6502b586eb4d9a92f8f99b6c001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement:
+    x: {fileID: 11496598}
+    y: {fileID: 11431848}
+  attack:
+    x: {fileID: 11492452}
+    y: {fileID: 11435142}
+  triggers: {fileID: 11406448}
 --- !u!114 &11441826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,7 +582,23 @@ MonoBehaviour:
   deadZone: .100000001
   direction: 1
   type: 0
-  axisName: J2 Left Stick Y
+  axisName: FF Button Y
+--- !u!114 &11442950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 1
+  type: 1
+  axisName: FF DPad Y
 --- !u!114 &11444828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,6 +636,43 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11448004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 29c7542eeadfde643bfd077f370f2925, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &11461900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 2
+  axisName: FF Left Triggers
 --- !u!114 &11462228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,7 +702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 29c7542eeadfde643bfd077f370f2925, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b00a51b960fa364ba6fbb3f079a1349, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -405,6 +747,24 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11467088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41ec6502b586eb4d9a92f8f99b6c001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement:
+    x: {fileID: 11413096}
+    y: {fileID: 11427594}
+  attack:
+    x: {fileID: 11406834}
+    y: {fileID: 11479606}
+  triggers: {fileID: 11427270}
 --- !u!114 &11470610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,7 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 98c69a900307dc8429cec61c25411f2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e3945c5c0f0e914dab3d2ccd2657376, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -443,6 +803,75 @@ MonoBehaviour:
   images:
   - {fileID: 11465900}
   - {fileID: 11446116}
+--- !u!114 &11479606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 1
+  type: 1
+  axisName: FF Right Stick Y
+--- !u!114 &11480816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3cdabff1d89a7b74787c6bda1f22f3bc, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &11492452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 1
+  axisName: J2 Right Stick X
+--- !u!114 &11496598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf532d507093cd4d9502b758b30be03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 0
+  deadZone: .100000001
+  direction: 0
+  type: 0
+  axisName: J2 Left Stick X
 --- !u!114 &11498202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,12 +921,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176172}
+--- !u!222 &22216254
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
 --- !u!222 &22229020
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171026}
+--- !u!222 &22244260
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
 --- !u!222 &22249844
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -510,6 +951,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155970}
+--- !u!222 &22286130
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
 --- !u!224 &22413632
 RectTransform:
   m_ObjectHideFlags: 1
@@ -569,13 +1016,30 @@ RectTransform:
   m_GameObject: {fileID: 155970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.50000024, y: 2.50000024, z: 1}
+  m_LocalScale: {x: 2.49999952, y: 2.49999952, z: 1}
   m_Children: []
   m_Father: {fileID: 22486428}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 200, y: -3.05175781e-05}
+  m_AnchoredPosition: {x: 200.000046, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!224 &22445890
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22486428}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 200.000046, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22471494
@@ -595,6 +1059,23 @@ RectTransform:
   m_AnchoredPosition: {x: 170, y: 3.24249268e-05}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: .5, y: .5}
+--- !u!224 &22485002
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.49999976, y: 2.49999976, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22486428}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 200.000046, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!224 &22486428
 RectTransform:
   m_ObjectHideFlags: 1
@@ -608,12 +1089,32 @@ RectTransform:
   - {fileID: 22499740}
   - {fileID: 22413632}
   - {fileID: 22418748}
+  - {fileID: 22488630}
+  - {fileID: 22445890}
+  - {fileID: 22485002}
   - {fileID: 22428284}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!224 &22488630
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.50000024, y: 2.50000024, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22486428}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 200, y: -3.05175781e-05}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22499740
