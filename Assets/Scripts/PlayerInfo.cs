@@ -117,6 +117,14 @@ public class PlayerInfo : MonoBehaviour, IMessage {
                 }
             }
         }
+        foreach (RotateAroundAxis rot in GetComponentsInChildren<RotateAroundAxis>())
+        {
+            rot.controller = controller;
+        }
+        foreach (RigidBodyTopDownMovement r in GetComponentsInChildren<RigidBodyTopDownMovement>())
+        {
+            r.controller = controller;
+        }
     }
 
     public void AttachWeapon(GameObject weapon)

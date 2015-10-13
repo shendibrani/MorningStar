@@ -6,14 +6,14 @@ public class RotateAroundAxis : MonoBehaviour
 	public bool smooth;
 	public float smoothTime = 5f;
 
-	Controller controller;
+	public Controller controller;
 
 	private Quaternion targetRot;
 	
 	void Start()
 	{
         targetRot = transform.rotation;
-		controller = gameObject.GetComponentInHierarchy<PlayerInfo> ().controller;
+		//controller = gameObject.GetComponentInHierarchy<PlayerInfo> ().controller;
 	}
 	
 	
