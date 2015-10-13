@@ -8,9 +8,12 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 	
 	bool _visible;
 
+	[SerializeField] int startingState;
+
 	protected virtual void Start()
 	{
 		overlord = FindObjectOfType<MenuOverlord>();
+		SetState (startingState);
 	}
 
 	public MenuOverlord overlord {get; protected set;}
