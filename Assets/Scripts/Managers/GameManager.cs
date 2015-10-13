@@ -45,13 +45,13 @@ public class GameManager : MonoBehaviour, IMessage {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown("joystick 1 button 7"))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown("joystick 1 button 9"))
         {
             if (Time.timeScale == 0) MessagingManager.Broadcast(Messages.RESUME, this.gameObject);
             else MessagingManager.Broadcast(Messages.PAUSE, this.gameObject);
         }
 
-		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick 1 button 6"))
+		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick 1 button 8"))
         {
 			if (Time.timeScale == 0) 
 			{

@@ -57,10 +57,14 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
     {
         if (state == 2)
         {
-            controllers = new Controller[2];
+            //controllers = new Controller[2];
             for (int counter = 0; counter < 2; counter++)
             {
-				controllers[counter] = states[counter].GetComponent<Controller>();
+                Debug.Log(controllers[counter]);
+                Debug.Log(states[counter].GetComponent<Selector>().stateObject.GetComponent<Controller>());
+				controllers[counter].attack = states[counter].GetComponent<Selector>().stateObject.GetComponent<Controller>().attack;
+                controllers[counter].movement = states[counter].GetComponent<Selector>().stateObject.GetComponent<Controller>().movement;
+                controllers[counter].triggers = states[counter].GetComponent<Selector>().stateObject.GetComponent<Controller>().triggers;
             }
             overlord.SetState(0);
         }
