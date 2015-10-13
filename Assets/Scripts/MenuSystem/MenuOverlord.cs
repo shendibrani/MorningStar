@@ -31,65 +31,64 @@ public class MenuOverlord : SubMenu<SubMenu>
 
     void Update()
     {
-        switch (state)
-        {
-            case 0:
-                if (LeftRight <= -0.9)
-                {
-                    if (!hasExecuted) PrevSelect();
-                    hasExecuted = true;
-                }
-                else if (LeftRight >= 0.9)
-                {
-                    if (!hasExecuted) NextSelect();
-                    hasExecuted = true;
-                }
-                else
-                {
-                    hasExecuted = false;
-                }
-                break;
-            case 1:
-                if (UpDown >= 0.9)
-                {
-                    if (!hasExecuted) PrevSelect();
-                    hasExecuted = true;
-                }
-                else if (UpDown <= -0.9)
-                {
-                    if (!hasExecuted) NextSelect();
-                    hasExecuted = true;
-                }
-                else if (LeftRight >= 0.9)
-                {
-                    if (!hasExecuted) states[state].NextSelect();
-                    hasExecuted = true;
-                }
-                else if (LeftRight <= -0.9)
-                {
-                    if (!hasExecuted)  states[state].PrevSelect();
-                    hasExecuted = true;
-                }
-                else
-                {
-                    hasExecuted = false;
-                }
-                break;
-            case 3:
-                //			if (Input.GetKeyDown(KeyCode.LeftArrow)){
-                //				PrevSelect();
-                //			} else if (Input.GetKeyDown(KeyCode.RightArrow)){
-                //				NextSelect();
-                //			}
-                //			if(Input.GetKeyDown(KeyCode.DownArrow)){
-                //				states[state].NextSelect();
-                //			} else if (Input.GetKeyDown(KeyCode.UpArrow)){
-                //				states[state].PrevSelect();
-                //			}
-                PCBS.SendAxes(LeftRight, UpDown);
-                break;
-        }
-        if (Input.GetKeyDown("joystick 1 button 0"))
+        switch (state) {
+		case 0:
+			if ((LeftRight <= -0.9)||(Input.GetKeyDown(KeyCode.LeftArrow))) {
+				if (!hasExecuted)
+					PrevSelect ();
+				hasExecuted = true;
+			} else if ((LeftRight >= 0.9)||(Input.GetKeyDown(KeyCode.RightArrow))) {
+				if (!hasExecuted)
+					NextSelect ();
+				hasExecuted = true;
+			} else {
+				hasExecuted = false;
+			}
+			break;
+		case 1:
+			if ((UpDown >= 0.9) ||(Input.GetKeyDown(KeyCode.UpArrow))){
+				if (!hasExecuted)
+					PrevSelect ();
+				hasExecuted = true;
+			} else if ((UpDown <= -0.9)||(Input.GetKeyDown(KeyCode.DownArrow))) {
+				if (!hasExecuted)
+					NextSelect ();
+				hasExecuted = true;
+			} else if ((LeftRight >= 0.9)||(Input.GetKeyDown(KeyCode.RightArrow))){
+				if (!hasExecuted)
+					states [state].NextSelect ();
+				hasExecuted = true;
+			} else if ((LeftRight <= -0.9)||(Input.GetKeyDown(KeyCode.LeftArrow))){
+				if (!hasExecuted)
+					states [state].PrevSelect ();
+				hasExecuted = true;
+			} else {
+				hasExecuted = false;
+			}
+			break;
+		case 3:
+			if ((LeftRight <= -0.9)||(Input.GetKeyDown(KeyCode.LeftArrow))) {
+				if (!hasExecuted)
+					states [state].PrevSelect ();
+				hasExecuted = true;
+			} else if ((LeftRight >= 0.9)||(Input.GetKeyDown(KeyCode.RightArrow))) {
+				if (!hasExecuted)
+					states [state].NextSelect ();
+				hasExecuted = true;
+			} else if ((UpDown <= -0.9)||(Input.GetKeyDown(KeyCode.DownArrow))) {
+				if (!hasExecuted)
+					NextSelect ();
+				hasExecuted = true;
+			} else if ((UpDown >= 0.9)||(Input.GetKeyDown(KeyCode.UpArrow))){
+				if (!hasExecuted)
+					PrevSelect ();
+				hasExecuted = true;
+			} else {
+				hasExecuted = false;
+			}
+			break;
+		}
+        if ((Input.GetKeyDown("joystick 1 button 0"))||(Input.GetKeyDown(KeyCode.Return)))
         {
             states[state].Submit();
             hasExecuted = true;

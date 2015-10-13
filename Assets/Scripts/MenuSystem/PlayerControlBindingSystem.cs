@@ -21,7 +21,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
      */
 
     [SerializeField]
-    AxisInversionPair[] bindings;
+    Controller[] controllers;
 
     bool hasExecuted = false;
 
@@ -30,96 +30,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
     {
         base.Start();
         UpdateHighlighting();
-        PlayerInfoPasser.SetBindings(bindings);
-    }
-
-    void Update()
-    {
-
-    }
-
-    public void SendAxes(float x, float y)
-    {
-        //		if(getInput){
-        //			if (passInput){
-        //				if (Input.GetKeyDown(KeyCode.LeftArrow)){
-        //					PrevSelect();
-        //				} else if (Input.GetKeyDown(KeyCode.RightArrow)){
-        //					NextSelect();
-        //				}
-        //				if(Input.GetKeyDown(KeyCode.DownArrow)){
-        //					NextState();
-        //				} else if (Input.GetKeyDown(KeyCode.UpArrow)){
-        //					PrevState();
-        //				}
-        //			}else{
-        //				if (Input.GetKeyDown(KeyCode.LeftArrow)){
-        //					PrevState();
-        //				} else if (Input.GetKeyDown(KeyCode.RightArrow)){
-        //					NextState();
-        //				}
-        //				if(Input.GetKeyDown(KeyCode.DownArrow)){
-        //					NextSelect();
-        //				} else if (Input.GetKeyDown(KeyCode.UpArrow)){
-        //					PrevSelect();
-        //				}
-        //			}
-        //		}
-
-        if (passInput)
-        {
-            if (x <= -0.9)
-            {
-                if (!hasExecuted) PrevSelect();
-                hasExecuted = true;
-            }
-            else if (x >= 0.9)
-            {
-                if (!hasExecuted) NextSelect();
-                hasExecuted = true;
-            }
-            else if (y <= -0.9)
-            {
-                if (!hasExecuted) NextState();
-                hasExecuted = true;
-            }
-            else if (y == 1)
-            {
-                if (!hasExecuted) PrevState();
-                hasExecuted = true;
-            }
-            else
-            {
-                hasExecuted = false;
-            }
-        }
-        else
-        {
-            if (x <= -0.9)
-            {
-                if (!hasExecuted) PrevState();
-                hasExecuted = true;
-            }
-            else if (x >= 0.9)
-            {
-                if (!hasExecuted) NextState();
-                hasExecuted = true;
-            }
-            else if (y <= -0.9)
-            {
-                if (!hasExecuted) NextSelect();
-                hasExecuted = true;
-            }
-            else if (y >= 0.9)
-            {
-                if (!hasExecuted) PrevSelect();
-                hasExecuted = true;
-            }
-            else
-            {
-                hasExecuted = false;
-            }
-        }
+        PlayerInfoPasser.SetControllers(controllers);
     }
 
     #region IStateMachine
@@ -144,22 +55,14 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
     public override void Submit()
     {
-        if (state == 4)
+        if (state == 2)
         {
-            bindings = new AxisInversionPair[8];
-            for (int counter = 0; counter < 4; counter++)
+            controllers = new Controller[2];
+            for (int counter = 0; counter < 2; counter++)
             {
-                bindings[counter].axisName = states[counter].GetComponent<AxisBinder>().axisSelector.xAxis;
-                bindings[counter].invert = states[counter].GetComponent<AxisBinder>().invertX;
-
-                bindings[counter + 1].axisName = states[counter].GetComponent<AxisBinder>().axisSelector.yAxis;
-                bindings[counter + 1].invert = states[counter].GetComponent<AxisBinder>().invertY;
+				controllers[counter] = states[counter].GetComponent<Controller>();
             }
             overlord.SetState(0);
-        }
-        else if (!passInput)
-        {
-            passInput = true;
         }
         else
         {
@@ -178,11 +81,4 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
         states[state].SetHighlight(true);
     }
-}
-
-[System.Serializable]
-public struct AxisInversionPair
-{
-    public string axisName;
-    public bool invert;
 }

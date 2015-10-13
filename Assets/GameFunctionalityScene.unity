@@ -1193,6 +1193,8 @@ MonoBehaviour:
   - {fileID: 164400, guid: ac05460d8007065489ead92583652091, type: 2}
   - {fileID: 152718, guid: a90452e24bdc2d94daebb7c40b3a9e91, type: 2}
   - {fileID: 132738, guid: a329bd6cabcfd4c4f9d537d5793d5321, type: 2}
+  - {fileID: 165670, guid: 3e1f507e3b0ee4846a062a67d9fb27f4, type: 2}
+  - {fileID: 198600, guid: 4eecd881f6952884b94c09b71a66fa93, type: 2}
   canvas: {fileID: 186594822}
   healthBarPrefab: {fileID: 135124, guid: b460834a84651db4bbcc5aeb4ed6dfe5, type: 2}
   cameraReference: {fileID: 1098789432}

@@ -9,7 +9,7 @@ public class PitKillZone : MonoBehaviour {
         if (c.GetComponent<ReceiveDamageOnCollision>() != null)
         {
             c.GetComponent<ReceiveDamageOnCollision>().RecieveDamage(GetComponent<DealDamageOnCollision>().damage);
-            c.GetComponent<ReceiveDamageOnCollision>().CheckDeath();
+            //c.GetComponent<ReceiveDamageOnCollision>().CheckDeath();
         }
     }
 
@@ -18,7 +18,7 @@ public class PitKillZone : MonoBehaviour {
         if (c.GetComponent<ReceiveDamageOnCollision>() != null)
         {
             c.GetComponent<ReceiveDamageOnCollision>().RecieveDamage(GetComponent<DealDamageOnCollision>().damage);
-            c.GetComponent<ReceiveDamageOnCollision>().CheckDeath();
+            //c.GetComponent<ReceiveDamageOnCollision>().CheckDeath();
         }
     }
 }
