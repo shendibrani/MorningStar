@@ -406,7 +406,7 @@ InputManager:
     axis: 5
     joyNum: 3
   - serializedVersion: 3
-    m_Name: J3 Button X
+    m_Name: J3 Face X
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick button 0
@@ -422,7 +422,7 @@ InputManager:
     axis: 5
     joyNum: 3
   - serializedVersion: 3
-    m_Name: J3 Button Y
+    m_Name: J3 Face Y
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick button 1
