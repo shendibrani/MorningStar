@@ -9,16 +9,13 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
     bool getInput;
 
-    [SerializeField]
-    Controller[] controllers;
+    [SerializeField] Controller[] controllers;
 
 	[SerializeField] Selector p1,p2;
 
 	[SerializeField] GameObject selectionTemplate;
 
-	[SerializeField] Sprite[] genericControllerIcons;
-
-	[SerializeField] Sprite[] ultimateArcadeIcons;
+	[SerializeField] Sprite[] genericControllerIcons, ultimateArcadeIcons;
 
     bool hasExecuted = false;
 
