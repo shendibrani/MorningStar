@@ -1631,7 +1631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &724629328
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3648,7 +3648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1509694227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3834,8 +3834,6 @@ MonoBehaviour:
   - {fileID: 1245122863}
   - {fileID: 1847130595}
   - {fileID: 381563362}
-  - {fileID: 724629331}
-  - {fileID: 1509694230}
   smooth: 1
   smoothTime: 5
   radius: 6
