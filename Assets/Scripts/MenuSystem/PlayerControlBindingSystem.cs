@@ -102,9 +102,9 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 				contr[0] = "J"+counter+" Left Stick X";
 				contr[1] = "J"+counter+" Left Stick Y";
-				contr[2] = "J"+counter+" Right Stick X";
-				contr[3] = "J"+counter+" Right Stick Y";
-				contr[4] = "J"+counter+" Triggers";
+				contr[2] = "J"+counter+" XB Right Stick X";
+				contr[3] = "J"+counter+" XB Right Stick Y";
+				contr[4] = "J"+counter+" XB Triggers";
 
 				GameObject selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
@@ -126,9 +126,9 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 				
 				contr[0] = "J"+counter+" Left Stick X";
 				contr[1] = "J"+counter+" Left Stick Y";
-				contr[2] = "J"+counter+" Right Stick X";
-				contr[3] = "J"+counter+" Right Stick Y";
-				contr[4] = "J"+counter+" Triggers";
+				contr[2] = "J"+counter+" FF Right Stick X";
+				contr[3] = "J"+counter+" FF Right Stick Y";
+				contr[4] = "J"+counter+" FF Triggers";
 				
 				GameObject selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
@@ -142,11 +142,11 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 				//////////////////////////////////////////////////////////////////////////////////
 
-				contr[0] = "J"+counter+" Left Stick X";
-				contr[1] = "J"+counter+" Left Stick Y";
-				contr[2] = "J"+counter+" Right Stick X";
-				contr[3] = "J"+counter+" Right Stick Y";
-				contr[4] = "J"+counter+" Triggers";
+				contr[0] = "J"+counter+" FF Face X";
+				contr[1] = "J"+counter+" FF Face Y";
+				contr[2] = "J"+counter+" FF Right Stick X";
+				contr[3] = "J"+counter+" FF Right Stick Y";
+				contr[4] = "J"+counter+" FF Right Triggers";
 				
 				selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
@@ -160,11 +160,11 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 				//////////////////////////////////////////////////////////////////////////////////
 
-				contr[0] = "J"+counter+" Left Stick X";
-				contr[1] = "J"+counter+" Left Stick Y";
-				contr[2] = "J"+counter+" Right Stick X";
-				contr[3] = "J"+counter+" Right Stick Y";
-				contr[4] = "J"+counter+" Triggers";
+				contr[0] = "J"+counter+" FF DPad X";
+				contr[1] = "J"+counter+" FF DPad Y";
+				contr[2] = "J"+counter+" Left Stick X";
+				contr[3] = "J"+counter+" Left Stick Y";
+				contr[4] = "J"+counter+" FF Left Triggers";
 				
 				selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
