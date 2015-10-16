@@ -88,7 +88,7 @@ public class MenuOverlord : SubMenu<SubMenu>
 			}
 			break;
 		}
-        if ((Input.GetKeyDown("joystick 1 button 0"))||(Input.GetKeyDown(KeyCode.Return)))
+        if ((Input.GetKeyDown("joystick button 0"))||(Input.GetKeyDown(KeyCode.Return)))
         {
             states[state].Submit();
             hasExecuted = true;
