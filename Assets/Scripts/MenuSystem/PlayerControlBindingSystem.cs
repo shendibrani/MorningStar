@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,20 +9,16 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
     bool getInput;
 
-    /* 
-     * Bindings:
-     * 0 == player 1 Movement X
-     * 1 == player 1 Movement Y
-     * 2 == player 1 Attack X
-     * 3 == player 1 Attack Y
-     * 4 == player 2 Movement X
-     * 5 == player 2 Movement Y
-     * 6 == player 2 Attack X
-     * 7 == player 2 Attack Y
-     */
-
     [SerializeField]
     Controller[] controllers;
+
+	[SerializeField] Selector p1,p2;
+
+	[SerializeField] GameObject selectionTemplate;
+
+	[SerializeField] Sprite[] genericControllerIcons;
+
+	[SerializeField] Sprite[] ultimateArcadeIcons;
 
     bool hasExecuted = false;
 
@@ -29,6 +26,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
     protected override void Start()
     {
         base.Start();
+		ControllerSetup ();
         UpdateHighlighting();
         PlayerInfoPasser.SetControllers(controllers);
     }
@@ -85,4 +83,104 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
         states[state].SetHighlight(true);
     }
+
+	void ControllerSetup()
+	{
+		string lx, ly, rx, ry, t;
+
+		string[] joystickNames = Input.GetJoystickNames ();
+
+		int controllerCount = 0;
+
+		for (int counter = 0; counter < joystickNames.Length; counter++) 
+		{
+			if(joystickNames[counter] == "Controller (Xbox 360 Wireless Receiver for Windows)"){
+
+				Debug.Log ("Found "+joystickNames[counter]);
+
+				string[] contr = new string[5];
+
+				contr[0] = "J"+counter+" Left Stick X";
+				contr[1] = "J"+counter+" Left Stick Y";
+				contr[2] = "J"+counter+" Right Stick X";
+				contr[3] = "J"+counter+" Right Stick Y";
+				contr[4] = "J"+counter+" Triggers";
+
+				GameObject selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = genericControllerIcons[controllerCount];
+				p1.AddState(selection);
+
+				selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = genericControllerIcons[controllerCount];
+				p2.AddState(selection);
+
+				controllerCount++;
+
+			} else if (joystickNames[counter] == "Ultimate Arcade Controller v2.0") {
+
+				Debug.Log ("Found "+joystickNames[counter]);
+
+				string[] contr = new string[5];
+				
+				contr[0] = "J"+counter+" Left Stick X";
+				contr[1] = "J"+counter+" Left Stick Y";
+				contr[2] = "J"+counter+" Right Stick X";
+				contr[3] = "J"+counter+" Right Stick Y";
+				contr[4] = "J"+counter+" Triggers";
+				
+				GameObject selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[0];
+				p1.AddState(selection);
+				
+				selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[0];
+				p2.AddState(selection);
+
+				//////////////////////////////////////////////////////////////////////////////////
+
+				contr[0] = "J"+counter+" Left Stick X";
+				contr[1] = "J"+counter+" Left Stick Y";
+				contr[2] = "J"+counter+" Right Stick X";
+				contr[3] = "J"+counter+" Right Stick Y";
+				contr[4] = "J"+counter+" Triggers";
+				
+				selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[1];
+				p1.AddState(selection);
+				
+				selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[1];
+				p2.AddState(selection);
+
+				//////////////////////////////////////////////////////////////////////////////////
+
+				contr[0] = "J"+counter+" Left Stick X";
+				contr[1] = "J"+counter+" Left Stick Y";
+				contr[2] = "J"+counter+" Right Stick X";
+				contr[3] = "J"+counter+" Right Stick Y";
+				contr[4] = "J"+counter+" Triggers";
+				
+				selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[2];
+				p1.AddState(selection);
+				
+				selection = GameObject.Instantiate(selectionTemplate);
+				selection.GetComponent<Controller>().array = contr;
+				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[2];
+				p2.AddState(selection);
+			}
+		}
+		
+		p1.SetState (0);
+		controllers [0].array = p1.stateObject.GetComponent<Controller> ().array;
+		p2.SetState (1);
+		controllers [1].array = p2.stateObject.GetComponent<Controller> ().array;
+	}
 }
