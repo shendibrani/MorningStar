@@ -8,14 +8,6 @@ public abstract class SubMenu : MonoBehaviour, IStateMachine, IStateBasedUI
 	
 	bool _visible;
 
-	[SerializeField] int startingButtonState;
-
-	protected virtual void Start()
-	{
-		overlord = FindObjectOfType<MenuOverlord>();
-		SetState (startingButtonState);
-	}
-
 	public MenuOverlord overlord {get; protected set;}
 
 	public bool visible {
@@ -86,6 +78,17 @@ public abstract class SubMenu<T> : SubMenu where T : MonoBehaviour
 	[SerializeField] protected List<T> states;
 
 	public T stateObject {get{return states[state];}}
+
+	[SerializeField] int startingButtonState;
+
+	protected virtual void Start()
+	{
+		overlord = FindObjectOfType<MenuOverlord>();
+		if (states.Count != 0) {
+			Debug.Log(states.Count);
+			SetState (startingButtonState);
+		}
+	}
 
 	#region IStateMachine
 	
