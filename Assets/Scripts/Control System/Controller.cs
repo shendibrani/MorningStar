@@ -48,8 +48,10 @@ public struct AxisPair
 			if(value.Length != 2){
 				throw(new UnityException("The Array is not the right size for an axis pair initialization"));
 			} else {
+                Debug.Log(value[0]);
 				x.axisName = value[0];
-				y.axisName = value[1];
+                Debug.Log(value[1]);
+                y.axisName = value[1];
 			}
 		}
 	}

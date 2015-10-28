@@ -118,11 +118,12 @@ public abstract class SubMenu<T> : SubMenu where T : MonoBehaviour
 
 	public override void SetState (int s)
 	{
-		if(passInput){
-			if(states[state].GetComponent<IStateMachine>() != null){
-				states[state].GetComponent<IStateMachine>().SetState(s);
-			}
-		} else {
+        if (passInput) {
+            if (states[state].GetComponent<IStateMachine>() != null) {
+                states[state].GetComponent<IStateMachine>().SetState(s);
+            }
+        } else if (states.Count != 0)
+        {
 			state = s;
 			state = (state%states.Count + states.Count)%states.Count;
 		}
