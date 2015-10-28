@@ -35,6 +35,7 @@ public class HealthBar : MonoBehaviour {
 
     public void SetHealth(float value)
     {
+		Debug.Log("Set Health " + health);
         health = value;
     }
 
