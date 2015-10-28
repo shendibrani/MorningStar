@@ -24,8 +24,10 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
     {
         base.Start();
 		ControllerSetup ();
+        Debug.Log("Controller Setup Passed");
         UpdateHighlighting();
         PlayerInfoPasser.SetControllers(controllers);
+        Debug.Log("Controller Data Passed");
     }
 
     #region IStateMachine
@@ -83,8 +85,6 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 	void ControllerSetup()
 	{
-		string lx, ly, rx, ry, t;
-
 		string[] joystickNames = Input.GetJoystickNames ();
 
 		int controllerCount = 0;
@@ -96,15 +96,15 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
                 joystickNames[counter] == "Controller(XBOX 360 For Windows)")
             {
 
-				Debug.Log ("Found "+joystickNames[counter]);
+				Debug.Log ("Found " + joystickNames[counter] + "In position " + (counter+1));
 
 				string[] contr = new string[5];
 
-				contr[0] = "J"+counter+" Left Stick X";
-				contr[1] = "J"+counter+" Left Stick Y";
-				contr[2] = "J"+counter+" XB Right Stick X";
-				contr[3] = "J"+counter+" XB Right Stick Y";
-				contr[4] = "J"+counter+" XB Triggers";
+				contr[0] = "J"+ (counter + 1) + " Left Stick X";
+				contr[1] = "J"+ (counter + 1) + " Left Stick Y";
+				contr[2] = "J"+ (counter + 1) + " XB Right Stick X";
+				contr[3] = "J"+ (counter + 1) + " XB Right Stick Y";
+				contr[4] = "J"+ (counter + 1) + " XB Triggers";
 
 				GameObject selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
@@ -124,11 +124,11 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 				string[] contr = new string[5];
 				
-				contr[0] = "J"+counter+" Left Stick X";
-				contr[1] = "J"+counter+" Left Stick Y";
-				contr[2] = "J"+counter+" FF Right Stick X";
-				contr[3] = "J"+counter+" FF Right Stick Y";
-				contr[4] = "J"+counter+" FF Triggers";
+				contr[0] = "J"+ (counter + 1) +" Left Stick X";
+				contr[1] = "J"+ (counter + 1) + " Left Stick Y";
+				contr[2] = "J"+ (counter + 1) + " FF Right Stick X";
+				contr[3] = "J"+ (counter + 1) + " FF Right Stick Y";
+				contr[4] = "J"+ (counter + 1) + " FF Triggers";
 				
 				GameObject selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
@@ -142,11 +142,11 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 				//////////////////////////////////////////////////////////////////////////////////
 
-				contr[0] = "J"+counter+" FF Face X";
-				contr[1] = "J"+counter+" FF Face Y";
-				contr[2] = "J"+counter+" FF Right Stick X";
-				contr[3] = "J"+counter+" FF Right Stick Y";
-				contr[4] = "J"+counter+" FF Right Triggers";
+				contr[0] = "J"+ (counter + 1) + " FF Face X";
+				contr[1] = "J"+ (counter + 1) + " FF Face Y";
+				contr[2] = "J"+ (counter + 1) + " FF Right Stick X";
+				contr[3] = "J"+ (counter + 1) + " FF Right Stick Y";
+				contr[4] = "J"+ (counter + 1) + " FF Right Triggers";
 				
 				selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
@@ -160,11 +160,11 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 				//////////////////////////////////////////////////////////////////////////////////
 
-				contr[0] = "J"+counter+" FF DPad X";
-				contr[1] = "J"+counter+" FF DPad Y";
-				contr[2] = "J"+counter+" Left Stick X";
-				contr[3] = "J"+counter+" Left Stick Y";
-				contr[4] = "J"+counter+" FF Left Triggers";
+				contr[0] = "J"+ (counter + 1) + " FF DPad X";
+				contr[1] = "J"+ (counter + 1) + " FF DPad Y";
+				contr[2] = "J"+ (counter + 1) + " Left Stick X";
+				contr[3] = "J"+ (counter + 1) + " Left Stick Y";
+				contr[4] = "J"+ (counter + 1) + " FF Left Triggers";
 				
 				selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
