@@ -91,7 +91,9 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 
 		for (int counter = 0; counter < joystickNames.Length; counter++) 
 		{
-			if(joystickNames[counter] == "Controller (Xbox 360 Wireless Receiver for Windows)"){
+			if(joystickNames[counter] == "Controller (Xbox 360 Wireless Receiver for Windows)" ||
+                joystickNames[counter] == "Rumble Gamepad F510")
+            {
 
 				Debug.Log ("Found "+joystickNames[counter]);
 
