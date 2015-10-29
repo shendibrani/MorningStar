@@ -48,7 +48,7 @@ public class ChickenAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        Debug.Log("Path?: " + _chicken.hasPath);
 		if (Time.time > _timer + _deltaTime)
 		{
 			_Instance = GameObject.Instantiate (_particleSys);
@@ -77,8 +77,9 @@ public class ChickenAI : MonoBehaviour {
 		
 			_eggObj = GameObject.Instantiate(_egg);
 			_eggObj.transform.position = this.transform.position ;
-		
-		}
+            Destroy(_eggObj, 5f);
+            ParticleSys.instance.spawnParticle(ParticleEffect.EggEffects, _eggObj.transform.position, true, 15, _eggObj.transform);
+        }
 
 	}
 

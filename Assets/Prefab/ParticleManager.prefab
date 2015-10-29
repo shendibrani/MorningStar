@@ -44,6 +44,10 @@ MonoBehaviour:
     TheParticleEffect: 1
   - Particle: {fileID: 168114, guid: 52add5deaf8df8547aed926868443c5b, type: 2}
     TheParticleEffect: 0
+  - Particle: {fileID: 143386, guid: 2b3decee81de154409e1d9fa0dcef2ee, type: 2}
+    TheParticleEffect: 2
+  - Particle: {fileID: 137356, guid: b79558ffdc31530489c805bf0f0fe2b1, type: 2}
+    TheParticleEffect: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

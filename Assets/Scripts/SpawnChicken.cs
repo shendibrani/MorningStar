@@ -39,8 +39,8 @@ public class SpawnChicken : MonoBehaviour {
 
 	}
 
-	void randomPoint(){
-		
+	void randomPoint()
+    {
 		_x = Random.Range (-50, 50) * 0.1f;
 		_y = Random.Range (-50, 50) * 0.1f;
 		_Point.transform.position = new Vector3 (_x, 0,_y);

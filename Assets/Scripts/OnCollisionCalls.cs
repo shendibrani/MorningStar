@@ -16,7 +16,12 @@ public class OnCollisionCalls : MonoBehaviour
         OnBreakableDestroyAll(col);
         OnWeaponsCollide(col);
         OnPlayerCollision(col);
-        
+
+        if (col.gameObject.CompareTag("Chicken")) {
+            Debug.Log("Weapon hit chicken!");
+            Destroy(col.gameObject);
+
+        }
     }
 
   
@@ -37,7 +42,7 @@ public class OnCollisionCalls : MonoBehaviour
     }
 
     /// <summary>
-    /// Weapon (this) colliders with Player's Body
+    /// Weapon (this) collides with Player's Body
     /// </summary>
     /// <param name="col"></param>
     void OnPlayerCollision(Collision col)
@@ -72,7 +77,7 @@ public class OnCollisionCalls : MonoBehaviour
                 newTransform = col.contacts[i].otherCollider.transform;
                 newTransform.gameObject.AddComponent<Rigidbody>();
                 newTransform.gameObject.AddComponent<DestroyBreakable>();
-                //tweak somehow to check for structural integrity
+               
                 col.contacts[i].otherCollider.transform.parent = null;
 
             }
@@ -90,8 +95,8 @@ public class OnCollisionCalls : MonoBehaviour
         if (col.gameObject.GetComponent<Breakable>())
         {
             Debug.Log("Touching Breakable Object");
-  
-            SoundManager.instance.PlaySound(SoundEffects.HitBreakable);
+        
+          if (!col.gameObject.GetComponent<Rigidbody>().CompareTag("EggFull"))  SoundManager.instance.PlaySound(SoundEffects.HitBreakable);
 
             for (int i = 0; i < col.transform.childCount; i++)
             {
@@ -111,4 +116,3 @@ public class OnCollisionCalls : MonoBehaviour
     
 
 }
-

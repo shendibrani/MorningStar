@@ -10,7 +10,9 @@ public class CoupledParticle {
 
 public enum ParticleEffect {
     Blood,
-    Spark
+    Spark,
+    ChickenSpawn,
+    EggEffects
 }
 
 public class ParticleSys : MonoBehaviour {
