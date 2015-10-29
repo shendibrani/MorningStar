@@ -553,7 +553,7 @@ GameObject:
   - 224: {fileID: 554734058}
   - 222: {fileID: 554734060}
   m_Layer: 5
-  m_Name: Player1Score
+  m_Name: Player2Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,7 +1070,7 @@ GameObject:
   - 224: {fileID: 1603105158}
   - 222: {fileID: 1603105160}
   m_Layer: 5
-  m_Name: Player0Score
+  m_Name: Player1Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1213,13 +1213,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInterval: 3
-  victory0Image: {fileID: 1798980792}
-  victory1Image: {fileID: 1733367983}
-  player0ScoreList:
+  victory1Image: {fileID: 1798980792}
+  victory2Image: {fileID: 1733367983}
+  player1ScoreList:
   - {fileID: 1346858994}
   - {fileID: 397389619}
   - {fileID: 2030467599}
-  player1ScoreList:
+  player2ScoreList:
   - {fileID: 1568978802}
   - {fileID: 1250014667}
   - {fileID: 785442564}
@@ -1235,7 +1235,7 @@ GameObject:
   - 114: {fileID: 1733367984}
   - 114: {fileID: 1733367983}
   m_Layer: 5
-  m_Name: Player1Victory
+  m_Name: Player2Victory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1310,7 +1310,7 @@ GameObject:
   - 114: {fileID: 1798980793}
   - 114: {fileID: 1798980792}
   m_Layer: 5
-  m_Name: Player0Victory
+  m_Name: Player1Victory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
