@@ -43,7 +43,7 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
 
 	void OnCollisionEnter(Collision c)
 	{
-		if(c.collider.GetComponent<DealDamageOnCollision>() && c.relativeVelocity.magnitude > 5){
+		if(c.collider.GetComponent<DealDamageOnCollision>()){
             RecieveDamage(c.collider.GetComponent<DealDamageOnCollision>().damage);
 		}
 	}

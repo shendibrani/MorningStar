@@ -12,7 +12,7 @@ public class MenuOverlord : SubMenu<SubMenu>
      */
 
     [SerializeField]
-    Axis UpDown, LeftRight;
+    Axis UpDown, UpDownAlt, LeftRight, LeftRightAlt;
 
     [SerializeField]
     PlayerControlBindingSystem PCBS;
@@ -33,11 +33,13 @@ public class MenuOverlord : SubMenu<SubMenu>
     {
         switch (state) {
 		case 0:
-			if ((LeftRight <= -0.7)||(Input.GetKeyDown(KeyCode.LeftArrow))) {
+			if ((LeftRight <= -0.7)||(LeftRightAlt <= -0.7)||(Input.GetKeyDown(KeyCode.LeftArrow))) {
 				if (!hasExecuted)
 					PrevSelect ();
 				hasExecuted = true;
-			} else if ((LeftRight >= 0.7)||(Input.GetKeyDown(KeyCode.RightArrow))) {
+            }
+            else if ((LeftRight >= 0.7) || (LeftRightAlt >= 0.7) || (Input.GetKeyDown(KeyCode.RightArrow)))
+            {
 				if (!hasExecuted)
 					NextSelect ();
 				hasExecuted = true;
@@ -46,19 +48,26 @@ public class MenuOverlord : SubMenu<SubMenu>
 			}
 			break;
 		case 1:
-			if ((UpDown >= 0.7) ||(Input.GetKeyDown(KeyCode.UpArrow))){
+            if ((UpDown >= 0.7) || (UpDownAlt >= 0.7) || (Input.GetKeyDown(KeyCode.UpArrow)))
+            {
 				if (!hasExecuted)
 					PrevSelect ();
 				hasExecuted = true;
-			} else if ((UpDown <= -0.7)||(Input.GetKeyDown(KeyCode.DownArrow))) {
+            }
+            else if ((UpDown <= -0.7) || (UpDownAlt <= -0.7) || (Input.GetKeyDown(KeyCode.DownArrow)))
+            {
 				if (!hasExecuted)
 					NextSelect ();
 				hasExecuted = true;
-			} else if ((LeftRight >= 0.7)||(Input.GetKeyDown(KeyCode.RightArrow))){
+            }
+            else if ((LeftRight >= 0.7) || (LeftRightAlt >= 0.7) || (Input.GetKeyDown(KeyCode.RightArrow)))
+            {
 				if (!hasExecuted)
 					states [state].NextSelect ();
 				hasExecuted = true;
-			} else if ((LeftRight <= -0.7)||(Input.GetKeyDown(KeyCode.LeftArrow))){
+            }
+            else if ((LeftRight <= -0.7) || (LeftRightAlt <= -0.7) || (Input.GetKeyDown(KeyCode.LeftArrow)))
+            {
 				if (!hasExecuted)
 					states [state].PrevSelect ();
 				hasExecuted = true;
@@ -67,19 +76,26 @@ public class MenuOverlord : SubMenu<SubMenu>
 			}
 			break;
 		case 3:
-			if ((LeftRight <= -0.7)||(Input.GetKeyDown(KeyCode.LeftArrow))) {
+            if ((LeftRight <= -0.7) || (LeftRightAlt <= -0.7) || (Input.GetKeyDown(KeyCode.LeftArrow)))
+            {
 				if (!hasExecuted)
 					states [state].PrevSelect ();
 				hasExecuted = true;
-			} else if ((LeftRight >= 0.7)||(Input.GetKeyDown(KeyCode.RightArrow))) {
+            }
+            else if ((LeftRight >= 0.7) || (LeftRightAlt >= 0.7) || (Input.GetKeyDown(KeyCode.RightArrow)))
+            {
 				if (!hasExecuted)
 					states [state].NextSelect ();
 				hasExecuted = true;
-			} else if ((UpDown <= -0.7)||(Input.GetKeyDown(KeyCode.DownArrow))) {
+            }
+            else if ((UpDown <= -0.7) || (UpDownAlt <= -0.7) || (Input.GetKeyDown(KeyCode.DownArrow)))
+            {
 				if (!hasExecuted)
 					NextSelect ();
 				hasExecuted = true;
-			} else if ((UpDown >= 0.7)||(Input.GetKeyDown(KeyCode.UpArrow))){
+            }
+            else if ((UpDown >= 0.7) || (UpDownAlt >= 0.7) || (Input.GetKeyDown(KeyCode.UpArrow)))
+            {
 				if (!hasExecuted)
 					PrevSelect ();
 				hasExecuted = true;

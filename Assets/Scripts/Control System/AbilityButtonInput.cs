@@ -12,13 +12,14 @@ public class AbilityButtonInput : MonoBehaviour {
 
     void Update()
     {
-        if (abilityAxis.axisValue >= 0.9f && !hasExecuted)
+        Debug.Log("trigger value " + abilityAxis.axisValue);
+        if (abilityAxis.axisValue >= 0.7f && !hasExecuted)
         {
             GetComponent<DashAbility>().Execute();
 //plusAbility.Execute();
             hasExecuted = true;
         }
-		else if (abilityAxis.axisValue <= -0.9f && !hasExecuted) 
+		else if (abilityAxis.axisValue <= -0.7f && !hasExecuted) 
         {
             foreach (Ability a in GetComponents<Ability>())
             {
@@ -30,7 +31,7 @@ public class AbilityButtonInput : MonoBehaviour {
             }
 
         }
-		else if (abilityAxis.axisValue < 0.9f && abilityAxis.axisValue > -0.9f)
+		else if (abilityAxis.axisValue < 0.7f && abilityAxis.axisValue > -0.7f)
         {
             hasExecuted = false;
         }
