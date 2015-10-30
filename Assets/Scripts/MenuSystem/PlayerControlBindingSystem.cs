@@ -123,24 +123,6 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 				Debug.Log ("Found "+joystickNames[counter]);
 
 				string[] contr = new string[5];
-				
-				contr[0] = "J"+ (counter + 1) +" Left Stick X";
-				contr[1] = "J"+ (counter + 1) + " Left Stick Y";
-				contr[2] = "J"+ (counter + 1) + " FF Right Stick X";
-				contr[3] = "J"+ (counter + 1) + " FF Right Stick Y";
-				contr[4] = "J"+ (counter + 1) + " FF Triggers";
-				
-				GameObject selection = GameObject.Instantiate(selectionTemplate);
-				selection.GetComponent<Controller>().array = contr;
-				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[0];
-				p1.AddState(selection);
-				
-				selection = GameObject.Instantiate(selectionTemplate);
-				selection.GetComponent<Controller>().array = contr;
-				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[0];
-				p2.AddState(selection);
-
-				//////////////////////////////////////////////////////////////////////////////////
 
 				contr[0] = "J"+ (counter + 1) + " FF Face X";
 				contr[1] = "J"+ (counter + 1) + " FF Face Y";
@@ -148,7 +130,7 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 				contr[3] = "J"+ (counter + 1) + " FF Right Stick Y";
 				contr[4] = "J"+ (counter + 1) + " FF Right Triggers";
 				
-				selection = GameObject.Instantiate(selectionTemplate);
+				GameObject selection = GameObject.Instantiate(selectionTemplate);
 				selection.GetComponent<Controller>().array = contr;
 				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[1];
 				p1.AddState(selection);
@@ -175,7 +157,27 @@ public class PlayerControlBindingSystem : SubMenu<Highlightable>
 				selection.GetComponent<Controller>().array = contr;
 				selection.GetComponent<Image>().sprite = ultimateArcadeIcons[2];
 				p2.AddState(selection);
-			}
+
+                //////////////////////////////////////////////////////////////////////////////////
+
+                contr[0] = "J" + (counter + 1) + " Left Stick X";
+                contr[1] = "J" + (counter + 1) + " Left Stick Y";
+                contr[2] = "J" + (counter + 1) + " FF Right Stick X";
+                contr[3] = "J" + (counter + 1) + " FF Right Stick Y";
+                contr[4] = "J" + (counter + 1) + " FF Triggers";
+
+                selection = GameObject.Instantiate(selectionTemplate);
+                selection.GetComponent<Controller>().array = contr;
+                selection.GetComponent<Image>().sprite = ultimateArcadeIcons[0];
+                p1.AddState(selection);
+
+                selection = GameObject.Instantiate(selectionTemplate);
+                selection.GetComponent<Controller>().array = contr;
+                selection.GetComponent<Image>().sprite = ultimateArcadeIcons[0];
+                p2.AddState(selection);
+
+                //////////////////////////////////////////////////////////////////////////////////
+            }
 		}
 		
 		p1.SetState (0);

@@ -189,7 +189,7 @@ GameObject:
   - 114: {fileID: 11454584}
   - 114: {fileID: 11416068}
   - 114: {fileID: 11491602}
-  - 114: {fileID: 11460402}
+  - 114: {fileID: 11454242}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -1220,8 +1220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd052cbae9392a34796d916d9fccc0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upDown: {fileID: 11476870}
-  leftRight: {fileID: 11448788}
+  controller: {fileID: 0}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
   baseSpeed: 200
   _speedMultiplier: 1
   pushThreshold: 1
@@ -1256,6 +1257,20 @@ MonoBehaviour:
   leftRight: {fileID: 11448788}
   dashPower: 5
   interval: 1
+--- !u!114 &11454242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70c291296047784b918d5d9346ca285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 476898}
+  arrowObject: {fileID: 109806, guid: 452dfd78629ae944487039b5ced03df8, type: 2}
+  interval: 4
 --- !u!114 &11454584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1304,18 +1319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightRotator: {fileID: 410458}
-  movementAxisX:
-    axisName: 
-    invert: 0
-  movementAxisY:
-    axisName: 
-    invert: 0
-  attackAxisX:
-    axisName: 
-    invert: 0
-  attackAxisY:
-    axisName: 
-    invert: 0
+  controller: {fileID: 0}
 --- !u!114 &11458310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1340,22 +1344,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11482558}
-  zAxis: {fileID: 11488606}
---- !u!114 &11460402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7825a1ffee083f242a7692070c55aa31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoomerangPrefab: {fileID: 106330, guid: 3b8ca80b302c3d847ad42d03cbc54a9b, type: 2}
-  spawnPoint: {fileID: 476898}
-  interval: 4
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &11469274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1439,8 +1430,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11469274}
-  zAxis: {fileID: 11496366}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &11488606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1518,7 +1510,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: minusAbility
       value: 
-      objectReference: {fileID: 11460402}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 112
