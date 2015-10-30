@@ -33,7 +33,6 @@ public class ShieldAbility : MonoBehaviour, Ability
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) Execute();
         if (Time.time > offTimer)
         {
             isActive = false;
@@ -60,7 +59,8 @@ public class ShieldAbility : MonoBehaviour, Ability
         if (Time.time >= timer)
         {
             Quaternion rot = transform.rotation;
-            shield = (GameObject)GameObject.Instantiate(shieldObject, transform.position, Quaternion.identity);
+            Vector3 pos = transform.position + new Vector3(0, 1, 0);
+            shield = (GameObject)GameObject.Instantiate(shieldObject, pos, Quaternion.identity);
             shield.transform.SetParent(transform);
             isActive = true;
             timer = interval + Time.time;
