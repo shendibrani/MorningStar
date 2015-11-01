@@ -10,6 +10,14 @@ public class ImageController : MonoBehaviour {
     float fadeTimer;
     [SerializeField]
     float displayTimer;
+	bool isActivated = false;
+
+	public bool IsActivated
+	{
+		get { return isActivated; }
+		set { isActivated = value; }
+	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,11 +32,13 @@ public class ImageController : MonoBehaviour {
     public void Enable()
     {
         GetComponent<Image>().enabled = true;
+		isActivated = true;
     }
 
     public void Disable()
     {
         GetComponent<Image>().enabled = false;
+		isActivated = false;
     }
 
     public void FadeOut()

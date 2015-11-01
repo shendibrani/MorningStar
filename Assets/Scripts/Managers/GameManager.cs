@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour, IMessage
 
 		if ((useTimer) && (Time.time > targetTime))
 		{
-			if (victory1Image.enabled || victory2Image.enabled) Application.LoadLevel("MainMenuTest");
-			RestartGame();
+			if (victory1Image.IsActivated || victory2Image.IsActivated) Application.LoadLevel("MainMenuTest");
+			else { RestartGame(); }
 			//gameTimerCallback -= RestartGame;
 		}
 	}
@@ -109,7 +109,6 @@ public class GameManager : MonoBehaviour, IMessage
 			}
 			isRound = true;
 		}
-		//imageTimerCallback += RestartGame;
 		DisplayScore();
 		targetTime = Time.time + displayInterval;
 		useTimer = true;

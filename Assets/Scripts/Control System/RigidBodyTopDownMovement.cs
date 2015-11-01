@@ -13,7 +13,7 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 	[SerializeField] float baseSpeed = 200;
 	[SerializeField] float _speedMultiplier = 1;
 
-	[SerializeField] float pushThreshold = 0.5f;
+	[SerializeField] float pushThreshold = 0.1f;
 
 	bool pushing;
 
