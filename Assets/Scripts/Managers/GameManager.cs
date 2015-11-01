@@ -109,7 +109,6 @@ public class GameManager : MonoBehaviour, IMessage
 			}
 			isRound = true;
 		}
-		//imageTimerCallback += RestartGame;
 		DisplayScore();
 		targetTime = Time.time + displayInterval;
 		useTimer = true;
