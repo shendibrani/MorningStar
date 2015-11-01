@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137356}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 1.25433636, y: 3.27999997, z: 36.7972031}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
@@ -340,13 +340,18 @@ ParticleSystem:
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: .00609756075
-          value: .878378391
-          inSlope: 0
-          outSlope: 0
+        - time: .00325732888
+          value: 0
+          inSlope: 2.88844109
+          outSlope: 2.88844109
+          tangentMode: 0
+        - time: .501211524
+          value: .885304689
+          inSlope: -.0196944922
+          outSlope: -.0196944922
           tangentMode: 0
         - time: 1
-          value: .324324369
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -412,7 +417,7 @@ ParticleSystem:
           rgba: 4284677119
         key1:
           serializedVersion: 2
-          rgba: 4284742654
+          rgba: 6552574
         key2:
           serializedVersion: 2
           rgba: 8191997
@@ -455,7 +460,7 @@ ParticleSystem:
           rgba: 4278221311
         key1:
           serializedVersion: 2
-          rgba: 4278251007
+          rgba: 60927
         key2:
           serializedVersion: 2
           rgba: 8191997
