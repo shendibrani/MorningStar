@@ -1221,8 +1221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11436812}
-  zAxis: {fileID: 11491276}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &11432464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1245,8 +1246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd052cbae9392a34796d916d9fccc0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upDown: {fileID: 11440374}
-  leftRight: {fileID: 11456584}
+  controller: {fileID: 0}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
   baseSpeed: 200
   _speedMultiplier: 1
   pushThreshold: 1
@@ -1262,18 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightRotator: {fileID: 411246}
-  movementAxisX:
-    axisName: 
-    invert: 0
-  movementAxisY:
-    axisName: 
-    invert: 0
-  attackAxisX:
-    axisName: 
-    invert: 0
-  attackAxisY:
-    axisName: 
-    invert: 0
+  controller: {fileID: 0}
 --- !u!114 &11436812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1330,8 +1321,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11454378}
-  zAxis: {fileID: 11428166}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &11451138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1403,8 +1395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc29046f590041840bbc62d622fef1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 4
-  force: 10
+  range: 7
+  force: 3
+  particles: {fileID: 140158, guid: 0872cb5d1a1b0ca49b1869f9270e04b4, type: 2}
 --- !u!114 &11467000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1526,6 +1519,18 @@ Prefab:
       propertyPath: dashPower
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: force
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 140158, guid: 0872cb5d1a1b0ca49b1869f9270e04b4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166168}
