@@ -9,13 +9,16 @@ public class GameManager : MonoBehaviour, IMessage
 	[SerializeField]
 	float displayInterval = 10f;
 	[SerializeField]
-	ImageController victory1Image;
+	Image victory1Image;
 	[SerializeField]
-	ImageController victory2Image;
+	Image victory2Image;
 	[SerializeField]
 	List<Image> player1ScoreList;
 	[SerializeField]
 	List<Image> player2ScoreList;
+
+	bool player1Victory = false;
+	bool player2Victory = true;
 
 	int player1Score = 0;
 	int player2Score = 0;
@@ -43,8 +46,8 @@ public class GameManager : MonoBehaviour, IMessage
 		{
 			i.color = new Color(i.color.r, i.color.g, i.color.b, 30f / 255f);
 		}
-		victory1Image.Invisible();
-		victory2Image.Invisible();
+		victory1Image.color = Color.clear;
+		victory2Image.color = Color.clear;
 		MessagingManager.AddListener(this);
 	}
 
@@ -68,7 +71,7 @@ public class GameManager : MonoBehaviour, IMessage
 
 		if ((useTimer) && (Time.time > targetTime))
 		{
-			if (victory1Image.IsActivated || victory2Image.IsActivated) Application.LoadLevel("MainMenuTest");
+			if (player1Victory || player2Victory) Application.LoadLevel("MainMenuTest");
 			else { RestartGame(); }
 			//gameTimerCallback -= RestartGame;
 		}
@@ -117,12 +120,12 @@ public class GameManager : MonoBehaviour, IMessage
 
 		if (player1Score == 3)
 		{
-			victory1Image.Visible();
+			victory1Image.color = Color.white;
 			targetTime += displayInterval;
 		}
 		if (player2Score == 3)
 		{
-			victory2Image.Visible();
+			victory2Image.color = Color.white;
 			targetTime += displayInterval;
 		}
 	}

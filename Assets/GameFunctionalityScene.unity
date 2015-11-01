@@ -1221,8 +1221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInterval: 3
-  victory1Image: {fileID: 1798980792}
-  victory2Image: {fileID: 1733367983}
+  victory1Image: {fileID: 0}
+  victory2Image: {fileID: 0}
   player1ScoreList:
   - {fileID: 1346858994}
   - {fileID: 397389619}
@@ -1241,7 +1241,6 @@ GameObject:
   - 224: {fileID: 1733367986}
   - 222: {fileID: 1733367985}
   - 114: {fileID: 1733367984}
-  - 114: {fileID: 1733367983}
   m_Layer: 5
   m_Name: Player2Victory
   m_TagString: Untagged
@@ -1249,17 +1248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1733367983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1733367982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a8729676b2d5b42a34104deaa71d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1733367984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,7 +1302,6 @@ GameObject:
   - 224: {fileID: 1798980791}
   - 222: {fileID: 1798980794}
   - 114: {fileID: 1798980793}
-  - 114: {fileID: 1798980792}
   m_Layer: 5
   m_Name: Player1Victory
   m_TagString: Untagged
@@ -1339,17 +1326,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1798980792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798980790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a8729676b2d5b42a34104deaa71d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1798980793
 MonoBehaviour:
   m_ObjectHideFlags: 0

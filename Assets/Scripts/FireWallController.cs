@@ -7,6 +7,8 @@ public class FireWallController : MonoBehaviour,IMessage {
     float wallSpeed;
     [SerializeField]
     float maxMotionDistance;
+	[SerializeField]
+	float pushForce = 200;
 
     float distance = 0;
 
@@ -38,6 +40,16 @@ public class FireWallController : MonoBehaviour,IMessage {
                 break;
         }
     }
+
+	void OnCollisionEnter(Collision c)
+	{
+		//Object.Destroy(this.gameObject);
+		if (c.gameObject.GetComponent<RigidBodyTopDownMovement>())
+		{
+			c.gameObject.GetComponent<RigidBodyTopDownMovement>().Push(transform.forward, pushForce);
+		}
+
+	}
 
     void ResetMotion()
     {
