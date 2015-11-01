@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour, IMessage
 		{
 			if (player1Victory || player2Victory) Application.LoadLevel("MainMenuTest");
 			 RestartGame();
-			//gameTimerCallback -= RestartGame;
 		}
 	}
 
@@ -102,14 +101,10 @@ public class GameManager : MonoBehaviour, IMessage
 			switch (info.playerID)
 			{
 				case 0:
-					//victory0Image.Enable();
 					player1Score++;
-					//player0ScoreText.text = ""+ player0Score;
 					break;
 				case 1:
-					//victory1Image.Enable();
 					player2Score++;
-					//player1ScoreText.text = "" + player1Score;
 					break;
 			}
 			isRound = true;
@@ -156,17 +151,23 @@ public class GameManager : MonoBehaviour, IMessage
 
 	void DisplayScore()
 	{
-		for (int i = 0; i < player1Score; i++)
+		if (player1Score != 0)
 		{
-			Color c = player1ScoreList[i].color;
-			player1ScoreList[i].color = new Color(c.r, c.g, c.b);
-			//player0ScoreList[i].enabled = true;
+			for (int i = 0; i < player1Score; i++)
+			{
+				Color c = player1ScoreList[i].color;
+				player1ScoreList[i].color = new Color(c.r, c.g, c.b);
+				//player0ScoreList[i].enabled = true;
+			}
 		}
-		for (int i = 0; i < player2Score; i++)
+		if (player2Score != 0)
 		{
-			Color c = player2ScoreList[i].color;
-			player2ScoreList[i].color = new Color(c.r, c.g, c.b);
-			//player1ScoreList[i].enabled = true;
+			for (int i = 0; i < player2Score; i++)
+			{
+				Color c = player2ScoreList[i].color;
+				player2ScoreList[i].color = new Color(c.r, c.g, c.b);
+				//player1ScoreList[i].enabled = true;
+			}
 		}
 	}
 }
