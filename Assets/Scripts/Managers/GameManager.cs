@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour, IMessage
 		{
 			i.color = new Color(i.color.r, i.color.g, i.color.b, 30f / 255f);
 		}
-		victory1Image.Disable();
-		victory2Image.Disable();
+		victory1Image.Invisible();
+		victory2Image.Invisible();
 		MessagingManager.AddListener(this);
 	}
 
@@ -117,12 +117,12 @@ public class GameManager : MonoBehaviour, IMessage
 
 		if (player1Score == 3)
 		{
-			victory1Image.Enable();
+			victory1Image.Visible();
 			targetTime += displayInterval;
 		}
 		if (player2Score == 3)
 		{
-			victory2Image.Enable();
+			victory2Image.Visible();
 			targetTime += displayInterval;
 		}
 	}
@@ -132,8 +132,8 @@ public class GameManager : MonoBehaviour, IMessage
 		Debug.Log("reload");
 		MessagingManager.Broadcast(Messages.RESTART, this.gameObject);
 		isRound = false;
-		victory1Image.Disable();
-		victory2Image.Disable();
+		victory1Image.Invisible();
+		victory2Image.Invisible();
 		useTimer = false;
 		//Application.LoadLevel(Application.loadedLevel);
 	}

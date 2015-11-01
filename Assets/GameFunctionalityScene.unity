@@ -666,7 +666,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11470882, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444180, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11489054, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
@@ -1256,15 +1260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a8729676b2d5b42a34104deaa71d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTimer: 0
-  displayTimer: 0
 --- !u!114 &1733367984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1733367982}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -1348,15 +1350,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a8729676b2d5b42a34104deaa71d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTimer: 0
-  displayTimer: 0
 --- !u!114 &1798980793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1798980790}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
