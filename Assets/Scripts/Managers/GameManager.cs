@@ -135,8 +135,8 @@ public class GameManager : MonoBehaviour, IMessage
 		Debug.Log("reload");
 		MessagingManager.Broadcast(Messages.RESTART, this.gameObject);
 		isRound = false;
-		victory1Image.Invisible();
-		victory2Image.Invisible();
+		victory1Image.color = Color.clear;
+		victory2Image.color = Color.clear;
 		useTimer = false;
 		//Application.LoadLevel(Application.loadedLevel);
 	}
