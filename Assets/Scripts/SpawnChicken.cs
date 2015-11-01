@@ -23,7 +23,7 @@ public class SpawnChicken : MonoBehaviour {
 	void Update () {
 	
 		if (_alive == false) {
-			if (Random.Range (1,20) == 1) {
+			if (Random.Range (1,100) == 1) {
 				randomPoint();
 				_Instance = GameObject.Instantiate(_chicken);
 				_Instance.transform.position = _Point.transform.position;
