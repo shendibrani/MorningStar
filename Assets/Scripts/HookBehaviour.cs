@@ -58,6 +58,13 @@ public class HookBehaviour : MonoBehaviour
             transform.SetParent(c.transform);
             deathActive = true;
         }
+		else if (c.gameObject.GetComponent<ArrowControl>())
+		{
+			GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
+			dragObject = c.gameObject;
+			GetComponent<Collider>().enabled = false;
+			deathActive = true;
+		}
         else if (c.gameObject.GetComponent<Rigidbody>())
         {
             Debug.Log("Contact Else");
