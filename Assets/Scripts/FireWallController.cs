@@ -41,8 +41,8 @@ public class FireWallController : MonoBehaviour,IMessage {
         }
     }
 
-	void OnCollisionEnter(Collision c)
-	{
+	    void OnTriggerEnter(Collider c)
+    {  
 		//Object.Destroy(this.gameObject);
 		if (c.gameObject.GetComponent<RigidBodyTopDownMovement>())
 		{
