@@ -61,7 +61,7 @@ public class HookBehaviour : MonoBehaviour
 		else if (c.gameObject.GetComponent<ArrowControl>())
 		{
 			GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
-			dragObject = c.gameObject;
+			dragObject = null;
 			GetComponent<Collider>().enabled = false;
 			deathActive = true;
 		}
