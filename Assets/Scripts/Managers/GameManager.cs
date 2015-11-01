@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour, IMessage
 	List<Image> player2ScoreList;
 
 	bool player1Victory = false;
-	bool player2Victory = true;
+	bool player2Victory = false;
 
 	int player1Score = 0;
 	int player2Score = 0;
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour, IMessage
 		if ((useTimer) && (Time.time > targetTime))
 		{
 			if (player1Victory || player2Victory) Application.LoadLevel("MainMenuTest");
-			else { RestartGame(); }
+			 RestartGame();
 			//gameTimerCallback -= RestartGame;
 		}
 	}
@@ -121,11 +121,13 @@ public class GameManager : MonoBehaviour, IMessage
 		if (player1Score == 3)
 		{
 			victory1Image.color = Color.white;
+			player1Victory = true;
 			targetTime += displayInterval;
 		}
 		if (player2Score == 3)
 		{
 			victory2Image.color = Color.white;
+			player2Victory = true;
 			targetTime += displayInterval;
 		}
 	}
