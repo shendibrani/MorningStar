@@ -1199,8 +1199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInterval: 3
-  victory1Image: {fileID: 0}
-  victory2Image: {fileID: 0}
+  victory1Image: {fileID: 1798980793}
+  victory2Image: {fileID: 1733367984}
   player1ScoreList:
   - {fileID: 1346858994}
   - {fileID: 397389619}
