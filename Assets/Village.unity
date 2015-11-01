@@ -394,6 +394,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: maxMotionDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -1738,7 +1742,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &211893405 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 2e58b80e19113c74b8116478398858e7, type: 3}
@@ -4337,6 +4341,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: maxMotionDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -4577,6 +4585,7 @@ GameObject:
   - 4: {fileID: 415376127}
   - 33: {fileID: 415376129}
   - 23: {fileID: 415376128}
+  - 65: {fileID: 415376130}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -4629,6 +4638,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 415376126}
   m_Mesh: {fileID: 4300002, guid: d72b2b56d37cb0b4aa85c798f21f5963, type: 3}
+--- !u!65 &415376130
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415376126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.22000003, y: 17.820261, z: 9.30150127}
+  m_Center: {x: -.600000024, y: -.74670893, z: 3.97905254}
 --- !u!4 &418236548
 Transform:
   m_ObjectHideFlags: 0
@@ -9762,6 +9783,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: maxMotionDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -10521,6 +10546,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: maxMotionDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -10805,8 +10834,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163068701}
-  m_LocalRotation: {x: .087172322, y: .899590552, z: .210452542, w: -.372622699}
-  m_LocalPosition: {x: 6.33724308, y: -4.29606962, z: 6.33724356}
+  m_LocalRotation: {x: -.165013939, y: .760690868, z: .212494686, w: .59073329}
+  m_LocalPosition: {x: -23.5018482, y: -14.636755, z: 38.5916443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12653,15 +12682,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13751120, guid: a4d12f01996487d43bcac10e19d3c3d8, type: 2}
       propertyPath: m_AABB.m_Extent.y
-      value: .127050295
+      value: .127048671
       objectReference: {fileID: 0}
     - target: {fileID: 13751120, guid: a4d12f01996487d43bcac10e19d3c3d8, type: 2}
       propertyPath: m_AABB.m_Extent.z
-      value: 15.2594986
+      value: 15.2594929
       objectReference: {fileID: 0}
     - target: {fileID: 13751120, guid: a4d12f01996487d43bcac10e19d3c3d8, type: 2}
       propertyPath: m_AABB.m_Center.y
-      value: 2.86102295e-06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3354830, guid: a4d12f01996487d43bcac10e19d3c3d8, type: 2}
       propertyPath: m_Mesh
@@ -12673,11 +12702,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: b9f00313a072f6845b83d2c90052f2a1, type: 2}
     - target: {fileID: 13751120, guid: a4d12f01996487d43bcac10e19d3c3d8, type: 2}
       propertyPath: m_AABB.m_Center.x
-      value: 0
+      value: 9.53674316e-07
       objectReference: {fileID: 0}
     - target: {fileID: 13751120, guid: a4d12f01996487d43bcac10e19d3c3d8, type: 2}
       propertyPath: m_AABB.m_Extent.x
-      value: 6.51198816
+      value: 6.51198673
       objectReference: {fileID: 0}
     - target: {fileID: 170310, guid: a4d12f01996487d43bcac10e19d3c3d8, type: 2}
       propertyPath: m_StaticEditorFlags

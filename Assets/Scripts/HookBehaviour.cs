@@ -22,10 +22,15 @@ public class HookBehaviour : MonoBehaviour
 
     bool deathActive = false;
 
+	bool getsDestroyed = false;
+	float runOut = 0;
+
+
 	// Use this for initialization
 	void Start ()
 	{
         GetComponent<Rigidbody>().AddForce(transform.forward * arrowSpeed, ForceMode.Force);
+
 	}
 
     public void SetTarget(Transform t)
@@ -53,6 +58,13 @@ public class HookBehaviour : MonoBehaviour
             transform.SetParent(c.transform);
             deathActive = true;
         }
+		else if (c.gameObject.GetComponent<ArrowControl>())
+		{
+			GetComponent<Rigidbody>().AddForce(Vector3.forward * -arrowSpeed, ForceMode.Force);
+			dragObject = null;
+			GetComponent<Collider>().enabled = false;
+			deathActive = true;
+		}
         else if (c.gameObject.GetComponent<Rigidbody>())
         {
             Debug.Log("Contact Else");
@@ -71,8 +83,9 @@ public class HookBehaviour : MonoBehaviour
         }
         else
         {
+			EndBrake();
             //gameObject.SetActive(false);
-            GameObject.Destroy(this.gameObject);
+            //GameObject.Destroy(this.gameObject);
         }
     }
 
@@ -90,10 +103,30 @@ public class HookBehaviour : MonoBehaviour
             }
             if (Vector3.Magnitude(transform.position - target.transform.position) < cancelDistance)
             {
-                Debug.Log("Destroy");
-                GameObject.Destroy(this.gameObject);
+                
+				EndBrake();
+                
             }
         }
+
+		if (getsDestroyed) {
+			if (Time.time > runOut + 3) {
+				Debug.Log("Destroy");
+				GameObject.Destroy(this.gameObject);
+			}
+
+		}
     }
+
+	void EndBrake(){
+		if (getsDestroyed == false) {
+			getsDestroyed = true;
+			runOut = Time.time;
+
+			foreach (var item in gameObject.GetComponentsInChildren<ParticleSystem>()) {
+				item.emissionRate = 0;
+			}
+		}
+	}
 }
 

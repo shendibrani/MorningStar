@@ -93,17 +93,21 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerPrefab = characterPrefabs[player1Data.characterID];
         weaponPrefab = weaponPrefabs[player1Data.weaponID];
 
-        pos = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance,maxSpawnDistance);
+        Vector3 posB = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance,maxSpawnDistance);
+		while (Vector3.Magnitude(pos - posB) < 8)
+		{
+			posB = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance, maxSpawnDistance);
+		}
         playerB = (GameObject)GameObject.Instantiate(
             playerPrefab,
-            pos,
+            posB,
             Quaternion.identity);
         cameraReference.b = playerB.GetComponentInChildren<RigidBodyTopDownMovement>().gameObject;
 
 		playerB.GetComponent<PlayerInfo> ().controller = PlayerInfoPasser.GetController (1);
         playerB.GetComponent<PlayerInfo>().AssignPlayer(1);
 		
-        GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, pos, Quaternion.identity);
+        GameObject weaponB = (GameObject)GameObject.Instantiate(weaponPrefab, posB, Quaternion.identity);
         //weaponB.transform.Rotate(0, 0, 90);
         playerB.GetComponent<PlayerInfo>().AttachWeapon(weaponB);
         
@@ -116,7 +120,7 @@ public class PlayerManager : MonoBehaviour, IMessage
         playerB.GetComponentInChildren<ReceiveDamageOnCollision>().healthBar = healthB.GetComponent<HealthBar>();
 		playerB.GetComponentInChildren<ReceiveDamageOnCollision>().health = 100 * player1Data.stats.health;
         
-		playerB.GetComponentInChildren<RigidBodyTopDownMovement>().speedMultiplier = 1 + player1Data.stats.speed * 0.2f;
+		playerB.GetComponentInChildren<RigidBodyTopDownMovement>().speedMultiplier = 1 + player1Data.stats.speed;
 
         Debug.Log("Done");
 
