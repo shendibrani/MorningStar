@@ -19,6 +19,10 @@ public class OnCollisionCalls : MonoBehaviour
 
         if (col.gameObject.CompareTag("Chicken")) {
             Debug.Log("Weapon hit chicken!");
+			for (int i = 0; i < col.contacts.Length; i++)
+			{
+				ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Blood, col.contacts[i].point, 1f);
+			}
             Destroy(col.gameObject);
 
         }
