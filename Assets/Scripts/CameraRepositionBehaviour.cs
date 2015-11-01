@@ -25,7 +25,7 @@ public class CameraRepositionBehaviour : MonoBehaviour {
 
         if (a != null && b != null)
         {
-			yPosition = (b.transform.position - a.transform.position).magnitude + 5;
+			yPosition = (b.transform.position - a.transform.position).magnitude + cameraDistance;
 
             Vector3 center = (b.transform.position - a.transform.position) / 2 + a.transform.position;
             transform.eulerAngles = new Vector3(cameraAngle, 0, 0);
