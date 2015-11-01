@@ -664,6 +664,10 @@ Prefab:
       propertyPath: edgeDetectShader
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11470882, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11489054, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5526dad4c54eccd41a7ab70aa96d6f12, type: 2}
