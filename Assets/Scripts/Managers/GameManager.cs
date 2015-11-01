@@ -145,23 +145,32 @@ public class GameManager : MonoBehaviour, IMessage
 
 	void DisplayScore()
 	{
-		if (player1Score != 0)
-		{
-			for (int i = 0; i < player1Score; i++)
-			{
-				Color c = player1ScoreList[i].color;
-				player1ScoreList[i].color = new Color(c.r, c.g, c.b);
-				//player0ScoreList[i].enabled = true;
-			}
-		}
-		if (player2Score != 0)
-		{
-			for (int i = 0; i < player2Score; i++)
-			{
-				Color c = player2ScoreList[i].color;
-				player2ScoreList[i].color = new Color(c.r, c.g, c.b);
-				//player1ScoreList[i].enabled = true;
-			}
-		}
+		Color c = player1ScoreList[0].color;
+		if (player1Score == 1) player1ScoreList[0].color = new Color(c.r, c.g, c.b);
+		if (player1Score == 2) player1ScoreList[1].color = new Color(c.r, c.g, c.b);
+		if (player1Score == 3) player1ScoreList[2].color = new Color(c.r, c.g, c.b);
+
+		c = player2ScoreList[0].color;
+		if (player2Score == 1) player2ScoreList[0].color = new Color(c.r, c.g, c.b);
+		if (player2Score == 2) player2ScoreList[1].color = new Color(c.r, c.g, c.b);
+		if (player2Score == 3) player2ScoreList[2].color = new Color(c.r, c.g, c.b);
+		//if (player1Score != 0)
+		//{
+		//	for (int i = 0; i < player1Score; i++)
+		//	{
+		//		Color c = player1ScoreList[i].color;
+		//		player1ScoreList[i].color = new Color(c.r, c.g, c.b);
+		//		//player0ScoreList[i].enabled = true;
+		//	}
+		//}
+		//if (player2Score != 0)
+		//{
+		//	for (int i = 0; i < player2Score; i++)
+		//	{
+		//		Color c = player2ScoreList[i].color;
+		//		player2ScoreList[i].color = new Color(c.r, c.g, c.b);
+		//		//player1ScoreList[i].enabled = true;
+		//	}
+		//}
 	}
 }
