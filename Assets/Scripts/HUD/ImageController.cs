@@ -31,13 +31,13 @@ public class ImageController : MonoBehaviour {
 
     public void Enable()
     {
-        GetComponent<Image>().enabled = true;
+		GetComponent<Image>().color = Color.white;
 		isActivated = true;
     }
 
     public void Disable()
     {
-        GetComponent<Image>().enabled = false;
+		GetComponent<Image>().color = Color.clear;
 		isActivated = false;
     }
 

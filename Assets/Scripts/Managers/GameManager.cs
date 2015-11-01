@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour, IMessage
 		{
 			i.color = new Color(i.color.r, i.color.g, i.color.b, 30f / 255f);
 		}
+		victory1Image.Disable();
+		victory2Image.Disable();
 		MessagingManager.AddListener(this);
 	}
 
