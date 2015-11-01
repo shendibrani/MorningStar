@@ -51,7 +51,7 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
     public void RecieveDamage(float damage)
     {
         _health -= damage;
-        if (_healthBar != null) _healthBar.SetHealth(_health);
+        if (_healthBar != null && _health >= 0) _healthBar.SetHealth(_health);
         CheckDeath();
     }
 
@@ -81,6 +81,6 @@ public class ReceiveDamageOnCollision : MonoBehaviour, IDeath
 
 	public void OnDeath()
 	{
-		// TODO
+		_healthBar = null;
 	}
 }
