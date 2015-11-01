@@ -5,17 +5,11 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class ImageController : MonoBehaviour {
 
-
-    [SerializeField]
-    float fadeTimer;
-    [SerializeField]
-    float displayTimer;
 	bool isActivated = false;
 
 	public bool IsActivated
 	{
 		get { return isActivated; }
-		set { isActivated = value; }
 	}
 
 
@@ -29,25 +23,15 @@ public class ImageController : MonoBehaviour {
 	
 	}
 
-    public void Enable()
+    public void Visible()
     {
 		GetComponent<Image>().color = Color.white;
 		isActivated = true;
     }
 
-    public void Disable()
+    public void Invisible()
     {
 		GetComponent<Image>().color = Color.clear;
 		isActivated = false;
-    }
-
-    public void FadeOut()
-    {
-
-    }
-
-    public void FadeIt()
-    {
-
     }
 }
