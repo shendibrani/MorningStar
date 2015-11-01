@@ -142,7 +142,7 @@ public class PlayerInfo : MonoBehaviour, IMessage {
                     state = PlayerState.DEAD;
                     GetComponent<DecayControl>().Activate();
                     GetComponentInChildren<WeaponInfo>().Death();
-                    playerID = 0;
+                    //playerID = 0;
                 }
                  break;
         }

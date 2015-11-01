@@ -39,6 +39,7 @@ public class HealthBar : MonoBehaviour
     {
         Debug.Log("Set Health " + health);
         health = value;
+		if (health < 0) health = 0;
     }
 
     // Update is called once per frame

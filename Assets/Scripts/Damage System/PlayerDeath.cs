@@ -7,6 +7,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
     Transform weaponBase;
     GameManager gameManager;
 
+	bool _isDead = false;
+
     void Start()
     {
         //gameManager = transform.Find("Manager").GetComponent<GameManager>();
@@ -19,7 +21,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
 	public void OnDeath()
 	{
-		if (GetComponentInParent<PlayerInfo>().State != PlayerInfo.PlayerState.DEAD)
+		if (!_isDead)
 		{
 			Debug.Log("This");
 			Transform parent = transform.parent;
@@ -67,8 +69,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
 			}
 
 			MessagingManager.Broadcast(Messages.DEATH, this.transform.parent.gameObject);
-
-			//gameManager.PlayerDeath(this.GetComponentInParent<PlayerInfo>());
+			_isDead = true;
 		}
 	}
 }
