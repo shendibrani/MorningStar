@@ -398,6 +398,10 @@ Prefab:
       propertyPath: maxMotionDistance
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: pushForce
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -4344,6 +4348,10 @@ Prefab:
     - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
       propertyPath: maxMotionDistance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: pushForce
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
@@ -9787,6 +9795,10 @@ Prefab:
       propertyPath: maxMotionDistance
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: pushForce
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
   m_IsPrefabParent: 0
@@ -10549,6 +10561,10 @@ Prefab:
     - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
       propertyPath: maxMotionDistance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415192, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
+      propertyPath: pushForce
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5be84711fc7ecd45ae6574093585596, type: 2}
