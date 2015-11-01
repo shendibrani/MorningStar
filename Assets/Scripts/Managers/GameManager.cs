@@ -28,12 +28,6 @@ public class GameManager : MonoBehaviour, IMessage
 	float targetTime = 0f;
 	bool useTimer = false;
 
-	delegate void GameEvent();
-	delegate void ImageEvent();
-
-	event ImageEvent imageTimerCallback;
-	event GameEvent gameTimerCallback;
-
 	float timeScale;
 
 	void Start()

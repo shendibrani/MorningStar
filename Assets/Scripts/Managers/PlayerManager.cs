@@ -44,6 +44,8 @@ public class PlayerManager : MonoBehaviour, IMessage
         switch (message)
         {
             case Messages.RESTART:
+				player0Data = PlayerInfoPasser.GetInfo(0);
+				player1Data = PlayerInfoPasser.GetInfo(1);
                 if (playerA.GetComponent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE) Object.Destroy(playerA);
                 if (playerB.GetComponent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE) Object.Destroy(playerB);
                 Object.Destroy(healthA);
