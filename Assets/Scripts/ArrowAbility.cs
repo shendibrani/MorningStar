@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ArrowAbility : MonoBehaviour, Ability {
+public class ArrowAbility : Ability {
 
     Transform other;
     [SerializeField]
@@ -27,7 +27,7 @@ public class ArrowAbility : MonoBehaviour, Ability {
 	
 	}
 
-    public void Execute()
+    public override void Execute()
     {
         if (Time.time >= timer)
         {

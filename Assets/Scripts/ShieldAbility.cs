@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ShieldAbility : MonoBehaviour, Ability
+public class ShieldAbility : Ability
 {
 
     Transform other;
@@ -54,7 +54,7 @@ public class ShieldAbility : MonoBehaviour, Ability
         }
     }
 
-    public void Execute()
+    public override void Execute()
     {
         if (Time.time >= timer)
         {
