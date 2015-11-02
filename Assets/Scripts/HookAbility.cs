@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class HookAbility : MonoBehaviour, Ability
+public class HookAbility : Ability
 {
 
 	float speed;
@@ -25,7 +25,7 @@ public class HookAbility : MonoBehaviour, Ability
 		target = list.Find(x => x != this).transform;
 	}
 
-	public void Execute()
+	public override void Execute()
 	{
         if (Time.time >= timer)
         {

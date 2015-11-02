@@ -26,7 +26,7 @@ public class Breakable : MonoBehaviour {
             Destroy(gameObject);
             replacementGO = (GameObject)Instantiate(replacementGO, gameObject.transform.position, Quaternion.identity);
 
-            col.collider.GetComponentInParent<ReceiveDamageOnCollision>().health += healthBonus;
+            col.collider.GetComponentInParent<ReceiveDamageOnCollision>().RecieveDamage(-healthBonus);
             Debug.Log("Health + 20 should activate");
             for (int i = 0; i < replacementGO.transform.childCount; i++) {
                 Transform newTransform = replacementGO.transform.GetChild(i);

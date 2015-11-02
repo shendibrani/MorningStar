@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface Ability {
+public abstract class Ability : MonoBehaviour{
 
-	void Execute();
+	public abstract void Execute();
 }

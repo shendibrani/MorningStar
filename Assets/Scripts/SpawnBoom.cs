@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SpawnBoom : MonoBehaviour, Ability {
+public class SpawnBoom : Ability {
 
     [SerializeField]
 	GameObject BoomerangPrefab;
@@ -24,7 +24,7 @@ public class SpawnBoom : MonoBehaviour, Ability {
 
 	}
 
-    public void Execute()
+    public override void Execute()
     {
         if ((Time.time >= timer) && BoomerangPrefab != null)
         {

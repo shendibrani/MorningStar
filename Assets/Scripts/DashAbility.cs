@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class DashAbility : MonoBehaviour, Ability {
+public class DashAbility : Ability {
 
     Transform other;
 
@@ -28,7 +28,7 @@ public class DashAbility : MonoBehaviour, Ability {
 
 	}
 
-    public void Execute()
+    public override void Execute()
     {
         if (Time.time >= timer)
         {
