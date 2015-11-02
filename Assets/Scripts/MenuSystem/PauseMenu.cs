@@ -21,5 +21,10 @@ public class PauseMenu : MonoBehaviour, IMessage
 			break;
 		}
 	}
+
+    void OnDestroy()
+    {
+        MessagingManager.RemoveListener(this);
+    }
 }
 

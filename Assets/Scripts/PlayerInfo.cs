@@ -147,4 +147,9 @@ public class PlayerInfo : MonoBehaviour, IMessage {
                  break;
         }
     }
+
+    void OnDestroy()
+    {
+        MessagingManager.RemoveListener(this);
+    }
 }

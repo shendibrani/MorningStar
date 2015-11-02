@@ -32,4 +32,9 @@ public class LookAtEachotherBehaviour : MonoBehaviour,IMessage {
         }
         Debug.Log(active);
     }
+
+    void OnDestroy()
+    {
+        MessagingManager.RemoveListener(this);
+    }
 }

@@ -65,7 +65,10 @@ public class GameManager : MonoBehaviour, IMessage
 
 		if ((useTimer) && (Time.time > targetTime))
 		{
-			if (player1Victory || player2Victory) Application.LoadLevel("MainMenuTest");
+            if (player1Victory || player2Victory)
+            {
+                Application.LoadLevel("MainMenuTest");
+            }
 			 RestartGame();
 		}
 	}
@@ -173,4 +176,9 @@ public class GameManager : MonoBehaviour, IMessage
 		//	}
 		//}
 	}
+
+    void OnDestroy()
+    {
+        MessagingManager.RemoveListener(this);
+    }
 }

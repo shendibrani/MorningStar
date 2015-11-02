@@ -3,7 +3,10 @@ using System.Collections;
 
 public class CreditsMenu : SubMenu 
 {
-
+    void Start()
+    {
+        overlord = FindObjectOfType<MenuOverlord>();
+    }
 
 	public override void Submit ()
 	{

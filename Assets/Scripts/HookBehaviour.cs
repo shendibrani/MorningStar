@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Collider))]
-public class HookBehaviour : MonoBehaviour
+public class HookBehaviour : MonoBehaviour, IDeath
 {
     [SerializeField]
     Transform target;
@@ -128,5 +128,10 @@ public class HookBehaviour : MonoBehaviour
 			}
 		}
 	}
+
+    public void OnDeath()
+    {
+        this.enabled = false;
+    }
 }
 
