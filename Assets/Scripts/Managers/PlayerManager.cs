@@ -27,6 +27,8 @@ public class PlayerManager : MonoBehaviour, IMessage
     GameObject healthA;
     GameObject healthB;
 
+	NavMeshHit _hit;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -40,6 +42,15 @@ public class PlayerManager : MonoBehaviour, IMessage
         MessagingManager.AddListener(this);
 	}
 
+	/*
+	void Update(){
+	
+		if (Input.GetKeyDown(KeyCode.S)) {
+			MessagingManager.Broadcast(Messages.RESTART,this.gameObject);
+		}
+	
+	}
+*/
     public void Message(Messages message, GameObject sender) {
         switch (message)
         {
@@ -70,7 +81,14 @@ public class PlayerManager : MonoBehaviour, IMessage
         GameObject weaponPrefab = weaponPrefabs[player0Data.weaponID];
 
         //instantiate player prefab in random position from 0,0
+
         Vector3 pos = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance, maxSpawnDistance);
+
+		while (NavMesh.SamplePosition (pos, out _hit, 0.4f, NavMesh.AllAreas) == false) {
+			pos = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance, maxSpawnDistance);
+			Debug.Log ("CantSpawnA");
+		}
+
         playerA = (GameObject)GameObject.Instantiate(
             playerPrefab,
             pos,
@@ -104,10 +122,16 @@ public class PlayerManager : MonoBehaviour, IMessage
         weaponPrefab = weaponPrefabs[player1Data.weaponID];
 
         Vector3 posB = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance,maxSpawnDistance);
-		while (Vector3.Magnitude(pos - posB) < 8)
-		{
-			posB = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance, maxSpawnDistance);
-		}
+
+			while (Vector3.Magnitude(pos - posB) < 8)
+			{
+				posB = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance, maxSpawnDistance);
+
+				while (NavMesh.SamplePosition (posB, out _hit, 0.4f, NavMesh.AllAreas) == false) {
+					posB = new Vector3(RNG.NextFloat(-1, 2), 0, RNG.NextFloat(-1, 2)).normalized * RNG.NextFloat(minSpawnDistance, maxSpawnDistance);
+					Debug.Log ("CantspawnB");
+				}
+			}
         playerB = (GameObject)GameObject.Instantiate(
             playerPrefab,
             posB,

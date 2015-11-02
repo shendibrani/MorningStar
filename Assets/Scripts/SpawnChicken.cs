@@ -44,7 +44,7 @@ public class SpawnChicken : MonoBehaviour {
 		_x = Random.Range (-50, 50) * 0.1f;
 		_y = Random.Range (-50, 50) * 0.1f;
 		_Point.transform.position = new Vector3 (_x, 0,_y);
-		
+
 		while (NavMesh.SamplePosition (_Point.GetComponent<Transform> ().position, out _hit, 0.4f, NavMesh.AllAreas) == false) {
 			_x = Random.Range (-45, 45);
 			_y = Random.Range (-45, 45);
