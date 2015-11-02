@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boomerangTransform: {fileID: 454970}
   _range: 15
-  _speed: 1
+  _speed: .50999999
   _maxRotSpeed: .150000006
 --- !u!114 &11477720
 MonoBehaviour:
@@ -243,7 +243,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: _speed
-      value: 1
+      value: .50999999
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _range
