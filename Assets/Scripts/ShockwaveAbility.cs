@@ -6,6 +6,8 @@ public class ShockwaveAbility : Ability
 {
 	[SerializeField] float range, force;
 
+	public GameObject particles;
+
 	public override void Execute ()
 	{
 		List<Rigidbody> targets = new List<Rigidbody>(FindObjectsOfType<Rigidbody>());
@@ -20,6 +22,9 @@ public class ShockwaveAbility : Ability
 				target.AddForce((target.transform.position - transform.position).normalized * force, ForceMode.Impulse);
 			}
 		}
+
+		GameObject parts = (GameObject)GameObject.Instantiate (particles);
+		GameObject.Destroy (parts, 2);
 	}	
 }
 
