@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upDown: {fileID: 11476870}
   leftRight: {fileID: 11448788}
-  dashPower: 5
+  dashPower: 70
   interval: 1
 --- !u!114 &11454242
 MonoBehaviour:
@@ -1547,7 +1547,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dashPower
-      value: 5
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

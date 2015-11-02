@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upDown: {fileID: 11400964}
   leftRight: {fileID: 11427982}
-  dashPower: 5
+  dashPower: 70
   interval: 1
 --- !u!114 &11422358
 MonoBehaviour:
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   abilityAxis: {fileID: 11461678}
   dashAbility: {fileID: 11419260}
   defaultAbility: {fileID: 11476260}
-  boomerangAbility: {fileID: 0}
+  boomerangAbility: {fileID: 11408146}
 --- !u!114 &11441390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1531,8 +1531,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dashPower
-      value: 5
+      value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: boomerangAbility
+      value: 
+      objectReference: {fileID: 11408146}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125594}
