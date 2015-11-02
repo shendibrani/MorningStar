@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ShockwaveAbility : MonoBehaviour, Ability
+public class ShockwaveAbility : Ability
 {
 	[SerializeField] float range, force;
 
-	public void Execute ()
+	public override void Execute ()
 	{
 		List<Rigidbody> targets = new List<Rigidbody>(FindObjectsOfType<Rigidbody>());
 		targets = targets.FindAll(x => 

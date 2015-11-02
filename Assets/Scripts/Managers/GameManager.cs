@@ -9,13 +9,16 @@ public class GameManager : MonoBehaviour, IMessage
 	[SerializeField]
 	float displayInterval = 10f;
 	[SerializeField]
-	Image victory1Image;
+	Image victory1Image, victory2Image;
 	[SerializeField]
-	Image victory2Image;
-	[SerializeField]
-	List<Image> player1ScoreList;
-	[SerializeField]
-	List<Image> player2ScoreList;
+	List<Image> player1ScoreList, player2ScoreList;
+
+	[SerializeField] 
+	Highlightable back, resume;
+	bool isResume;
+
+	AnalogToAxisLayer LeftRight, LeftRightAlt;
+	bool hasExecuted;
 
 	bool player1Victory = false;
 	bool player2Victory = false;
@@ -40,6 +43,13 @@ public class GameManager : MonoBehaviour, IMessage
 		{
 			i.color = new Color(i.color.r, i.color.g, i.color.b, 30f / 255f);
 		}
+
+		LeftRight = gameObject.AddComponent<AnalogToAxisLayer> ();
+		LeftRightAlt = gameObject.AddComponent<AnalogToAxisLayer> ();
+
+		LeftRight.axisName = PlayerInfoPasser.GetController (0).movement.x.axisName;
+		LeftRightAlt.axisName = PlayerInfoPasser.GetController (1).movement.x.axisName;
+
 		victory1Image.color = Color.clear;
 		victory2Image.color = Color.clear;
 		MessagingManager.AddListener(this);
@@ -48,19 +58,57 @@ public class GameManager : MonoBehaviour, IMessage
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown("joystick 1 button 9"))
-		{
-			if (Time.timeScale == 0) MessagingManager.Broadcast(Messages.RESUME, this.gameObject);
-			else MessagingManager.Broadcast(Messages.PAUSE, this.gameObject);
+
+		if (Time.timeScale == 0) {
+			if ((LeftRight <= -0.7)||(LeftRightAlt <= -0.7)||(Input.GetKeyDown(KeyCode.LeftArrow))) {
+				if (!hasExecuted){
+					isResume = !isResume;
+					resume.SetHighlight(isResume);
+					back.SetHighlight(!isResume);
+					hasExecuted = true;
+				}
+			}
+			else if ((LeftRight >= 0.7) || (LeftRightAlt >= 0.7) || (Input.GetKeyDown(KeyCode.RightArrow)))
+			{
+				if (!hasExecuted){
+					isResume = !isResume;
+					resume.SetHighlight(isResume);
+					back.SetHighlight(!isResume);
+					hasExecuted = true;
+				}
+			} else {
+				hasExecuted = false;
+			}
+			
+			if (Input.GetKeyDown(KeyCode.Return) 
+			    || Input.GetKeyDown("joystick 1 button 9") 
+			    || Input.GetKeyDown("joystick 2 button 9")
+			    || Input.GetKeyDown("joystick 3 button 9")
+			    || Input.GetKeyDown("joystick 1 button 7") 
+			    || Input.GetKeyDown("joystick 2 button 7")
+			    || Input.GetKeyDown("joystick 3 button 7")){
+				if(isResume) {
+					MessagingManager.Broadcast(Messages.RESUME, this.gameObject);
+				}
+				else {
+					Resume();
+					Application.LoadLevel("MainMenuTest");
+				}
+			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick 1 button 8"))
+		else if (Input.GetKeyDown(KeyCode.P) 
+		    || Input.GetKeyDown("joystick 1 button 9") 
+		    || Input.GetKeyDown("joystick 2 button 9")
+		    || Input.GetKeyDown("joystick 3 button 9")
+		    || Input.GetKeyDown("joystick 1 button 7") 
+		    || Input.GetKeyDown("joystick 2 button 7")
+		    || Input.GetKeyDown("joystick 3 button 7"))
 		{
-			if (Time.timeScale == 0)
-			{
-				Resume();
-				Application.LoadLevel("MainMenuTest");
-			}
+			MessagingManager.Broadcast(Messages.PAUSE, this.gameObject);
+			isResume = true;
+			back.SetHighlight(!isResume);
+			resume.SetHighlight(isResume);
 		}
 
 		if ((useTimer) && (Time.time > targetTime))

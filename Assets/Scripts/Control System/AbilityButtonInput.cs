@@ -5,37 +5,41 @@ public class AbilityButtonInput : MonoBehaviour {
 
 	[SerializeField] Axis abilityAxis;
 
-    //[SerializeField] Ability plusAbility;
-    //[SerializeField] Ability minusAbility;
+    [SerializeField] Ability dashAbility;
+    [SerializeField] Ability defaultAbility;
+    [SerializeField] Ability boomerangAbility;
 
     bool hasExecuted = false;
+    bool hasSpecial = false;
+
+    public void PickupSpecial()
+    {
+        hasSpecial = true;
+    }
 
     void Update()
     {
         Debug.Log("trigger value " + abilityAxis.axisValue);
         if (abilityAxis.axisValue >= 0.7f && !hasExecuted)
         {
-            GetComponent<DashAbility>().Execute();
-//plusAbility.Execute();
+            dashAbility.Execute();
             hasExecuted = true;
         }
 		else if (abilityAxis.axisValue <= -0.7f && !hasExecuted) 
         {
-            foreach (Ability a in GetComponents<Ability>())
-            {
-                if (a != GetComponent<DashAbility>())
-                {
-                    a.Execute();
-                    hasExecuted = true;
-                }
-            }
+           if (hasSpecial){
+               boomerangAbility.Execute();
+           }
+           else
+           {
+               defaultAbility.Execute();
+           }
+           hasExecuted = true;
 
         }
 		else if (abilityAxis.axisValue < 0.7f && abilityAxis.axisValue > -0.7f)
         {
             hasExecuted = false;
         }
-       
-       
 	}
 }

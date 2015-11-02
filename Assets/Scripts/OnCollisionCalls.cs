@@ -16,16 +16,7 @@ public class OnCollisionCalls : MonoBehaviour
         OnBreakableDestroyAll(col);
         OnWeaponsCollide(col);
         OnPlayerCollision(col);
-
-        if (col.gameObject.CompareTag("Chicken")) {
-            Debug.Log("Weapon hit chicken!");
-			for (int i = 0; i < col.contacts.Length; i++)
-			{
-				ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Blood, col.contacts[i].point, 1f);
-			}
-            Destroy(col.gameObject);
-
-        }
+        OnChickenCollision(col);
     }
 
   
@@ -113,6 +104,24 @@ public class OnCollisionCalls : MonoBehaviour
                     newTransform.gameObject.AddComponent<DestroyBreakable>();
 
             }
+
+        }
+    }
+
+
+    void OnChickenCollision(Collision col) {
+
+        if (col.gameObject.CompareTag("Chicken"))
+        {
+            Debug.Log("Weapon hit chicken!");
+
+            GetComponent<Rigidbody>().GetComponentInParent<AbilityButtonInput>().PickupSpecial();
+            for (int i = 0; i < col.contacts.Length; i++)
+            {
+                ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Blood, col.contacts[i].point, 1f);
+                
+            }
+            Destroy(col.gameObject);
 
         }
     }
