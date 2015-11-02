@@ -19,27 +19,32 @@ public class AbilityButtonInput : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log("trigger value " + abilityAxis.axisValue);
-        if (abilityAxis.axisValue >= 0.7f && !hasExecuted)
+        if (GetComponentInParent<PlayerInfo>().State != PlayerInfo.PlayerState.DEAD)
         {
-            dashAbility.Execute();
-            hasExecuted = true;
-        }
-		else if (abilityAxis.axisValue <= -0.7f && !hasExecuted) 
-        {
-           if (hasSpecial){
-               boomerangAbility.Execute();
-           }
-           else
-           {
-               defaultAbility.Execute();
-           }
-           hasExecuted = true;
+            Debug.Log("trigger value " + abilityAxis.axisValue);
+            if (abilityAxis.axisValue >= 0.7f && !hasExecuted)
+            {
+                dashAbility.Execute();
+                hasExecuted = true;
+            }
+            else if (abilityAxis.axisValue <= -0.7f && !hasExecuted)
+            {
+                if (hasSpecial)
+                {
+                    boomerangAbility.Execute();
+                    hasSpecial = false;
+                }
+                else
+                {
+                    defaultAbility.Execute();
+                }
+                hasExecuted = true;
 
+            }
+            else if (abilityAxis.axisValue < 0.7f && abilityAxis.axisValue > -0.7f)
+            {
+                hasExecuted = false;
+            }
         }
-		else if (abilityAxis.axisValue < 0.7f && abilityAxis.axisValue > -0.7f)
-        {
-            hasExecuted = false;
-        }
-	}
+    }
 }

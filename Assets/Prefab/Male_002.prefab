@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upDown: {fileID: 11440374}
   leftRight: {fileID: 11456584}
-  dashPower: 5
+  dashPower: 70
   interval: 1
 --- !u!114 &11451340
 MonoBehaviour:
@@ -1396,8 +1396,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc29046f590041840bbc62d622fef1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 7
-  force: 3
+  range: 14
+  force: 15
+  interval: 4
+  particles: {fileID: 140158, guid: 0872cb5d1a1b0ca49b1869f9270e04b4, type: 2}
 --- !u!114 &11467000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1534,15 +1536,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dashPower
-      value: 5
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: range
-      value: 7
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: force
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: particles

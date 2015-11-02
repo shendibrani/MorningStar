@@ -29,7 +29,7 @@ public class SpawnBoom : Ability {
         if ((Time.time >= timer) && BoomerangPrefab != null)
         {
             GameObject boomerang = (GameObject)Instantiate(BoomerangPrefab, spawnPoint.position, transform.rotation);
-            BoomerangBase script = BoomerangPrefab.GetComponent<BoomerangBase>();
+            BoomerangBase script = boomerang.GetComponent<BoomerangBase>();
 
             List<LookAtEachotherBehaviour> list = new List<LookAtEachotherBehaviour>(FindObjectsOfType<LookAtEachotherBehaviour>());
             Transform target = list.Find(x => x != this.GetComponent<LookAtEachotherBehaviour>()).transform;
