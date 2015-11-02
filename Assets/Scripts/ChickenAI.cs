@@ -78,7 +78,7 @@ public class ChickenAI : MonoBehaviour {
 			_eggObj = GameObject.Instantiate(_egg);
 			_eggObj.transform.position = this.transform.position ;
             Destroy(_eggObj, 5f);
-            ParticleSys.instance.spawnParticle(ParticleEffect.EggEffects, _eggObj.transform.position, true, 15, _eggObj.transform);
+          //  ParticleSys.instance.spawnParticle(ParticleEffect.EggEffects, _eggObj.transform.position, true, 15, _eggObj.transform);
         }
 
 	}

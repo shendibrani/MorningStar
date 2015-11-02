@@ -108,7 +108,6 @@ public class OnCollisionCalls : MonoBehaviour
         }
     }
 
-
     void OnChickenCollision(Collision col) {
 
         if (col.gameObject.CompareTag("Chicken"))
