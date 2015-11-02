@@ -66,7 +66,7 @@ public class ChickenAI : MonoBehaviour {
 			_anim.SetFloat("Speed",2);
 		}
 
-		if(Time.time > _stayTimer + _deltaStay && _moving == false){
+		if (Time.time > _stayTimer + _deltaStay && _moving == false){
 			_chicken.SetDestination (_destination.transform.position);
 			_moving = true;
 
@@ -78,8 +78,9 @@ public class ChickenAI : MonoBehaviour {
 			_eggObj = GameObject.Instantiate(_egg);
 			_eggObj.transform.position = this.transform.position ;
             Destroy(_eggObj, 5f);
-          //  ParticleSys.instance.spawnParticle(ParticleEffect.EggEffects, _eggObj.transform.position, true, 15, _eggObj.transform);
+         
         }
+
 
 	}
 
@@ -96,4 +97,10 @@ public class ChickenAI : MonoBehaviour {
 		}
 	}
 
+    void OnCollisionEnter(Collision col) {
+        if (col.gameObject.name == "FireWall") {
+            Destroy(_chicken);
+            
+        }
+    }
 }
