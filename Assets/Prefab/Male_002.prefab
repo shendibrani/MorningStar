@@ -1398,6 +1398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 7
   force: 3
+  particles: {fileID: 140158, guid: 0872cb5d1a1b0ca49b1869f9270e04b4, type: 2}
 --- !u!114 &11467000
 MonoBehaviour:
   m_ObjectHideFlags: 1
