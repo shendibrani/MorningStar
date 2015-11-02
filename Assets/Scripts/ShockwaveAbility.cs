@@ -24,6 +24,7 @@ public class ShockwaveAbility : Ability
 		}
 
 		GameObject parts = (GameObject)GameObject.Instantiate (particles);
+		parts.transform.position = this.gameObject.transform.position;
 		GameObject.Destroy (parts, 2);
 	}	
 }
