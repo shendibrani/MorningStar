@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 445750}
   - 114: {fileID: 11452266}
-  - 114: {fileID: 11422300}
   m_Layer: 0
   m_Name: BoomerangBase
   m_TagString: Untagged
@@ -46,6 +45,9 @@ GameObject:
   - 33: {fileID: 3371056}
   - 23: {fileID: 2305378}
   - 95: {fileID: 9537212}
+  - 114: {fileID: 11477720}
+  - 64: {fileID: 6495948}
+  - 114: {fileID: 11424156}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Untagged
@@ -153,6 +155,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130050}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6495948
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 28e4be83de5a87e4aace4871a06ef10b, type: 3}
 --- !u!95 &9537212
 Animator:
   serializedVersion: 3
@@ -170,18 +184,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11422300
+--- !u!114 &11424156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106330}
+  m_GameObject: {fileID: 165692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c146d79c12e364b9a00d3e1a55d051, type: 3}
+  m_Script: {fileID: 11500000, guid: 4890e0d29e19d8049a9c45ea2bf8f641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
 --- !u!114 &11452266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,8 +208,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boomerangTransform: {fileID: 454970}
   _range: 15
-  _speed: .200000003
+  _speed: 1
   _maxRotSpeed: .150000006
+--- !u!114 &11477720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c146d79c12e364b9a00d3e1a55d051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
 --- !u!135 &13576226
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -218,7 +243,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: _speed
-      value: .200000003
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _range

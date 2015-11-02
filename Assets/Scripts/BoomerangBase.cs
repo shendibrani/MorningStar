@@ -24,6 +24,7 @@ public class BoomerangBase : MonoBehaviour {
 
 	private Quaternion _aimVector = Quaternion.identity;
 
+    bool _isHit = false;
 
 
 	void Start () {
@@ -37,7 +38,6 @@ public class BoomerangBase : MonoBehaviour {
     {
         player = iPlayer;
         target = iTarget;
-        Debug.Log(player + " boomerang " + target);
     }
 
     void Update()
@@ -48,15 +48,18 @@ public class BoomerangBase : MonoBehaviour {
             if (_state == 0)
             {
                 _rotSet.transform.LookAt(target);
+                _rotSet.transform.eulerAngles = new Vector3(0, _rotSet.transform.rotation.eulerAngles.y, 0);
                 _aimVector = _rotSet.transform.rotation;
             }
             else if (_state == 1)
             {
                 _rotSet.transform.LookAt(target);
+                _rotSet.transform.eulerAngles = new Vector3(0, _rotSet.transform.rotation.eulerAngles.y, 0);
                 Quaternion _aimStore = _rotSet.transform.rotation;
 
                 _rotSet.transform.LookAt(player);
-                _rotSet.transform.Rotate(0, 180, 0);
+                _rotSet.transform.eulerAngles = new Vector3(0, _rotSet.transform.rotation.eulerAngles.y + 180, 0);
+                //_rotSet.transform.Rotate(0, 180, 0);
                 Quaternion _backStore = _rotSet.transform.rotation;
 
                 float _fraction = _distance / _range;
@@ -67,7 +70,8 @@ public class BoomerangBase : MonoBehaviour {
             else if (_state == 2)
             {
                 _rotSet.transform.LookAt(player);
-                _rotSet.transform.Rotate(0, 180, 0);
+                _rotSet.transform.eulerAngles = new Vector3(0, _rotSet.transform.rotation.eulerAngles.y + 180, 0);
+                //_rotSet.transform.Rotate(0, 180, 0);
                 _aimVector = _rotSet.transform.rotation;
             }
 
@@ -96,9 +100,6 @@ public class BoomerangBase : MonoBehaviour {
             }
             else if (_state == 2)
             {
-                Debug.Log(transform.position);
-                Debug.Log(player.position);
-                Debug.Log(_range);
                 _range = Vector3.Distance(transform.position, player.position);
 
                 if (_distance > -_range + 0.2)
@@ -112,7 +113,7 @@ public class BoomerangBase : MonoBehaviour {
                 else if (_distance > -_range - 0.2 && _distance < -_range + 0.2)
                 {
 
-                    if (Vector3.Distance(player.position, _boomerangTransform.position) < 0.2)
+                    if (Vector3.Distance(player.position + new Vector3(0,2), _boomerangTransform.position) < 5)
                     {
                         Object.Destroy(_rotSet.gameObject);
                         Object.Destroy(this.gameObject);
@@ -124,5 +125,13 @@ public class BoomerangBase : MonoBehaviour {
         }
     }
 
-
+    public void CollideWithPlayer(Transform trans)
+    {
+        if (trans == player)
+        {
+            //_isHit = true;
+            Object.Destroy(_rotSet.gameObject);
+            Object.Destroy(this.gameObject);
+        }
+    }
 }
