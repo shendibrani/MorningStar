@@ -126,6 +126,7 @@ GameObject:
   - 114: {fileID: 11499554}
   - 114: {fileID: 11432464}
   - 114: {fileID: 11458198}
+  - 114: {fileID: 11492168}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -1397,7 +1398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 7
   force: 3
-  particles: {fileID: 140158, guid: 0872cb5d1a1b0ca49b1869f9270e04b4, type: 2}
 --- !u!114 &11467000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1432,6 +1432,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11499554}
+  dashAbility: {fileID: 11451138}
+  defaultAbility: {fileID: 11458198}
+  boomerangAbility: {fileID: 11492168}
 --- !u!114 &11481238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1471,6 +1474,20 @@ MonoBehaviour:
   direction: 0
   type: 1
   axisName: 
+--- !u!114 &11492168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7825a1ffee083f242a7692070c55aa31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoomerangPrefab: {fileID: 106330, guid: 3b8ca80b302c3d847ad42d03cbc54a9b, type: 2}
+  spawnPoint: {fileID: 444570}
+  interval: 4
 --- !u!114 &11499554
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -37,6 +37,7 @@ public class BoomerangBase : MonoBehaviour {
     {
         player = iPlayer;
         target = iTarget;
+        Debug.Log(player + " boomerang " + target);
     }
 
     void Update()
