@@ -60,4 +60,9 @@ public class FireWallController : MonoBehaviour,IMessage {
     {
         distance = maxMotionDistance + 1;
     }
+
+    void OnDestroy()
+    {
+        MessagingManager.RemoveListener(this);
+    }
 }

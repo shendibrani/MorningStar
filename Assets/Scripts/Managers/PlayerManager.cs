@@ -46,8 +46,14 @@ public class PlayerManager : MonoBehaviour, IMessage
             case Messages.RESTART:
 				player0Data = PlayerInfoPasser.GetInfo(0);
 				player1Data = PlayerInfoPasser.GetInfo(1);
-                if (playerA.GetComponent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE) Object.Destroy(playerA);
-                if (playerB.GetComponent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE) Object.Destroy(playerB);
+                if (playerA != null)
+                {
+                    if (playerA.GetComponent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE) Object.Destroy(playerA);
+                }
+                if (playerB != null)
+                {
+                    if (playerB.GetComponent<PlayerInfo>().State == PlayerInfo.PlayerState.ALIVE) Object.Destroy(playerB);
+                }
                 Object.Destroy(healthA);
                 Object.Destroy(healthB);
                 CreatePlayers();
@@ -81,7 +87,9 @@ public class PlayerManager : MonoBehaviour, IMessage
         //weaponA.GetComponent<AttachWeapon>().Attach(playerA, playerA.GetComponent<PlayerInfo>().rightRotator);
 
         //set up HUD 
+        Debug.Log(canvas + " HealthA  "+  healthA);
         healthA = (GameObject)GameObject.Instantiate(healthBarPrefab, new Vector3(960, -768, 0), Quaternion.identity);
+        Debug.Log(canvas + " HealthA  " + healthA + "    SECOND");
         healthA.transform.SetParent(canvas.transform, false);
         healthA.GetComponent<HealthBar>().SetIcon(player0Data.characterIcon);
         playerA.GetComponentInChildren<ReceiveDamageOnCollision>().healthBar = healthA.GetComponent<HealthBar>();
@@ -126,6 +134,11 @@ public class PlayerManager : MonoBehaviour, IMessage
 
         Debug.Log("Done");
 
+    }
+
+    void OnDestroy()
+    {
+        MessagingManager.RemoveListener(this);
     }
 
 //	void SetupABindings()

@@ -54,4 +54,9 @@ public class RigidBodyPause : MonoBehaviour, IMessage {
     {
         GetComponent<Rigidbody>().constraints = constraints;
     }
+
+    void OnDestroy()
+    {
+        MessagingManager.RemoveListener(this);
+    }
 }
