@@ -333,6 +333,7 @@ GameObject:
   - 114: {fileID: 11461678}
   - 114: {fileID: 11494624}
   - 114: {fileID: 11476260}
+  - 114: {fileID: 11408146}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -1213,8 +1214,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11495022}
-  zAxis: {fileID: 11491398}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
+--- !u!114 &11408146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7825a1ffee083f242a7692070c55aa31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoomerangPrefab: {fileID: 106330, guid: 3b8ca80b302c3d847ad42d03cbc54a9b, type: 2}
+  spawnPoint: {fileID: 433798}
+  interval: 4
 --- !u!114 &11415548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1303,6 +1319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11461678}
+  dashAbility: {fileID: 11419260}
+  defaultAbility: {fileID: 11476260}
+  boomerangAbility: {fileID: 0}
 --- !u!114 &11441390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1315,18 +1334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightRotator: {fileID: 487814}
-  movementAxisX:
-    axisName: 
-    invert: 0
-  movementAxisY:
-    axisName: 
-    invert: 0
-  attackAxisX:
-    axisName: 
-    invert: 0
-  attackAxisY:
-    axisName: 
-    invert: 0
+  controller: {fileID: 0}
 --- !u!114 &11441394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1367,8 +1375,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11403088}
-  zAxis: {fileID: 11457984}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &11461678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1436,8 +1445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd052cbae9392a34796d916d9fccc0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upDown: {fileID: 11400964}
-  leftRight: {fileID: 11427982}
+  controller: {fileID: 0}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
   baseSpeed: 200
   _speedMultiplier: 1
   pushThreshold: 1

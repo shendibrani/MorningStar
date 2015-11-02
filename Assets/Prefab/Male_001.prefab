@@ -297,6 +297,7 @@ GameObject:
   - 114: {fileID: 11465218}
   - 114: {fileID: 11427852}
   - 114: {fileID: 11472812}
+  - 114: {fileID: 11416542}
   m_Layer: 0
   m_Name: Control Rigidbody
   m_TagString: Player
@@ -1187,6 +1188,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa028bfcba51e24daa7bc260f27368b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11416542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7825a1ffee083f242a7692070c55aa31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoomerangPrefab: {fileID: 106330, guid: 3b8ca80b302c3d847ad42d03cbc54a9b, type: 2}
+  spawnPoint: {fileID: 426712}
+  interval: 4
 --- !u!114 &11422032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1262,18 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightRotator: {fileID: 417220}
-  movementAxisX:
-    axisName: 
-    invert: 0
-  movementAxisY:
-    axisName: 
-    invert: 0
-  attackAxisX:
-    axisName: 
-    invert: 0
-  attackAxisY:
-    axisName: 
-    invert: 0
+  controller: {fileID: 0}
 --- !u!114 &11443612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1442,8 +1446,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11485780}
-  zAxis: {fileID: 11487128}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &11487128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1473,8 +1478,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   smoothTime: 4
-  xAxis: {fileID: 11466390}
-  zAxis: {fileID: 11426620}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &11491814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1486,8 +1492,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd052cbae9392a34796d916d9fccc0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upDown: {fileID: 11446220}
-  leftRight: {fileID: 11465290}
+  controller: {fileID: 0}
+  UpDown: {fileID: 0}
+  LeftRight: {fileID: 0}
   baseSpeed: 200
   _speedMultiplier: 1
   pushThreshold: 1
@@ -1503,6 +1510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityAxis: {fileID: 11465218}
+  dashAbility: {fileID: 11470842}
+  defaultAbility: {fileID: 11472812}
+  boomerangAbility: {fileID: 11416542}
 --- !u!136 &13626392
 CapsuleCollider:
   m_ObjectHideFlags: 1
