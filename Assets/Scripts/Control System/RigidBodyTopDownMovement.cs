@@ -52,6 +52,7 @@ public class RigidBodyTopDownMovement: MonoBehaviour {
 	public void Push(Vector3 direction, float force)
 	{
 		pushing = true;
+        GetComponent<Rigidbody>().velocity = new Vector3();
 		GetComponent<Rigidbody>().AddForce(direction.normalized * force, ForceMode.Impulse);
 	}
 }
