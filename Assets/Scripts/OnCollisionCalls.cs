@@ -115,7 +115,7 @@ public class OnCollisionCalls : MonoBehaviour
         {
             Debug.Log("Weapon hit chicken!");
 
-            GetComponent<Rigidbody>().GetComponentInParent<AbilityButtonInput>();
+            GetComponent<Rigidbody>().GetComponentInParent<AbilityButtonInput>().PickupSpecial();
             for (int i = 0; i < col.contacts.Length; i++)
             {
                 ParticleSys.instance.spawnParticleDestroyable(ParticleEffect.Blood, col.contacts[i].point, 1f);
