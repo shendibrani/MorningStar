@@ -1283,7 +1283,7 @@ MonoBehaviour:
   cameraReference: {fileID: 1098789432}
   engagementDistance: 8
   minSpawnDistance: 12
-  maxSpawnDistance: 15
+  maxSpawnDistance: 22
 --- !u!114 &1707060246
 MonoBehaviour:
   m_ObjectHideFlags: 0
